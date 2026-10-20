@@ -1,9 +1,20 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QFontDatabase>
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
+
+#ifdef HAS_EMOJI_FONT
+    const int fontId = QFontDatabase::addApplicationFont(
+        QStringLiteral(":/fonts/NotoColorEmoji.ttf"));
+    if (fontId == -1)
+        qWarning("Failed to load NotoColorEmoji.ttf from resources");
+    else
+        qInfo() << "Loaded emoji font from resources, id:" << fontId;
+#endif
 
     QQmlApplicationEngine engine;
     QObject::connect(&engine, &QQmlApplicationEngine::warnings, [](const QList<QQmlError> &warnings) {
