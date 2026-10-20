@@ -44,7 +44,7 @@ Window {
             spacing: 14
 
             Label {
-                text: "🌀 Temporal Spiral & Pie Day Plan"
+                text: "🌀 QtSpeis Schedule & Calendar"
                 font.bold: true
                 font.pixelSize: 18
                 color: "#F8FAFC"
@@ -56,10 +56,14 @@ Window {
                 color: "#334155"
             }
 
-            // View Mode Selector: 3-Day (72h) vs 7-Day Week vs 24h Circle
+            ButtonGroup {
+                id: viewModeGroup
+            }
+
+            // Radial / Spiral View Selector
             Rectangle {
                 Layout.preferredHeight: 32
-                Layout.preferredWidth: 380
+                Layout.preferredWidth: 280
                 radius: 8
                 color: "#0F172A"
                 border.color: "#334155"
@@ -70,10 +74,6 @@ Window {
                     anchors.margins: 2
                     spacing: 2
 
-                    ButtonGroup {
-                        id: viewModeGroup
-                    }
-
                     Rectangle {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
@@ -83,11 +83,13 @@ Window {
                         Button {
                             id: spiral3Btn
                             anchors.fill: parent
-                            text: "🌀 3-Day (72h)"
+                            text: "🌀 3-Day"
                             checkable: true
                             checked: true
                             ButtonGroup.group: viewModeGroup
                             flat: true
+                            ToolTip.visible: hovered
+                            ToolTip.text: "Spiral View: 3-Day (72 Hours)"
                             contentItem: Label {
                                 text: spiral3Btn.text
                                 font.bold: spiral3Btn.checked
@@ -113,11 +115,13 @@ Window {
                         Button {
                             id: spiral7Btn
                             anchors.fill: parent
-                            text: "🌀 7-Day Week"
+                            text: "🌀 7-Day"
                             checkable: true
                             checked: false
                             ButtonGroup.group: viewModeGroup
                             flat: true
+                            ToolTip.visible: hovered
+                            ToolTip.text: "Spiral View: 7-Day Week"
                             contentItem: Label {
                                 text: spiral7Btn.text
                                 font.bold: spiral7Btn.checked
@@ -143,11 +147,13 @@ Window {
                         Button {
                             id: circleBtn
                             anchors.fill: parent
-                            text: "🕒 24h Circle"
+                            text: "🕒 24h Dial"
                             checkable: true
                             checked: false
                             ButtonGroup.group: viewModeGroup
                             flat: true
+                            ToolTip.visible: hovered
+                            ToolTip.text: "Circular View: 24-Hour Dial"
                             contentItem: Label {
                                 text: circleBtn.text
                                 font.bold: circleBtn.checked
@@ -158,6 +164,124 @@ Window {
                             }
                             background: Item {}
                             onClicked: mainChart.currentIndex = 1
+                        }
+                    }
+                }
+            }
+
+            Rectangle {
+                Layout.preferredWidth: 1
+                Layout.preferredHeight: 24
+                color: "#334155"
+            }
+
+            // Tabular Calendar View Selector (24h, 3 days, 7 days)
+            Rectangle {
+                Layout.preferredHeight: 32
+                Layout.preferredWidth: 320
+                radius: 8
+                color: "#0F172A"
+                border.color: "#334155"
+                border.width: 1
+
+                RowLayout {
+                    anchors.fill: parent
+                    anchors.margins: 2
+                    spacing: 2
+
+                    Rectangle {
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        radius: 6
+                        color: table24Btn.checked ? "#2563EB" : "transparent"
+
+                        Button {
+                            id: table24Btn
+                            anchors.fill: parent
+                            text: "📅 24h Table"
+                            checkable: true
+                            checked: false
+                            ButtonGroup.group: viewModeGroup
+                            flat: true
+                            ToolTip.visible: hovered
+                            ToolTip.text: "Tabular Calendar: 24-Hour Straight Time Axis (No Scrolling)"
+                            contentItem: Label {
+                                text: table24Btn.text
+                                font.bold: table24Btn.checked
+                                font.pixelSize: 11
+                                color: table24Btn.checked ? "#FFFFFF" : "#94A3B8"
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                            }
+                            background: Item {}
+                            onClicked: {
+                                mainChart.currentIndex = 2;
+                                tableChart.daysCount = 1;
+                            }
+                        }
+                    }
+
+                    Rectangle {
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        radius: 6
+                        color: table3Btn.checked ? "#2563EB" : "transparent"
+
+                        Button {
+                            id: table3Btn
+                            anchors.fill: parent
+                            text: "📅 3-Day Table"
+                            checkable: true
+                            checked: false
+                            ButtonGroup.group: viewModeGroup
+                            flat: true
+                            ToolTip.visible: hovered
+                            ToolTip.text: "Tabular Calendar: 3 Days (72h) Straight Time Axes (No Scrolling)"
+                            contentItem: Label {
+                                text: table3Btn.text
+                                font.bold: table3Btn.checked
+                                font.pixelSize: 11
+                                color: table3Btn.checked ? "#FFFFFF" : "#94A3B8"
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                            }
+                            background: Item {}
+                            onClicked: {
+                                mainChart.currentIndex = 2;
+                                tableChart.daysCount = 3;
+                            }
+                        }
+                    }
+
+                    Rectangle {
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        radius: 6
+                        color: table7Btn.checked ? "#2563EB" : "transparent"
+
+                        Button {
+                            id: table7Btn
+                            anchors.fill: parent
+                            text: "📅 7-Day Week"
+                            checkable: true
+                            checked: false
+                            ButtonGroup.group: viewModeGroup
+                            flat: true
+                            ToolTip.visible: hovered
+                            ToolTip.text: "Tabular Calendar: 7-Day Week Straight Time Axes (No Scrolling)"
+                            contentItem: Label {
+                                text: table7Btn.text
+                                font.bold: table7Btn.checked
+                                font.pixelSize: 11
+                                color: table7Btn.checked ? "#FFFFFF" : "#94A3B8"
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                            }
+                            background: Item {}
+                            onClicked: {
+                                mainChart.currentIndex = 2;
+                                tableChart.daysCount = 7;
+                            }
                         }
                     }
                 }
@@ -328,40 +452,49 @@ Window {
                         function resetZoom() {
                             spiralChart.resetZoom();
                             pieChart.resetZoom();
+                            tableChart.resetZoom();
                             mainChart.zoom = 1.0;
                         }
 
                         function updateCurrentTime() {
                             spiralChart.updateCurrentTime();
                             pieChart.updateCurrentTime();
+                            tableChart.updateCurrentTime();
                         }
 
                         function isItemVisibleOnDial(item) {
                             if (mainChart.currentIndex === 0) {
                                 return spiralChart.isItemVisibleOnDial(item);
-                            } else {
+                            } else if (mainChart.currentIndex === 1) {
                                 return pieChart.isItemVisibleOnDial(item);
+                            } else if (mainChart.currentIndex === 2) {
+                                return tableChart.isItemVisibleOnDial(item);
                             }
+                            return true;
                         }
 
                         onZoomChanged: {
                             if (spiralChart.zoom !== mainChart.zoom) spiralChart.zoom = mainChart.zoom;
                             if (pieChart.zoom !== mainChart.zoom) pieChart.zoom = mainChart.zoom;
+                            if (tableChart.zoom !== mainChart.zoom) tableChart.zoom = mainChart.zoom;
                         }
 
                         onFocusAngleChanged: {
                             if (spiralChart.focusAngle !== mainChart.focusAngle) spiralChart.focusAngle = mainChart.focusAngle;
                             if (pieChart.focusAngle !== mainChart.focusAngle) pieChart.focusAngle = mainChart.focusAngle;
+                            if (tableChart.focusAngle !== mainChart.focusAngle) tableChart.focusAngle = mainChart.focusAngle;
                         }
 
                         onFollowTimeChanged: {
                             if (spiralChart.followTime !== mainChart.followTime) spiralChart.followTime = mainChart.followTime;
                             if (pieChart.followTime !== mainChart.followTime) pieChart.followTime = mainChart.followTime;
+                            if (tableChart.followTime !== mainChart.followTime) tableChart.followTime = mainChart.followTime;
                         }
 
                         onSelectedItemChanged: {
                             if (spiralChart.selectedItem !== mainChart.selectedItem) spiralChart.selectedItem = mainChart.selectedItem;
                             if (pieChart.selectedItem !== mainChart.selectedItem) pieChart.selectedItem = mainChart.selectedItem;
+                            if (tableChart.selectedItem !== mainChart.selectedItem) tableChart.selectedItem = mainChart.selectedItem;
                         }
 
                         onItemClicked: (item) => {
@@ -425,6 +558,33 @@ Window {
                             }
                             onSelectedItemChanged: {
                                 if (mainChart.currentIndex === 1 && mainChart.selectedItem !== selectedItem) mainChart.selectedItem = selectedItem;
+                            }
+                            onItemClicked: (item) => mainChart.itemClicked(item)
+                        }
+
+                        // Index 2: Tabular Calendar View (24h, 3-Day, 7-Day Straight Time Axes)
+                        TemporalTableChart {
+                            id: tableChart
+                            Layout.fillWidth: true
+                            Layout.fillHeight: true
+                            interactive: true
+                            planModel: dayPlanModel
+                            daysCount: 7
+                            zoom: mainChart.zoom
+                            focusAngle: mainChart.focusAngle
+                            followTime: mainChart.followTime
+
+                            onZoomChanged: {
+                                if (mainChart.currentIndex === 2 && mainChart.zoom !== zoom) mainChart.zoom = zoom;
+                            }
+                            onFocusAngleChanged: {
+                                if (mainChart.currentIndex === 2 && mainChart.focusAngle !== focusAngle) mainChart.focusAngle = focusAngle;
+                            }
+                            onFollowTimeChanged: {
+                                if (mainChart.currentIndex === 2 && mainChart.followTime !== followTime) mainChart.followTime = followTime;
+                            }
+                            onSelectedItemChanged: {
+                                if (mainChart.currentIndex === 2 && mainChart.selectedItem !== selectedItem) mainChart.selectedItem = selectedItem;
                             }
                             onItemClicked: (item) => mainChart.itemClicked(item)
                         }
