@@ -11,6 +11,7 @@ Item {
     property bool interactive: true
     property bool showIcons: true
     property bool showLabels: true
+    property bool showLensHighlight: true
 
     // Calendar Duration Parameters (1 = 24h, 3 = 3-Day, 7 = 7-Day Week)
     property int daysCount: 7
@@ -99,10 +100,9 @@ Item {
     }
 
     Behavior on focusAngle {
-        enabled: !root.followTime
-        RotationAnimation {
-            direction: RotationAnimation.Shortest
-            duration: 130
+        enabled: !dragHandler.active && !root.followTime
+        NumberAnimation {
+            duration: 140
             easing.type: Easing.OutQuad
         }
     }
@@ -126,37 +126,63 @@ Item {
         canvas.requestPaint();
     }
 
-    // --- Mathematical Mapping for Straight Time Axis (Starts at Top, Ends at Bottom) ---
-    // At hours = 0.0 -> gridY (Top)
-    // At hours = 24.0 -> gridY + gridH (Bottom)
-    // No vertical scrolling needed: the full 24h day spans height & width
+    // --- Mathematical 1D Conformal Möbius Fisheye Lens for Straight Time Axis ---
+    // 00:00 (hours = 0.0) is fixed at gridY (Top)
+    // 24:00 (hours = 24.0) is fixed at gridY + gridH (Bottom)
+    // Magnification at focus time (hours = focusH) is exactly equal to root.zoom
     function timeToY(hours, gY, gH) {
         let clampedH = Math.max(0.0, Math.min(24.0, hours));
         if (Math.abs(root.zoom - 1.0) < 0.001) {
             return gY + (clampedH / 24.0) * gH;
         }
+
         let focusH = (root.focusAngle / (2.0 * Math.PI)) * 24.0;
-        let k = 4.0;
-        let gMin = Math.atan(root.zoom * (0.0 - focusH) / k);
-        let gMax = Math.atan(root.zoom * (24.0 - focusH) / k);
-        let gVal = Math.atan(root.zoom * (clampedH - focusH) / k);
-        let frac = (gVal - gMin) / (gMax - gMin);
-        return gY + Math.max(0.0, Math.min(1.0, frac)) * gH;
+        let z = root.zoom;
+        let yFocus = focusH / 24.0;
+
+        if (clampedH <= focusH) {
+            let D1 = focusH;
+            if (D1 < 1e-5) return gY + yFocus * gH;
+            let xi = (focusH - clampedH) / D1;
+            xi = Math.max(0.0, Math.min(1.0, xi));
+            let xiVisual = (2.0 / Math.PI) * Math.atan(z * Math.tan(xi * Math.PI * 0.5));
+            let frac = yFocus * (1.0 - xiVisual);
+            return gY + Math.max(0.0, Math.min(1.0, frac)) * gH;
+        } else {
+            let D2 = 24.0 - focusH;
+            if (D2 < 1e-5) return gY + yFocus * gH;
+            let xi = (clampedH - focusH) / D2;
+            xi = Math.max(0.0, Math.min(1.0, xi));
+            let xiVisual = (2.0 / Math.PI) * Math.atan(z * Math.tan(xi * Math.PI * 0.5));
+            let frac = yFocus + (1.0 - yFocus) * xiVisual;
+            return gY + Math.max(0.0, Math.min(1.0, frac)) * gH;
+        }
     }
 
-    // Inverse mapping from Y coordinate to time in hours [0..24]
+    // Exact inverse mapping from Y coordinate back to time in hours [0..24]
     function yToTime(y, gY, gH) {
         let frac = Math.max(0.0, Math.min(1.0, (y - gY) / gH));
         if (Math.abs(root.zoom - 1.0) < 0.001) {
             return frac * 24.0;
         }
+
         let focusH = (root.focusAngle / (2.0 * Math.PI)) * 24.0;
-        let k = 4.0;
-        let gMin = Math.atan(root.zoom * (0.0 - focusH) / k);
-        let gMax = Math.atan(root.zoom * (24.0 - focusH) / k);
-        let targetG = gMin + frac * (gMax - gMin);
-        let h = focusH + (k / root.zoom) * Math.tan(targetG);
-        return Math.max(0.0, Math.min(24.0, h));
+        let z = root.zoom;
+        let yFocus = focusH / 24.0;
+
+        if (frac <= yFocus) {
+            if (yFocus < 1e-5) return 0.0;
+            let xiVisual = (yFocus - frac) / yFocus;
+            xiVisual = Math.max(0.0, Math.min(1.0, xiVisual));
+            let xi = (2.0 / Math.PI) * Math.atan((1.0 / z) * Math.tan(xiVisual * Math.PI * 0.5));
+            return Math.max(0.0, Math.min(24.0, focusH - xi * focusH));
+        } else {
+            if (1.0 - yFocus < 1e-5) return 24.0;
+            let xiVisual = (frac - yFocus) / (1.0 - yFocus);
+            xiVisual = Math.max(0.0, Math.min(1.0, xiVisual));
+            let xi = (2.0 / Math.PI) * Math.atan((1.0 / z) * Math.tan(xiVisual * Math.PI * 0.5));
+            return Math.max(0.0, Math.min(24.0, focusH + xi * (24.0 - focusH)));
+        }
     }
 
     function formatClockTime(hours) {
@@ -166,7 +192,6 @@ Item {
     }
 
     // Diurnal / Circadian blended color function matching Circle & Spiral exactly:
-    // Calm blue at midnight (00:00) -> Sunrise gold -> Bright orangy yellow at noon (12:00) -> Sunset coral -> Midnight blue
     function getBlendedColor(timeHours) {
         let t = timeHours % 24.0;
         if (t < 0) t += 24.0;
@@ -351,6 +376,39 @@ Item {
         return Math.abs(y2 - y1) >= 2.0;
     }
 
+    // Synchronized Wheel Zoom handling
+    function handleWheelZoom(py, angleDeltaY) {
+        let gY = root.gridY;
+        let gH = root.gridH;
+        let targetTime = root.yToTime(py, gY, gH);
+        let targetAngle = (targetTime / 24.0) * 2.0 * Math.PI;
+
+        if (root.followTime) {
+            applyWheelZoomDelta(angleDeltaY);
+            return;
+        }
+
+        if (Math.abs(root.zoom - 1.0) < 0.02) {
+            root.focusAngle = targetAngle;
+            applyWheelZoomDelta(angleDeltaY);
+            return;
+        }
+
+        // Smoothly nudge focus towards mouse cursor position
+        let curH = (root.focusAngle / (2.0 * Math.PI)) * 24.0;
+        let diffH = targetTime - curH;
+        let step = diffH * 0.30;
+        let newH = Math.max(0.0, Math.min(24.0, curH + step));
+        root.focusAngle = (newH / 24.0) * 2.0 * Math.PI;
+        applyWheelZoomDelta(angleDeltaY);
+    }
+
+    function applyWheelZoomDelta(deltaY) {
+        let factor = deltaY > 0 ? 1.15 : 0.87;
+        let targetZoom = root.zoom * factor;
+        root.zoom = Math.max(root.minZoom, Math.min(root.maxZoom, targetZoom));
+    }
+
     // Canvas Painting
     Canvas {
         id: canvas
@@ -424,28 +482,26 @@ Item {
             }
             ctx.restore();
 
-            // 2. Circadian Column Background Gradients (00:00 top to 24:00 bottom)
+            // 2. Circadian Column Background Gradients (Dynamically Warped by Fisheye Lens)
             ctx.save();
-            let baseGrad = ctx.createLinearGradient(0, gY, 0, gY + gH);
-            baseGrad.addColorStop(0.0 / 24.0, "rgb(22, 48, 118)");   // 00:00 Midnight blue
-            baseGrad.addColorStop(3.5 / 24.0, "rgb(28, 56, 130)");   // 03:30 Deep calm night
-            baseGrad.addColorStop(5.5 / 24.0, "rgb(65, 75, 130)");   // 05:30 Dawn twilight
-            baseGrad.addColorStop(7.0 / 24.0, "rgb(220, 118, 50)");  // 07:00 Sunrise amber
-            baseGrad.addColorStop(9.5 / 24.0, "rgb(248, 168, 30)");  // 09:30 Morning gold
-            baseGrad.addColorStop(12.0 / 24.0, "rgb(255, 195, 18)"); // 12:00 Bright midday yellow
-            baseGrad.addColorStop(14.5 / 24.0, "rgb(248, 160, 28)"); // 14:30 Afternoon sun
-            baseGrad.addColorStop(17.0 / 24.0, "rgb(232, 110, 45)"); // 17:00 Golden hour
-            baseGrad.addColorStop(19.5 / 24.0, "rgb(175, 68, 85)");  // 19:30 Sunset dusky rose
-            baseGrad.addColorStop(21.5 / 24.0, "rgb(58, 48, 112)");  // 21:30 Evening indigo
-            baseGrad.addColorStop(24.0 / 24.0, "rgb(22, 48, 118)");  // 24:00 Midnight blue
+            let warpedGrad = ctx.createLinearGradient(0, gY, 0, gY + gH);
+            let prevFrac = -1.0;
+            for (let h = 0; h <= 24; ++h) {
+                let yPos = root.timeToY(h, gY, gH);
+                let stopFrac = Math.max(0.0, Math.min(1.0, (yPos - gY) / gH));
+                if (stopFrac > prevFrac) {
+                    warpedGrad.addColorStop(stopFrac, root.getBlendedColor(h));
+                    prevFrac = stopFrac;
+                }
+            }
 
             for (let c = 0; c < colCount; ++c) {
                 let col = cols[c];
                 let colX = gX + c * colW;
 
-                // Subtle circadian backdrop
-                ctx.fillStyle = baseGrad;
-                ctx.globalAlpha = 0.28;
+                // Subtle circadian backdrop warped by fisheye lens
+                ctx.fillStyle = warpedGrad;
+                ctx.globalAlpha = 0.30;
                 ctx.fillRect(colX + 2, gY, colW - 4, gH);
 
                 // Highlight today column
@@ -474,28 +530,55 @@ Item {
             ctx.stroke();
             ctx.restore();
 
-            // 3. Horizontal Grid Lines & Ticks Across Straight Time Axis
+            // 3. Horizontal Grid Lines & Ticks Across Fisheye Straight Time Axis
             ctx.save();
             for (let h = 0; h <= 24; ++h) {
                 let y = root.timeToY(h, gY, gH);
                 let isMajor = (h % 3 === 0);
+                let yNext = (h < 24) ? root.timeToY(h + 1, gY, gH) : y;
+                let hourPixelH = (h < 24) ? (yNext - y) : 25;
 
-                ctx.beginPath();
-                ctx.moveTo(gX, y);
-                ctx.lineTo(gX + gW, y);
-                ctx.strokeStyle = isMajor ? "rgba(255, 255, 255, 0.22)" : "rgba(255, 255, 255, 0.08)";
-                ctx.lineWidth = isMajor ? 1.0 : 0.7;
-                ctx.stroke();
+                // Major 3-hour line
+                if (isMajor) {
+                    ctx.beginPath();
+                    ctx.moveTo(gX, y);
+                    ctx.lineTo(gX + gW, y);
+                    ctx.strokeStyle = "rgba(255, 255, 255, 0.25)";
+                    ctx.lineWidth = 1.0;
+                    ctx.stroke();
+                } else if (hourPixelH >= 15) {
+                    // Minor 1-hour line
+                    ctx.beginPath();
+                    ctx.moveTo(gX, y);
+                    ctx.lineTo(gX + gW, y);
+                    ctx.strokeStyle = "rgba(255, 255, 255, 0.09)";
+                    ctx.lineWidth = 0.7;
+                    ctx.stroke();
+                }
 
-                // Half-hour dashed line if height allows
-                if (h < 24 && gH / 24.0 >= 32) {
+                // Half-hour dashed line if height allows (near expanded focus)
+                if (h < 24 && hourPixelH >= 46) {
                     let yHalf = root.timeToY(h + 0.5, gY, gH);
                     ctx.beginPath();
                     ctx.setLineDash([3, 4]);
                     ctx.moveTo(gX, yHalf);
                     ctx.lineTo(gX + gW, yHalf);
-                    ctx.strokeStyle = "rgba(255, 255, 255, 0.05)";
+                    ctx.strokeStyle = "rgba(255, 255, 255, 0.07)";
                     ctx.lineWidth = 0.6;
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+                }
+
+                // Quarter-hour dotted lines if deeply expanded
+                if (h < 24 && hourPixelH >= 95) {
+                    let yQ1 = root.timeToY(h + 0.25, gY, gH);
+                    let yQ3 = root.timeToY(h + 0.75, gY, gH);
+                    ctx.beginPath();
+                    ctx.setLineDash([1, 4]);
+                    ctx.moveTo(gX, yQ1); ctx.lineTo(gX + gW, yQ1);
+                    ctx.moveTo(gX, yQ3); ctx.lineTo(gX + gW, yQ3);
+                    ctx.strokeStyle = "rgba(255, 255, 255, 0.04)";
+                    ctx.lineWidth = 0.5;
                     ctx.stroke();
                     ctx.setLineDash([]);
                 }
@@ -516,26 +599,92 @@ Item {
                 ctx.fill();
             }
 
-            // Time labels in gutter
+            // Time labels in gutter with smart collision prevention
             ctx.textAlign = "right";
             ctx.textBaseline = "middle";
+            let lastLabelY = -100;
+
             for (let h = 0; h <= 24; ++h) {
                 let y = root.timeToY(h, gY, gH);
                 let isMajor = (h % 3 === 0);
+                let yNext = (h < 24) ? root.timeToY(h + 1, gY, gH) : y;
+                let hourPixelH = (h < 24) ? (yNext - y) : 25;
 
                 if (isMajor) {
                     let timeStr = (h < 10 ? "0" : "") + h + ":00";
                     ctx.font = "bold 11px sans-serif";
                     ctx.fillStyle = "rgba(255, 255, 255, 0.88)";
                     ctx.fillText(timeStr, gX - 12, y);
-                } else if (gH / 24.0 >= 28) {
+                    lastLabelY = y;
+                } else if (hourPixelH >= 20 && Math.abs(y - lastLabelY) >= 15) {
                     let timeStr = (h < 10 ? "0" : "") + h + ":00";
                     ctx.font = "9px sans-serif";
-                    ctx.fillStyle = "rgba(255, 255, 255, 0.40)";
+                    ctx.fillStyle = "rgba(255, 255, 255, 0.52)";
                     ctx.fillText(timeStr, gX - 12, y);
+                    lastLabelY = y;
+                }
+
+                // If hour is deeply expanded, also show half-hour label
+                if (h < 24 && hourPixelH >= 54) {
+                    let yHalf = root.timeToY(h + 0.5, gY, gH);
+                    let halfStr = (h < 10 ? "0" : "") + h + ":30";
+                    ctx.font = "8px sans-serif";
+                    ctx.fillStyle = "rgba(255, 255, 255, 0.38)";
+                    ctx.fillText(halfStr, gX - 12, yHalf);
                 }
             }
             ctx.restore();
+
+            // 4b. Fisheye Lens Highlight Bracket in Gutter
+            if (root.showLensHighlight && Math.abs(root.zoom - 1.0) > 0.05) {
+                ctx.save();
+                let focusH = (root.focusAngle / (2.0 * Math.PI)) * 24.0;
+                let isZoomedIn = (root.zoom > 1.0);
+                let lensHalfSpanH = 3.0 / Math.sqrt(Math.max(0.5, root.zoom));
+                let hL1 = Math.max(0.0, focusH - lensHalfSpanH);
+                let hL2 = Math.min(24.0, focusH + lensHalfSpanH);
+                let yL1 = root.timeToY(hL1, gY, gH);
+                let yL2 = root.timeToY(hL2, gY, gH);
+                let yFocus = root.timeToY(focusH, gY, gH);
+
+                let lensColor = isZoomedIn ? "#F59E0B" : "#F43F5E";
+
+                // Lens vertical bar along the inner edge of gutter
+                ctx.beginPath();
+                ctx.moveTo(gX - 1, yL1);
+                ctx.lineTo(gX - 1, yL2);
+                ctx.strokeStyle = lensColor;
+                ctx.lineWidth = isZoomedIn ? 4.0 : 3.0;
+                ctx.shadowColor = lensColor;
+                ctx.shadowBlur = 8;
+                ctx.stroke();
+                ctx.shadowColor = "transparent";
+                ctx.shadowBlur = 0;
+
+                // Top & Bottom lens bracket ticks
+                ctx.beginPath();
+                ctx.moveTo(gX - 7, yL1); ctx.lineTo(gX - 1, yL1);
+                ctx.moveTo(gX - 7, yL2); ctx.lineTo(gX - 1, yL2);
+                ctx.strokeStyle = lensColor;
+                ctx.lineWidth = 1.8;
+                ctx.stroke();
+
+                // Lens focal pip (diamond) at exact focus time
+                let pipSize = 4.0;
+                ctx.beginPath();
+                ctx.moveTo(gX - 1, yFocus - pipSize);
+                ctx.lineTo(gX - 1 - pipSize, yFocus);
+                ctx.lineTo(gX - 1, yFocus + pipSize);
+                ctx.lineTo(gX - 1 + pipSize, yFocus);
+                ctx.closePath();
+                ctx.fillStyle = lensColor;
+                ctx.fill();
+                ctx.strokeStyle = "#FFFFFF";
+                ctx.lineWidth = 1.0;
+                ctx.stroke();
+
+                ctx.restore();
+            }
 
             // 5. Activity Intervals (Tabular Cards)
             if (hasPlan) {
@@ -562,7 +711,7 @@ Item {
                         let eTime = iv.crossesMidnight ? 24.0 : iv.endTime;
                         let y1 = root.timeToY(sTime, gY, gH);
                         let y2 = root.timeToY(eTime, gY, gH);
-                        let cardH = Math.max(16, y2 - y1);
+                        let cardH = Math.max(14, y2 - y1);
 
                         // Horizontal track position for multi-level items
                         let trackW = (colW - 8) / (subTrackCount > 1 ? subTrackCount : 1);
@@ -616,7 +765,7 @@ Item {
                         let textX = cardX + paddingX;
                         let textY = y1 + 4;
 
-                        if (cardH >= 34 && cardW >= 60) {
+                        if (cardH >= 36 && cardW >= 55) {
                             ctx.font = (iv.level === 0) ? "bold 11px sans-serif" : "bold 10px sans-serif";
                             let titleStr = (iv.icon ? iv.icon + " " : "") + iv.title;
                             ctx.fillText(titleStr, textX, textY);
@@ -625,6 +774,13 @@ Item {
                             ctx.fillStyle = "rgba(255, 255, 255, 0.85)";
                             let timeStr = iv.startClock + " - " + iv.endClock;
                             ctx.fillText(timeStr, textX, textY + 14);
+
+                            if (cardH >= 64 && cardW >= 80) {
+                                ctx.font = "8px sans-serif";
+                                ctx.fillStyle = "rgba(255, 255, 255, 0.70)";
+                                let subText = iv.duration ? ("Duration: " + iv.duration.toFixed(1) + "h") : (iv.parentTitle ? ("Part of: " + iv.parentTitle) : "");
+                                if (subText) ctx.fillText(subText, textX, textY + 28);
+                            }
                         } else if (cardH >= 16 && cardW >= 36) {
                             ctx.font = (cardW >= 65) ? "bold 10px sans-serif" : "9px sans-serif";
                             let titleStr = (iv.icon ? iv.icon + " " : "") + iv.title;
@@ -643,7 +799,7 @@ Item {
                             let nextColX = gX + (c + 1) * colW;
                             let yNext1 = root.timeToY(0.0, gY, gH);
                             let yNext2 = root.timeToY(iv.endTime, gY, gH);
-                            let nextH = Math.max(16, yNext2 - yNext1);
+                            let nextH = Math.max(14, yNext2 - yNext1);
                             let nextCardX = nextColX + 4 + (subTrackCount > 1 ? trackIdx * trackW : 0);
 
                             ctx.save();
@@ -692,7 +848,6 @@ Item {
                         let pY = root.timeToY(pTime, gY, gH);
 
                         ctx.save();
-                        // Point marker pill
                         let pillW = Math.min(colW - 12, 130);
                         let pillH = 18;
                         let pillX = colX + 6;
@@ -753,7 +908,6 @@ Item {
                 // Horizontal red needle
                 if (todayColIdx >= 0) {
                     let colX = gX + todayColIdx * colW;
-                    // Across today's column with glowing red stroke
                     ctx.beginPath();
                     ctx.moveTo(colX, yNow);
                     ctx.lineTo(colX + colW, yNow);
@@ -931,7 +1085,9 @@ Item {
         }
     }
 
-    // --- Interactive Hover & Click Handling ---
+    // --- Interactive Pointer & Gesture Handlers ---
+
+    // 1. Hover Handler
     HoverHandler {
         id: hoverHandler
         enabled: root.interactive
@@ -967,7 +1123,6 @@ Item {
                 root.hoveredX = px;
                 root.hoveredY = py;
 
-                // Find closest matching item
                 let activeActs = root.getActiveActivitiesAtTime(root.hoveredTime, root.hoveredDay);
                 root.hoveredItem = activeActs.length > 0 ? activeActs[0] : null;
             } else {
@@ -981,10 +1136,49 @@ Item {
         }
     }
 
+    // 2. Mouse Wheel Handler (Desktop & WebAssembly)
+    WheelHandler {
+        id: wheelHandler
+        enabled: root.interactive
+        target: null
+        acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+        onWheel: (event) => {
+            root.handleWheelZoom(point.position.y, event.angleDelta.y);
+        }
+    }
+
+    // 3. Drag Handler (Pan fisheye lens up and down across the day when zoomed)
+    DragHandler {
+        id: dragHandler
+        enabled: root.interactive && Math.abs(root.zoom - 1.0) > 0.05
+        target: null
+        property real startFocusH: 0.0
+        property real startTouchY: 0.0
+
+        onActiveChanged: {
+            if (active) {
+                if (root.followTime) root.followTime = false;
+                startFocusH = (root.focusAngle / (2.0 * Math.PI)) * 24.0;
+                startTouchY = centroid.position.y;
+            }
+        }
+        onTranslationChanged: {
+            if (active) {
+                let dy = centroid.position.y - startTouchY;
+                let scale = 1.0 / Math.max(1.0, Math.sqrt(root.zoom));
+                let deltaH = -(dy / root.gridH) * 24.0 * scale;
+                let newH = Math.max(0.0, Math.min(24.0, startFocusH + deltaH));
+                root.focusAngle = (newH / 24.0) * 2.0 * Math.PI;
+            }
+        }
+    }
+
+    // 4. Tap Handler (Double tap to reset zoom, single tap to inspect or focus)
     TapHandler {
         id: tapHandler
         enabled: root.interactive
-        onTapped: (eventPoint) => {
+        onDoubleTapped: root.resetZoom()
+        onSingleTapped: (eventPoint) => {
             let px = eventPoint.position.x;
             let py = eventPoint.position.y;
             let gX = root.gridX;
@@ -1003,30 +1197,19 @@ Item {
                 if (activeActs.length > 0) {
                     root.selectedItem = activeActs[0];
                     root.itemClicked(activeActs[0]);
+                } else {
+                    if (root.followTime) root.followTime = false;
+                    root.focusAngle = (clickTime / 24.0) * 2.0 * Math.PI;
                 }
             }
         }
     }
 
-    WheelHandler {
-        enabled: root.interactive
-        acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
-        onWheel: (event) => {
-            if (event.angleDelta.y !== 0) {
-                let py = event.position.y;
-                let t = root.yToTime(py, root.gridY, root.gridH);
-                root.focusAngle = (t / 24.0) * 2.0 * Math.PI;
-
-                let factor = event.angleDelta.y > 0 ? 1.15 : 0.87;
-                let targetZoom = root.zoom * factor;
-                root.zoom = Math.max(root.minZoom, Math.min(root.maxZoom, targetZoom));
-            }
-        }
-    }
-
+    // 5. Pinch Handler (Touchpad & Touch screen pinch-to-zoom)
     PinchHandler {
         id: pinchHandler
         enabled: root.interactive
+        target: null
         onScaleChanged: (delta) => {
             let newZoom = root.zoom * delta;
             root.zoom = Math.max(root.minZoom, Math.min(root.maxZoom, newZoom));
