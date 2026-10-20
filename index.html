@@ -43,7 +43,15 @@
         }
     </style>
     <script>
-        window.location.replace("build/WebAssembly_Qt_6_8_3_single_threaded-Release/index.html");
+        (function() {
+            var target = "build/WebAssembly_Qt_6_8_3_single_threaded-Release/index.html";
+            var path = window.location.pathname;
+            if (!path.endsWith('/') && !path.endsWith('.html')) {
+                window.location.replace(window.location.protocol + "//" + window.location.host + path + "/" + target);
+            } else {
+                window.location.replace(target);
+            }
+        })();
     </script>
 </head>
 <body>
