@@ -315,10 +315,32 @@ void DayPlanModel::processRawItems(const QVariantList &rawList)
     }
 }
 
-void DayPlanModel::resolveItem(const QVariantMap &rawItem, double parentStart, double parentDuration, int level, const QString &parentTitle, const QString &parentColor)
+void DayPlanModel::resolveItem(const QVariantMap &rawItem, double parentStart, double parentDuration, int level, const QString &parentTitle, const QString &parentColor, int parentDay)
 {
     if (level > m_maxLevel)
         m_maxLevel = level;
+
+    int itemDay = parentDay;
+    bool repeatDaily = false;
+    if (rawItem.contains("day")) {
+        QVariant dayVal = rawItem.value("day");
+        bool ok = false;
+        int num = dayVal.toInt(&ok);
+        if (ok && num >= 0 && num < 7) {
+            itemDay = num;
+        } else {
+            QString dStr = dayVal.toString().trimmed().toLower();
+            if (dStr == "all" || dStr == "every" || dStr == "daily") {
+                repeatDaily = true;
+            } else if (dStr.startsWith("mon") || dStr == "0") itemDay = 0;
+            else if (dStr.startsWith("tue") || dStr == "1") itemDay = 1;
+            else if (dStr.startsWith("wed") || dStr == "2") itemDay = 2;
+            else if (dStr.startsWith("thu") || dStr == "3") itemDay = 3;
+            else if (dStr.startsWith("fri") || dStr == "4") itemDay = 4;
+            else if (dStr.startsWith("sat") || dStr == "5") itemDay = 5;
+            else if (dStr.startsWith("sun") || dStr == "6") itemDay = 6;
+        }
+    }
 
     QString title = rawItem.value("title", "Untitled").toString();
     QString icon = rawItem.value("icon", "📌").toString();
@@ -402,6 +424,13 @@ void DayPlanModel::resolveItem(const QVariantMap &rawItem, double parentStart, d
         resolved["totalSteps"] = rawItem.value("totalSteps").toInt();
     }
 
+    resolved["repeatDaily"] = repeatDaily;
+    if (itemDay >= 0 && itemDay < 7) {
+        resolved["day"] = itemDay;
+        static const char* const dayNames[] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+        resolved["dayName"] = QString::fromLatin1(dayNames[itemDay]);
+    }
+
     // Append parent item BEFORE children so they appear hierarchically in pre-order
     m_flatItems.append(resolved);
     if (level == 0)
@@ -451,7 +480,7 @@ void DayPlanModel::resolveItem(const QVariantMap &rawItem, double parentStart, d
                 untimedIndex++;
             }
 
-            resolveItem(cMap, startTime, duration, level + 1, title, color);
+            resolveItem(cMap, startTime, duration, level + 1, title, color, itemDay);
         }
     }
 }

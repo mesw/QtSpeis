@@ -1,0 +1,64 @@
+version: "1.0"
+title: "Benjamin Franklin's Daily Schedule"
+
+plan:
+  - title: Sleep & Rest
+    start: "22:00"
+    end: "05:00"
+    icon: 😴
+    color: "#1E3A8A"
+
+  - title: Morning Preparation & Reflection
+    start: "05:00"
+    duration: "03:00"
+    icon: 🌅
+    color: "#3B82F6"
+    items:
+      - title: Wash & Personal Care
+        icon: 🚿
+      - title: Address Powerful Goodness (Prayer)
+        icon: 🙏
+      - title: Contrive Day's Business & Resolution
+        icon: 📝
+      - title: Morning Study
+        icon: 📖
+      - title: Breakfast
+        icon: 🍳
+
+  - title: Morning Work Block
+    start: "08:00"
+    duration: "04:00"
+    icon: 💼
+    color: "#8B5CF6"
+
+  - title: Midday Break & Reading
+    start: "12:00"
+    duration: "02:00"
+    icon: 🍽️
+    color: "#10B981"
+    items:
+      - title: Read & Overlook Accounts
+        icon: 📊
+      - title: Lunch / Dine
+        icon: 🥗
+
+  - title: Afternoon Work Block
+    start: "14:00"
+    duration: "04:00"
+    icon: ⚙️
+    color: "#8B5CF6"
+
+  - title: Evening Order, Music & Diversion
+    start: "18:00"
+    end: "22:00"
+    icon: 🎻
+    color: "#F59E0B"
+    items:
+      - title: Put Things in Their Places
+        icon: 🧹
+      - title: Supper
+        icon: 🍲
+      - title: Music & Conversation
+        icon: 🎶
+      - title: Examination of the Day
+        icon: 🔍

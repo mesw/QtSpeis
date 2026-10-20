@@ -1,0 +1,29 @@
+# Qt Creator & IDE
+.qtcreator/
+*.user
+*.user.*
+
+# Desktop builds
+build/Desktop_*
+
+# Build intermediate directories & temporary compiler caches
+build/*/.cmake/
+build/*/.qt/
+build/*/.qtc/
+build/*/.qtc_clangd/
+build/*/.rcc/
+build/*/CMakeFiles/
+build/*/appQtSpeis_autogen/
+build/*/meta_types/
+build/*/qmltypes/
+build/*/Testing/
+build/*/QtSpeis/
+build/*/.ninja*
+build/*/build.ninja
+build/*/CMakeCache.txt
+build/*/cmake_install.cmake
+build/*/qtcsettings.cmake
+build/*/*.cpp
+build/*/*.o
+build/*/*.obj
+build/*/*.aotstats

@@ -17,6 +17,22 @@ Window {
         id: dayPlanModel
     }
 
+    TvProgramFetcher {
+        id: tvFetcher
+        targetModel: dayPlanModel
+        daysToFetch: 7
+        onFetchFinished: (success, msg) => {
+            if (success) {
+                yamlEditor.text = dayPlanModel.rawYaml;
+            }
+        }
+    }
+
+    Component.onCompleted: {
+        dayPlanModel.loadFile("schedule_week.yaml");
+        yamlEditor.text = dayPlanModel.rawYaml;
+    }
+
     ColumnLayout {
         anchors.fill: parent
         anchors.margins: 16
@@ -28,10 +44,123 @@ Window {
             spacing: 14
 
             Label {
-                text: "🕒 Temporal Pie Day Plan"
+                text: "🌀 Temporal Spiral & Pie Day Plan"
                 font.bold: true
                 font.pixelSize: 18
                 color: "#F8FAFC"
+            }
+
+            Rectangle {
+                Layout.preferredWidth: 1
+                Layout.preferredHeight: 24
+                color: "#334155"
+            }
+
+            // View Mode Selector: 3-Day (72h) vs 7-Day Week vs 24h Circle
+            Rectangle {
+                Layout.preferredHeight: 32
+                Layout.preferredWidth: 380
+                radius: 8
+                color: "#0F172A"
+                border.color: "#334155"
+                border.width: 1
+
+                RowLayout {
+                    anchors.fill: parent
+                    anchors.margins: 2
+                    spacing: 2
+
+                    ButtonGroup {
+                        id: viewModeGroup
+                    }
+
+                    Rectangle {
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        radius: 6
+                        color: spiral3Btn.checked ? "#2563EB" : "transparent"
+
+                        Button {
+                            id: spiral3Btn
+                            anchors.fill: parent
+                            text: "🌀 3-Day (72h)"
+                            checkable: true
+                            checked: true
+                            ButtonGroup.group: viewModeGroup
+                            flat: true
+                            contentItem: Label {
+                                text: spiral3Btn.text
+                                font.bold: spiral3Btn.checked
+                                font.pixelSize: 11
+                                color: spiral3Btn.checked ? "#FFFFFF" : "#94A3B8"
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                            }
+                            background: Item {}
+                            onClicked: {
+                                mainChart.currentIndex = 0;
+                                spiralChart.daysCount = 3;
+                            }
+                        }
+                    }
+
+                    Rectangle {
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        radius: 6
+                        color: spiral7Btn.checked ? "#2563EB" : "transparent"
+
+                        Button {
+                            id: spiral7Btn
+                            anchors.fill: parent
+                            text: "🌀 7-Day Week"
+                            checkable: true
+                            checked: false
+                            ButtonGroup.group: viewModeGroup
+                            flat: true
+                            contentItem: Label {
+                                text: spiral7Btn.text
+                                font.bold: spiral7Btn.checked
+                                font.pixelSize: 11
+                                color: spiral7Btn.checked ? "#FFFFFF" : "#94A3B8"
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                            }
+                            background: Item {}
+                            onClicked: {
+                                mainChart.currentIndex = 0;
+                                spiralChart.daysCount = 7;
+                            }
+                        }
+                    }
+
+                    Rectangle {
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        radius: 6
+                        color: circleBtn.checked ? "#2563EB" : "transparent"
+
+                        Button {
+                            id: circleBtn
+                            anchors.fill: parent
+                            text: "🕒 24h Circle"
+                            checkable: true
+                            checked: false
+                            ButtonGroup.group: viewModeGroup
+                            flat: true
+                            contentItem: Label {
+                                text: circleBtn.text
+                                font.bold: circleBtn.checked
+                                font.pixelSize: 11
+                                color: circleBtn.checked ? "#FFFFFF" : "#94A3B8"
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                            }
+                            background: Item {}
+                            onClicked: mainChart.currentIndex = 1
+                        }
+                    }
+                }
             }
 
             Rectangle {
@@ -45,8 +174,8 @@ Window {
                 Layout.preferredHeight: 26
                 Layout.preferredWidth: statusLabel.implicitWidth + 18
                 radius: 13
-                color: mainChart.zoom > 1.05 ? "rgba(56, 189, 248, 0.15)" :
-                       (mainChart.zoom < 0.95 ? "rgba(244, 63, 94, 0.15)" : "rgba(148, 163, 184, 0.15)")
+                color: mainChart.zoom > 1.05 ? "#2638BDF8" :
+                       (mainChart.zoom < 0.95 ? "#26F43F5E" : "#2694A3B8")
                 border.color: mainChart.zoom > 1.05 ? "#38BDF8" :
                               (mainChart.zoom < 0.95 ? "#F43F5E" : "#64748B")
                 border.width: 1
@@ -69,7 +198,7 @@ Window {
                 Layout.preferredHeight: 26
                 Layout.preferredWidth: liveLabel.implicitWidth + 24
                 radius: 13
-                color: rgba(244, 63, 94, 0.18)
+                color: "#2EF43F5E"
                 border.color: "#F43F5E"
                 border.width: 1
 
@@ -89,7 +218,39 @@ Window {
                 }
             }
 
+            // TV Fetcher Status Pill
+            Rectangle {
+                visible: tvFetcher.statusMessage !== ""
+                Layout.preferredHeight: 26
+                Layout.preferredWidth: tvStatusLabel.implicitWidth + 24
+                radius: 13
+                color: tvFetcher.isLoading ? "#2638BDF8" : "#2610B981"
+                border.color: tvFetcher.isLoading ? "#38BDF8" : "#10B981"
+                border.width: 1
+
+                Label {
+                    id: tvStatusLabel
+                    anchors.centerIn: parent
+                    text: tvFetcher.statusMessage
+                    font.pixelSize: 11
+                    font.bold: true
+                    color: tvFetcher.isLoading ? "#38BDF8" : "#34D399"
+                }
+            }
+
             Item { Layout.fillWidth: true }
+
+            Button {
+                id: topOrfRefreshBtn
+                text: tvFetcher.isLoading ? "⏳ Fetching ORF 1..." : "📡 Refresh ORF 1"
+                enabled: !tvFetcher.isLoading
+                highlighted: true
+                ToolTip.visible: hovered
+                ToolTip.text: "Fetch live TV program from https://tv.orf.at/program/orf1/"
+                onClicked: {
+                    tvFetcher.fetchProgram("orf1");
+                }
+            }
 
             Button {
                 text: sidePanel.visible ? "Hide Plan / YAML Panel" : "Show Plan / YAML Panel"
@@ -138,7 +299,7 @@ Window {
             Layout.fillHeight: true
             spacing: 12
 
-            // Left: Circular Pie Chart Area
+            // Left: Dial & Spiral Chart Display Area
             Rectangle {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
@@ -150,25 +311,122 @@ Window {
                     anchors.margins: 14
                     spacing: 10
 
-                    TemporalPieChart {
+                    StackLayout {
                         id: mainChart
                         Layout.fillWidth: true
                         Layout.fillHeight: true
-                        Layout.alignment: Qt.AlignHCenter
-                        zoom: 1.0
-                        focusAngle: (9.0 / 24.0) * 2 * Math.PI
-                        interactive: true
-                        planModel: dayPlanModel
+                        currentIndex: 0
+
+                        property real zoom: 1.0
+                        property real focusAngle: (12.0 / 24.0) * 2 * Math.PI
+                        property bool followTime: false
+                        property int daysCount: spiralChart.daysCount
+                        property var selectedItem: null
+
+                        signal itemClicked(var item)
+
+                        function resetZoom() {
+                            spiralChart.resetZoom();
+                            pieChart.resetZoom();
+                            mainChart.zoom = 1.0;
+                        }
+
+                        function updateCurrentTime() {
+                            spiralChart.updateCurrentTime();
+                            pieChart.updateCurrentTime();
+                        }
+
+                        function isItemVisibleOnDial(item) {
+                            if (mainChart.currentIndex === 0) {
+                                return spiralChart.isItemVisibleOnDial(item);
+                            } else {
+                                return pieChart.isItemVisibleOnDial(item);
+                            }
+                        }
+
+                        onZoomChanged: {
+                            if (spiralChart.zoom !== mainChart.zoom) spiralChart.zoom = mainChart.zoom;
+                            if (pieChart.zoom !== mainChart.zoom) pieChart.zoom = mainChart.zoom;
+                        }
+
+                        onFocusAngleChanged: {
+                            if (spiralChart.focusAngle !== mainChart.focusAngle) spiralChart.focusAngle = mainChart.focusAngle;
+                            if (pieChart.focusAngle !== mainChart.focusAngle) pieChart.focusAngle = mainChart.focusAngle;
+                        }
+
+                        onFollowTimeChanged: {
+                            if (spiralChart.followTime !== mainChart.followTime) spiralChart.followTime = mainChart.followTime;
+                            if (pieChart.followTime !== mainChart.followTime) pieChart.followTime = mainChart.followTime;
+                        }
+
+                        onSelectedItemChanged: {
+                            if (spiralChart.selectedItem !== mainChart.selectedItem) spiralChart.selectedItem = mainChart.selectedItem;
+                            if (pieChart.selectedItem !== mainChart.selectedItem) pieChart.selectedItem = mainChart.selectedItem;
+                        }
 
                         onItemClicked: (item) => {
+                            mainChart.selectedItem = item;
                             inspectorTitle.text = (item.icon ? item.icon + " " : "") + item.title;
                             if (item.isInterval) {
-                                inspectorTime.text = item.startClock + " - " + item.endClock + " (" + item.duration.toFixed(1) + "h)";
+                                inspectorTime.text = (item.dayName ? item.dayName + " • " : "") + item.startClock + " - " + item.endClock + " (" + item.duration.toFixed(1) + "h)";
                             } else {
-                                inspectorTime.text = item.startClock + (item.isUntimedStep ? " (Step " + item.orderIndex + ")" : "");
+                                inspectorTime.text = (item.dayName ? item.dayName + " • " : "") + item.startClock + (item.isUntimedStep ? " (Step " + item.orderIndex + ")" : "");
                             }
                             inspectorDesc.text = item.parentTitle ? ("Part of: " + item.parentTitle) : "Top-level Activity";
                             sidePanel.visible = true;
+                        }
+
+                        // Index 0: Spiral View (3-Day 72h or 7-Day Week)
+                        TemporalSpiralChart {
+                            id: spiralChart
+                            Layout.fillWidth: true
+                            Layout.fillHeight: true
+                            interactive: true
+                            planModel: dayPlanModel
+                            daysCount: 3
+                            zoom: mainChart.zoom
+                            focusAngle: mainChart.focusAngle
+                            followTime: mainChart.followTime
+
+                            onZoomChanged: {
+                                if (mainChart.currentIndex === 0 && mainChart.zoom !== zoom) mainChart.zoom = zoom;
+                            }
+                            onFocusAngleChanged: {
+                                if (mainChart.currentIndex === 0 && mainChart.focusAngle !== focusAngle) mainChart.focusAngle = focusAngle;
+                            }
+                            onFollowTimeChanged: {
+                                if (mainChart.currentIndex === 0 && mainChart.followTime !== followTime) mainChart.followTime = followTime;
+                            }
+                            onSelectedItemChanged: {
+                                if (mainChart.currentIndex === 0 && mainChart.selectedItem !== selectedItem) mainChart.selectedItem = selectedItem;
+                            }
+                            onItemClicked: (item) => mainChart.itemClicked(item)
+                        }
+
+                        // Index 1: 24h Circle Dial View
+                        TemporalPieChart {
+                            id: pieChart
+                            Layout.fillWidth: true
+                            Layout.fillHeight: true
+                            interactive: true
+                            planModel: dayPlanModel
+                            zoom: mainChart.zoom
+                            focusAngle: mainChart.focusAngle
+                            followTime: mainChart.followTime
+
+                            onZoomChanged: {
+                                if (mainChart.currentIndex === 1 && mainChart.zoom !== zoom) mainChart.zoom = zoom;
+                            }
+                            onFocusAngleChanged: {
+                                if (mainChart.currentIndex === 1 && mainChart.focusAngle !== focusAngle) mainChart.focusAngle = focusAngle;
+                            }
+                            onFollowTimeChanged: {
+                                if (mainChart.currentIndex === 1 && mainChart.followTime !== followTime) mainChart.followTime = followTime;
+                            }
+                            onSelectedItemChanged: {
+                                if (mainChart.currentIndex === 1 && mainChart.selectedItem !== selectedItem) mainChart.selectedItem = selectedItem;
+                            }
+                            onItemClicked: (item) => mainChart.itemClicked(item)
                         }
                     }
 
@@ -185,9 +443,45 @@ Window {
                         }
 
                         Button {
+                            text: tvFetcher.isLoading ? "⏳ Fetching..." : "📡 ORF 1 Live"
+                            enabled: !tvFetcher.isLoading
+                            highlighted: true
+                            ToolTip.visible: hovered
+                            ToolTip.text: "Fetch live TV program from https://tv.orf.at/program/orf1/"
+                            onClicked: {
+                                tvFetcher.fetchProgram("orf1");
+                            }
+                        }
+
+                        Button {
+                            text: "🗓️ 3-Day (72h) Plan"
+                            highlighted: spiral3Btn.checked
+                            onClicked: {
+                                dayPlanModel.loadFile("schedule_week.yaml");
+                                yamlEditor.text = dayPlanModel.rawYaml;
+                                spiral3Btn.checked = true;
+                                mainChart.currentIndex = 0;
+                                spiralChart.daysCount = 3;
+                            }
+                        }
+
+                        Button {
+                            text: "📅 7-Day Week Plan"
+                            highlighted: spiral7Btn.checked
+                            onClicked: {
+                                dayPlanModel.loadFile("schedule_week.yaml");
+                                yamlEditor.text = dayPlanModel.rawYaml;
+                                spiral7Btn.checked = true;
+                                mainChart.currentIndex = 0;
+                                spiralChart.daysCount = 7;
+                            }
+                        }
+
+                        Button {
                             text: "⏱️ Load 1440-Min Day"
                             onClicked: {
                                 dayPlanModel.loadFile("schedule_1440_minutes.yaml");
+                                yamlEditor.text = dayPlanModel.rawYaml;
                             }
                         }
 
@@ -195,6 +489,7 @@ Window {
                             text: "📜 Franklin Schedule"
                             onClicked: {
                                 dayPlanModel.loadDefaultPlan();
+                                yamlEditor.text = dayPlanModel.rawYaml;
                             }
                         }
 
@@ -404,7 +699,7 @@ Window {
                                             }
 
                                             Label {
-                                                text: delegateRoot.modelData.title
+                                                text: (delegateRoot.modelData.dayName ? "[" + delegateRoot.modelData.dayName.substring(0, 3).toUpperCase() + "] " : "") + delegateRoot.modelData.title
                                                 color: "#F8FAFC"
                                                 font.pixelSize: 11
                                                 Layout.fillWidth: true

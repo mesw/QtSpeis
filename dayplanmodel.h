@@ -47,7 +47,7 @@ signals:
 
 private:
     void processRawItems(const QVariantList &rawList);
-    void resolveItem(const QVariantMap &rawItem, double parentStart, double parentDuration, int level, const QString &parentTitle, const QString &parentColor = QString());
+    void resolveItem(const QVariantMap &rawItem, double parentStart, double parentDuration, int level, const QString &parentTitle, const QString &parentColor = QString(), int parentDay = -1);
 
     QString m_rawYaml;
     QString m_title;

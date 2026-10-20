@@ -48,6 +48,12 @@ Item {
     property var selectedItem: null
     signal itemClicked(var item)
 
+    // Interactive Hover & Time Readability Tracking
+    property real hoveredTime: -1
+    property bool isHoveringCircle: false
+    property real hoveredX: 0
+    property real hoveredY: 0
+
     onPlanModelChanged: {
         if (planModel && planModel.modelChanged) {
             planModel.modelChanged.connect(canvas.requestPaint)
@@ -60,11 +66,16 @@ Item {
 
     // Live System Time Tracking ("Follow Time")
     property bool followTime: false
+    property int currentDayOfWeek: 0       // 0 = Monday, ..., 6 = Sunday
     property real currentTimeHours: 12.0
     property bool showCurrentTimeHand: true
 
     function updateCurrentTime() {
         let now = new Date();
+        let jsDay = now.getDay();
+        let monDay = (jsDay + 6) % 7; // Monday-first: 0 = Mon, 6 = Sun
+        root.currentDayOfWeek = monDay;
+
         let h = now.getHours() + now.getMinutes() / 60.0 + now.getSeconds() / 3600.0 + now.getMilliseconds() / 3600000.0;
         root.currentTimeHours = h;
         if (root.followTime) {
@@ -202,6 +213,99 @@ Item {
 
     function resetZoom() {
         root.zoom = 1.0;
+    }
+
+    function formatClockTime(hours) {
+        let h = Math.floor(hours) % 24;
+        let m = Math.floor((hours % 1) * 60);
+        return (h < 10 ? "0" : "") + h + ":" + (m < 10 ? "0" : "") + m;
+    }
+
+    function isItemActiveAtTime(item, t) {
+        if (!item) return false;
+        let s = item.startTime;
+        let e = item.endTime;
+        if (s === undefined || e === undefined) return false;
+        if (Math.abs(s - e) < 0.001) {
+            return Math.abs(t - s) < 0.08;
+        }
+        if (e > s) {
+            return (t >= s && t <= e);
+        } else {
+            return (t >= s || t <= e);
+        }
+    }
+
+    function getActiveActivitiesAtTime(t, calendarDay) {
+        let result = [];
+        let hasPlan = (root.planModel && root.planModel.flatItems && root.planModel.flatItems.length > 0);
+        if (!hasPlan) {
+            for (let s = 0; s < root.sections.length; ++s) {
+                let sec = root.sections[s];
+                if (t >= sec.startH && t <= sec.endH) {
+                    result.push({
+                        title: sec.name,
+                        startClock: sec.label.split(" - ")[0],
+                        endClock: sec.label.split(" - ")[1],
+                        startTime: sec.startH,
+                        endTime: sec.endH,
+                        level: 0,
+                        color: sec.color
+                    });
+                }
+            }
+            for (let ev = 0; ev < root.events.length; ++ev) {
+                let item = root.events[ev];
+                let diff = Math.abs(item.time - t) % 24.0;
+                if (diff > 12.0) diff = 24.0 - diff;
+                if (diff <= 0.25) {
+                    result.push(Object.assign({}, item, { isPoint: true, startTime: item.time, startClock: root.formatClockTime(item.time) }));
+                }
+            }
+            return result;
+        }
+
+        let list = root.planModel.intervals || [];
+        for (let i = 0; i < list.length; ++i) {
+            let iv = list[i];
+            if (calendarDay !== undefined && iv.day !== undefined && iv.day >= 0 && !iv.repeatDaily) {
+                if (iv.day !== calendarDay) continue;
+            }
+            if (root.isItemActiveAtTime(iv, t)) {
+                result.push(iv);
+            }
+        }
+
+        let pList = root.planModel.pointItems || [];
+        for (let j = 0; j < pList.length; ++j) {
+            let p = pList[j];
+            if (calendarDay !== undefined && p.day !== undefined && p.day >= 0 && !p.repeatDaily) {
+                if (p.day !== calendarDay) continue;
+            }
+            let pTime = p.startTime !== undefined ? p.startTime : p.time;
+            let diff = Math.abs(pTime - t) % 24.0;
+            if (diff > 12.0) diff = 24.0 - diff;
+            if (diff <= 0.20) {
+                result.push(Object.assign({}, p, { isPoint: true }));
+            }
+        }
+        result.sort((a, b) => (a.level || 0) - (b.level || 0));
+        return result;
+    }
+
+    function drawRoundedRect(ctx, x, y, width, height, radius) {
+        let r = Math.min(radius, Math.min(width * 0.5, height * 0.5));
+        ctx.beginPath();
+        ctx.moveTo(x + r, y);
+        ctx.lineTo(x + width - r, y);
+        ctx.arcTo(x + width, y, x + width, y + r, r);
+        ctx.lineTo(x + width, y + height - r);
+        ctx.arcTo(x + width, y + height, x + width - r, y + height, r);
+        ctx.lineTo(x + r, y + height);
+        ctx.arcTo(x, y + height, x, y + height - r, r);
+        ctx.lineTo(x, y + r);
+        ctx.arcTo(x, y, x + r, y, r);
+        ctx.closePath();
     }
 
     function getTrackRadii(level, maxLevel, radius) {
@@ -562,6 +666,9 @@ Item {
 
                     for (let k = 0; k < levelItems.length; ++k) {
                         let iv = levelItems[k];
+                        if (iv.day !== undefined && iv.day >= 0 && !iv.repeatDaily) {
+                            if (iv.day !== root.currentDayOfWeek) continue;
+                        }
                         let track = tracks[Math.min(iv.level, tracks.length - 1)];
 
                         // Fast item culling: skip items outside visible angular focus window
@@ -585,6 +692,7 @@ Item {
 
                         let isHovered = (root.hoveredItem && root.hoveredItem.title === iv.title && root.hoveredItem.startTime === iv.startTime);
                         let isSelected = (root.selectedItem && root.selectedItem.title === iv.title && root.selectedItem.startTime === iv.startTime);
+                        let isActiveAtHover = root.isHoveringCircle && (root.hoveredTime >= 0) && root.isItemActiveAtTime(iv, root.hoveredTime);
 
                         ctx.beginPath();
                         ctx.arc(cx, cy, track.rOut, ca1, ca1 + span, false);
@@ -594,27 +702,37 @@ Item {
                         // Translucent fill with hierarchical layer depth
                         ctx.fillStyle = iv.color ? iv.color : "rgba(255, 255, 255, 0.35)";
                         let baseAlpha = (iv.level === 0) ? 0.50 : (iv.level === 1 ? 0.44 : (iv.level === 2 ? 0.38 : 0.60));
-                        ctx.globalAlpha = isHovered ? 0.80 : (isSelected ? 0.70 : baseAlpha);
+                        if (root.isHoveringCircle) {
+                            ctx.globalAlpha = isActiveAtHover ? 0.92 : (isSelected ? 0.65 : 0.22);
+                        } else {
+                            ctx.globalAlpha = isHovered ? 0.80 : (isSelected ? 0.70 : baseAlpha);
+                        }
                         ctx.fill();
 
                         // Border
-                        ctx.strokeStyle = (isHovered || isSelected) ? "#38BDF8" : (iv.color ? iv.color : "rgba(255, 255, 255, 0.85)");
-                        ctx.lineWidth = (isHovered || isSelected) ? 2.5 : ((iv.level >= 2 && arcPixels < 12) ? 0.6 : 1.2);
-                        ctx.globalAlpha = (isHovered || isSelected) ? 1.0 : 0.85;
+                        let isHighlighted = isActiveAtHover || isHovered || isSelected;
+                        ctx.strokeStyle = isHighlighted ? "#38BDF8" : (iv.color ? iv.color : "rgba(255, 255, 255, 0.85)");
+                        ctx.lineWidth = isHighlighted ? 2.5 : ((iv.level >= 2 && arcPixels < 12) ? 0.6 : 1.2);
+                        if (root.isHoveringCircle) {
+                            ctx.globalAlpha = isHighlighted ? 1.0 : 0.22;
+                        } else {
+                            ctx.globalAlpha = isHighlighted ? 1.0 : 0.85;
+                        }
                         ctx.stroke();
 
-                        // Progressive Label Disclosure based on available room
-                        if (arcPixels >= 55) {
+                        // Progressive Label Disclosure inside the slice based on available room
+                        if (arcPixels >= 48) {
                             let aMid = ca1 + span * 0.5 + Math.PI / 2;
                             let lx = cx + track.rMid * Math.sin(aMid);
                             let ly = cy - track.rMid * Math.cos(aMid);
 
                             ctx.font = (iv.level === 0) ? "bold 11px sans-serif" : (iv.level === 1 ? "bold 10px sans-serif" : "9px sans-serif");
                             ctx.fillStyle = "#FFFFFF";
+                            ctx.globalAlpha = isActiveAtHover ? 1.0 : (root.isHoveringCircle ? 0.25 : 1.0);
                             ctx.textAlign = "center";
                             ctx.textBaseline = "middle";
-                            ctx.shadowColor = "rgba(0, 0, 0, 0.85)";
-                            ctx.shadowBlur = 4;
+                            ctx.shadowColor = "rgba(0, 0, 0, 0.95)";
+                            ctx.shadowBlur = 5;
                             ctx.fillText((iv.icon ? iv.icon + " " : "") + iv.title, lx, ly);
                             ctx.shadowColor = "transparent";
                             ctx.shadowBlur = 0;
@@ -625,6 +743,7 @@ Item {
 
                             ctx.font = (track.height > 24) ? "13px sans-serif" : "11px sans-serif";
                             ctx.fillStyle = "#FFFFFF";
+                            ctx.globalAlpha = isActiveAtHover ? 1.0 : (root.isHoveringCircle ? 0.25 : 1.0);
                             ctx.textAlign = "center";
                             ctx.textBaseline = "middle";
                             ctx.fillText(iv.icon, lx, ly);
@@ -639,6 +758,9 @@ Item {
 
                 for (let j = 0; j < pointList.length; ++j) {
                     let ev = pointList[j];
+                    if (hasPlan && ev.day !== undefined && ev.day >= 0 && !ev.repeatDaily) {
+                        if (ev.day !== root.currentDayOfWeek) continue;
+                    }
                     let evTime = hasPlan ? ev.startTime : ev.time;
                     let maxL = (root.planModel && root.planModel.maxLevel !== undefined) ? root.planModel.maxLevel : 1;
                     let pTrack = hasPlan ? root.getTrackRadii(ev.level || 0, maxL, radius) : null;
@@ -648,9 +770,21 @@ Item {
                     let ex = cx + rTrack * Math.sin(a);
                     let ey = cy - rTrack * Math.cos(a);
 
-                    let isHovered = (root.hoveredItem && root.hoveredItem.title === ev.title && (hasPlan ? (root.hoveredItem.startTime === ev.startTime) : (root.hoveredItem.time === ev.time)));
+                    let isPointActive = false;
+                    if (root.isHoveringCircle && root.hoveredTime >= 0) {
+                        let diffH = Math.abs(evTime - root.hoveredTime) % 24.0;
+                        if (diffH > 12.0) diffH = 24.0 - diffH;
+                        isPointActive = (diffH <= 0.20);
+                    }
+
+                    let isHovered = isPointActive || (root.hoveredItem && root.hoveredItem.title === ev.title && (hasPlan ? (root.hoveredItem.startTime === ev.startTime) : (root.hoveredItem.time === ev.time)));
                     let isSelected = (root.selectedItem && root.selectedItem.title === ev.title);
                     let badgeRadius = (isHovered || isSelected) ? 16 : 13;
+
+                    ctx.save();
+                    if (root.isHoveringCircle && !isHovered) {
+                        ctx.globalAlpha = 0.30;
+                    }
 
                     // Badge background
                     ctx.beginPath();
@@ -668,8 +802,8 @@ Item {
                     ctx.fillStyle = "#1E293B";
                     ctx.fillText(ev.icon ? ev.icon : (ev.orderIndex ? ev.orderIndex : "📌"), ex, ey + 1);
 
-                    // Hovered Tooltip Card
-                    if (isHovered) {
+                    // Individual Hovered Tooltip Card (if not covered by active circle HUD)
+                    if (isHovered && !root.isHoveringCircle) {
                         let titleY = ey - 26;
                         let tipText = (ev.icon ? ev.icon + " " : "") + ev.title;
                         if (ev.isUntimedStep) {
@@ -693,6 +827,7 @@ Item {
                         ctx.fillStyle = "#F8FAFC";
                         ctx.fillText(tipText, ex, titleY);
                     }
+                    ctx.restore();
                 }
             }
 
@@ -834,6 +969,166 @@ Item {
                 ctx.stroke();
                 ctx.setLineDash([]);
             }
+
+            // 8. Top-Level High-Contrast Readability Pass (Active Activities Highlight)
+            if (root.isHoveringCircle && root.hoveredTime >= 0) {
+                let hTime = root.hoveredTime;
+                let hAngle = root.timeToAngle(hTime);
+                let activeActs = root.getActiveActivitiesAtTime(hTime, root.currentDayOfWeek);
+
+                // A. Subtle Glowing Hairline at Cursor Time
+                let hx1 = cx + (innerRadius + 2) * Math.sin(hAngle);
+                let hy1 = cy - (innerRadius + 2) * Math.cos(hAngle);
+                let hx2 = cx + (radius + 4) * Math.sin(hAngle);
+                let hy2 = cy - (radius + 4) * Math.cos(hAngle);
+
+                ctx.save();
+                ctx.beginPath();
+                ctx.moveTo(hx1, hy1);
+                ctx.lineTo(hx2, hy2);
+                ctx.strokeStyle = "#38BDF8";
+                ctx.lineWidth = 1.8;
+                ctx.setLineDash([4, 3]);
+                ctx.shadowColor = "rgba(56, 189, 248, 0.75)";
+                ctx.shadowBlur = 6;
+                ctx.stroke();
+                ctx.restore();
+
+                // B. Floating Activity Callout Card (Zero-Overlap Layout)
+                let cardWidth = 290;
+                let rowH = 24;
+                let headerH = 34;
+                let cardHeight = headerH + Math.max(1, activeActs.length) * rowH + 10;
+
+                // Adjust card width dynamically if title is wide
+                ctx.font = "bold 11px sans-serif";
+                for (let aIdx = 0; aIdx < activeActs.length; ++aIdx) {
+                    let act = activeActs[aIdx];
+                    let prefix = (act.level === 0) ? "🔷 " : (act.level === 1 ? "  ↳ " : "    ↳ ");
+                    if (act.isPoint) prefix = "📌 ";
+                    let titleStr = prefix + (act.icon ? act.icon + " " : "") + act.title;
+                    let fullW = ctx.measureText(titleStr).width + 130;
+                    if (fullW > cardWidth) cardWidth = Math.min(420, fullW);
+                }
+
+                // Position card with 24px clearance from cursor to prevent covering cursor and dial slices
+                let cardX;
+                if (root.hoveredX > cx) {
+                    cardX = root.hoveredX + 24;
+                    if (cardX + cardWidth > root.width - 12) {
+                        cardX = root.hoveredX - cardWidth - 24;
+                    }
+                } else {
+                    cardX = root.hoveredX - cardWidth - 24;
+                    if (cardX < 12) {
+                        cardX = root.hoveredX + 24;
+                    }
+                }
+                if (cardX < 12) cardX = 12;
+                if (cardX + cardWidth > root.width - 12) cardX = root.width - cardWidth - 12;
+
+                let cardY = root.hoveredY - cardHeight * 0.5;
+                if (cardY < 12) cardY = 12;
+                if (cardY + cardHeight > root.height - 12) cardY = root.height - cardHeight - 12;
+
+                // C. Leader line from cursor anchor to card
+                let anchorCardX = (root.hoveredX < cardX) ? cardX : (cardX + cardWidth);
+                let anchorCardY = Math.max(cardY + 12, Math.min(cardY + cardHeight - 12, root.hoveredY));
+
+                ctx.save();
+                ctx.strokeStyle = "rgba(56, 189, 248, 0.65)";
+                ctx.lineWidth = 1.4;
+                ctx.setLineDash([3, 2]);
+                ctx.beginPath();
+                ctx.moveTo(root.hoveredX, root.hoveredY);
+                ctx.lineTo(anchorCardX, anchorCardY);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Target anchor pip at cursor point on track
+                ctx.beginPath();
+                ctx.arc(root.hoveredX, root.hoveredY, 4, 0, 2 * Math.PI, false);
+                ctx.fillStyle = "#38BDF8";
+                ctx.fill();
+                ctx.strokeStyle = "#FFFFFF";
+                ctx.lineWidth = 1.5;
+                ctx.stroke();
+
+                // Draw Card Container
+                ctx.shadowColor = "rgba(0, 0, 0, 0.85)";
+                ctx.shadowBlur = 14;
+                root.drawRoundedRect(ctx, cardX, cardY, cardWidth, cardHeight, 8);
+                ctx.fillStyle = "rgba(15, 23, 42, 0.96)";
+                ctx.fill();
+                ctx.strokeStyle = "#38BDF8";
+                ctx.lineWidth = 1.6;
+                ctx.stroke();
+
+                ctx.shadowColor = "transparent";
+                ctx.shadowBlur = 0;
+
+                // Header
+                let hStr = "🕒 " + root.formatClockTime(hTime);
+                let countStr = activeActs.length === 0 ? "No active activities" : (activeActs.length === 1 ? "1 Active Activity" : activeActs.length + " Active Activities");
+                ctx.font = "bold 12px sans-serif";
+                ctx.fillStyle = "#38BDF8";
+                ctx.textAlign = "left";
+                ctx.textBaseline = "middle";
+                ctx.fillText(hStr, cardX + 12, cardY + 18);
+
+                ctx.font = "10px sans-serif";
+                ctx.fillStyle = "#94A3B8";
+                ctx.textAlign = "right";
+                ctx.fillText(countStr, cardX + cardWidth - 12, cardY + 18);
+
+                // Separator line
+                ctx.beginPath();
+                ctx.moveTo(cardX + 10, cardY + 30);
+                ctx.lineTo(cardX + cardWidth - 10, cardY + 30);
+                ctx.strokeStyle = "rgba(56, 189, 248, 0.30)";
+                ctx.lineWidth = 1.0;
+                ctx.stroke();
+
+                // Non-overlapping rows for all active activities
+                if (activeActs.length === 0) {
+                    ctx.font = "italic 11px sans-serif";
+                    ctx.fillStyle = "#94A3B8";
+                    ctx.textAlign = "left";
+                    ctx.fillText("No scheduled broadcasts or tasks", cardX + 14, cardY + 46);
+                } else {
+                    for (let aIdx = 0; aIdx < activeActs.length; ++aIdx) {
+                        let act = activeActs[aIdx];
+                        let curY = cardY + 44 + aIdx * rowH;
+
+                        let prefix = (act.level === 0) ? "🔷 " : (act.level === 1 ? "  ↳ " : "    ↳ ");
+                        if (act.isPoint) prefix = "📌 ";
+                        let title = prefix + (act.icon ? act.icon + " " : "") + act.title;
+                        let timeRange = act.startClock ? (act.startClock + " - " + act.endClock) : (root.formatClockTime(act.startTime) + " - " + root.formatClockTime(act.endTime));
+                        if (act.isPoint) timeRange = act.startClock || root.formatClockTime(act.startTime || act.time);
+
+                        ctx.font = (act.level === 0) ? "bold 11px sans-serif" : "11px sans-serif";
+                        ctx.fillStyle = "#FFFFFF";
+                        ctx.textAlign = "left";
+                        ctx.textBaseline = "middle";
+
+                        let maxTitleW = cardWidth - 110;
+                        let dispTitle = title;
+                        if (ctx.measureText(dispTitle).width > maxTitleW) {
+                            while (dispTitle.length > 3 && ctx.measureText(dispTitle + "...").width > maxTitleW) {
+                                dispTitle = dispTitle.substring(0, dispTitle.length - 1);
+                            }
+                            dispTitle += "...";
+                        }
+                        ctx.fillText(dispTitle, cardX + 12, curY);
+
+                        ctx.font = "10px monospace";
+                        ctx.fillStyle = "#38BDF8";
+                        ctx.textAlign = "right";
+                        ctx.fillText(timeRange, cardX + cardWidth - 12, curY);
+                    }
+                }
+                ctx.restore();
+            }
         }
     }
 
@@ -951,6 +1246,14 @@ Item {
     // 5. Hover Handler (Highlight nearest item or interval)
     HoverHandler {
         enabled: root.interactive
+        onHoveredChanged: {
+            if (!hovered) {
+                root.isHoveringCircle = false;
+                root.hoveredTime = -1;
+                root.hoveredItem = null;
+                canvas.requestPaint();
+            }
+        }
         onPointChanged: {
             let cx = root.width / 2;
             let cy = root.height / 2;
@@ -960,6 +1263,19 @@ Item {
             let dx = px - cx;
             let dy = py - cy;
             let dist = Math.hypot(dx, dy);
+
+            // Determine if cursor is hovering over the circular timeline
+            if (dist >= radius * 0.35 && dist <= radius * 1.05) {
+                root.isHoveringCircle = true;
+                let cursorClockAngle = Math.atan2(dx, -dy);
+                if (cursorClockAngle < 0) cursorClockAngle += 2 * Math.PI;
+                root.hoveredTime = root.angleToTime(cursorClockAngle);
+                root.hoveredX = px;
+                root.hoveredY = py;
+            } else {
+                root.isHoveringCircle = false;
+                root.hoveredTime = -1;
+            }
 
             let hasPlan = (root.planModel && root.planModel.flatItems && root.planModel.flatItems.length > 0);
             let pointList = hasPlan ? root.planModel.pointItems : root.events;
@@ -972,6 +1288,7 @@ Item {
 
             for (let j = 0; j < pointList.length; ++j) {
                 let ev = pointList[j];
+                if (hasPlan && ev.day !== undefined && ev.day >= 0 && !ev.repeatDaily && ev.day !== root.currentDayOfWeek) continue;
                 let evTime = hasPlan ? ev.startTime : ev.time;
                 let pTrack = hasPlan ? root.getTrackRadii(ev.level || 0, maxL, radius) : null;
                 let rTrack = pTrack ? pTrack.rMid : (radius * 0.84);
@@ -1020,6 +1337,7 @@ Item {
 
                     for (let k = 0; k < levelItems.length; ++k) {
                         let iv = levelItems[k];
+                        if (iv.day !== undefined && iv.day >= 0 && !iv.repeatDaily && iv.day !== root.currentDayOfWeek) continue;
                         if (!hasLevels && iv.level !== targetLevel) continue;
 
                         let s = iv.startTime;
@@ -1052,6 +1370,7 @@ Item {
 
                         for (let k = 0; k < levelItems.length; ++k) {
                             let iv = levelItems[k];
+                            if (iv.day !== undefined && iv.day >= 0 && !iv.repeatDaily && iv.day !== root.currentDayOfWeek) continue;
                             if (!hasLevels && iv.level !== targetLevel) continue;
 
                             let s = iv.startTime;
@@ -1074,7 +1393,7 @@ Item {
                 }
             }
 
-            if (root.hoveredItem !== closestItem) {
+            if (root.hoveredItem !== closestItem || root.isHoveringCircle) {
                 root.hoveredItem = closestItem;
                 canvas.requestPaint();
             }

@@ -1,0 +1,187 @@
+version: "1.0"
+title: "Weekly Balanced Schedule (7 Days)"
+
+plan:
+  - title: Monday Sprint
+    day: Monday
+    start: "06:00"
+    end: "22:00"
+    icon: 💼
+    color: "#3B82F6"
+    items:
+      - title: Morning Planning & Setup
+        start: "06:00"
+        duration: "03:00"
+        icon: 🌅
+      - title: Team Sprint Kickoff
+        start: "09:00"
+        duration: "03:00"
+        icon: 🚀
+      - title: Lunch & Walk
+        start: "12:00"
+        duration: "02:00"
+        icon: 🥗
+      - title: Architecture Deep Dive
+        start: "14:00"
+        duration: "04:00"
+        icon: 💻
+      - title: Evening Fitness & Dinner
+        start: "18:00"
+        duration: "04:00"
+        icon: 🏃
+
+  - title: Tuesday Core
+    day: Tuesday
+    start: "06:00"
+    end: "22:00"
+    icon: ⚙️
+    color: "#06B6D4"
+    items:
+      - title: Morning Focus
+        start: "06:00"
+        duration: "03:00"
+        icon: ☕
+      - title: Core Development
+        start: "09:00"
+        duration: "03:00"
+        icon: 🔨
+      - title: Lunch & Catch-up
+        start: "12:00"
+        duration: "02:00"
+        icon: 🥪
+      - title: Code Reviews & QA
+        start: "14:00"
+        duration: "04:00"
+        icon: 🔍
+      - title: Family Time & Reading
+        start: "18:00"
+        duration: "04:00"
+        icon: 📖
+
+  - title: Wednesday Workshop
+    day: Wednesday
+    start: "06:00"
+    end: "22:00"
+    icon: 📊
+    color: "#10B981"
+    items:
+      - title: Morning Routine & Meditation
+        start: "06:00"
+        duration: "03:00"
+        icon: 🧘
+      - title: Product Workshop
+        start: "09:00"
+        duration: "03:00"
+        icon: 💡
+      - title: Midday Break
+        start: "12:00"
+        duration: "02:00"
+        icon: 🍽️
+      - title: Release Engineering
+        start: "14:00"
+        duration: "04:00"
+        icon: 📦
+      - title: Evening Social
+        start: "18:00"
+        duration: "04:00"
+        icon: 🎸
+
+  - title: Thursday Research
+    day: Thursday
+    start: "06:00"
+    end: "22:00"
+    icon: 🔬
+    color: "#8B5CF6"
+    items:
+      - title: Morning Jog & Study
+        start: "06:00"
+        duration: "03:00"
+        icon: 🏃
+      - title: Research & Experimentation
+        start: "09:00"
+        duration: "03:00"
+        icon: 🧪
+      - title: Healthy Lunch
+        start: "12:00"
+        duration: "02:00"
+        icon: 🥗
+      - title: Client Meetings & Sync
+        start: "14:00"
+        duration: "04:00"
+        icon: 🤝
+      - title: Relaxation & Music
+        start: "18:00"
+        duration: "04:00"
+        icon: 🎶
+
+  - title: Friday Innovation
+    day: Friday
+    start: "06:00"
+    end: "22:00"
+    icon: 🎉
+    color: "#EC4899"
+    items:
+      - title: Morning Journaling
+        start: "06:00"
+        duration: "03:00"
+        icon: ✍️
+      - title: Sprint Demo & Retro
+        start: "09:00"
+        duration: "03:00"
+        icon: 🎯
+      - title: Team Celebration Lunch
+        start: "12:00"
+        duration: "02:00"
+        icon: 🍕
+      - title: Hackathon & Innovation
+        start: "14:00"
+        duration: "04:00"
+        icon: ⚡
+      - title: Weekend Welcome Dinner
+        start: "18:00"
+        duration: "04:00"
+        icon: 🍷
+
+  - title: Saturday Outdoors
+    day: Saturday
+    start: "07:00"
+    end: "23:00"
+    icon: 🏖️
+    color: "#F59E0B"
+    items:
+      - title: Weekend Sleep-in & Brunch
+        start: "07:00"
+        duration: "04:00"
+        icon: 🥞
+      - title: Outdoor Adventure & Hiking
+        start: "11:00"
+        duration: "05:00"
+        icon: 🌲
+      - title: Dinner & Movie Night
+        start: "16:00"
+        duration: "07:00"
+        icon: 🎬
+
+  - title: Sunday Reflection
+    day: Sunday
+    start: "07:00"
+    end: "22:00"
+    icon: ☀️
+    color: "#6366F1"
+    items:
+      - title: Relaxed Morning & Coffee
+        start: "07:00"
+        duration: "04:00"
+        icon: ☕
+      - title: Gardening & Hobbies
+        start: "11:00"
+        duration: "04:00"
+        icon: 🪴
+      - title: Week Ahead Preparation
+        start: "15:00"
+        duration: "03:00"
+        icon: 📝
+      - title: Rest & Early Bedtime
+        start: "18:00"
+        duration: "04:00"
+        icon: 😴
