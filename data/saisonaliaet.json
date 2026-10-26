@@ -1,0 +1,1754 @@
+[
+    {
+        "name_de": "Apfel",
+        "synonyms": [
+            "Äpfel"
+        ],
+        "category": "Obst",
+        "fresh_months": [
+            8,
+            9,
+            10
+        ],
+        "storage_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            11,
+            12
+        ],
+        "unavailable_months": []
+    },
+    {
+        "name_de": "Marillen",
+        "synonyms": [
+            "Aprikosen"
+        ],
+        "category": "Obst",
+        "fresh_months": [
+            7,
+            8
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            9,
+            10,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Artischocken",
+        "synonyms": [],
+        "category": "Gemüse",
+        "fresh_months": [
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Melanzani",
+        "synonyms": [
+            "Aubergine",
+            "Auberginen"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Birnen",
+        "synonyms": [
+            "Birne"
+        ],
+        "category": "Obst",
+        "fresh_months": [
+            8,
+            9,
+            10
+        ],
+        "storage_months": [
+            1,
+            2,
+            11,
+            12
+        ],
+        "unavailable_months": [
+            3,
+            4,
+            5,
+            6,
+            7
+        ]
+    },
+    {
+        "name_de": "Karfiol",
+        "synonyms": [
+            "Blumenkohl"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Fisolen",
+        "synonyms": [
+            "Bohnen",
+            "Buschbohnen",
+            "Stangenbohnen",
+            "Grüne Bohnen"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Brokkoli",
+        "synonyms": [
+            "Broccoli"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Brombeeren",
+        "synonyms": [
+            "Brombeere"
+        ],
+        "category": "Obst",
+        "fresh_months": [
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Pilze",
+        "synonyms": [
+            "Champignons",
+            "Kulturchampignons"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+        ],
+        "storage_months": [],
+        "unavailable_months": []
+    },
+    {
+        "name_de": "Chicorée",
+        "synonyms": [],
+        "category": "Salat",
+        "fresh_months": [
+            1,
+            2,
+            3,
+            10,
+            11,
+            12
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+        ]
+    },
+    {
+        "name_de": "Chinakohl",
+        "synonyms": [],
+        "category": "Gemüse",
+        "fresh_months": [
+            8,
+            9,
+            10,
+            11
+        ],
+        "storage_months": [
+            1,
+            2,
+            12
+        ],
+        "unavailable_months": [
+            3,
+            4,
+            5,
+            6,
+            7
+        ]
+    },
+    {
+        "name_de": "Dicke Bohnen",
+        "synonyms": [
+            "Ackerbohnen",
+            "Saubohnen"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            6,
+            7,
+            8
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            9,
+            10,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Dille",
+        "synonyms": [
+            "Dill"
+        ],
+        "category": "Kräuter",
+        "fresh_months": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Eisbergsalat",
+        "synonyms": [
+            "Eisberg"
+        ],
+        "category": "Salat",
+        "fresh_months": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            12
+        ]
+    },
+    {
+        "name_de": "Endivien",
+        "synonyms": [
+            "Endiviensalat"
+        ],
+        "category": "Salat",
+        "fresh_months": [
+            7,
+            8,
+            9,
+            10,
+            11
+        ],
+        "storage_months": [
+            12
+        ],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+        ]
+    },
+    {
+        "name_de": "Erbsen",
+        "synonyms": [
+            "Zuckererbsen",
+            "Markerbsen"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            6,
+            7,
+            8
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            9,
+            10,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Erdäpfel",
+        "synonyms": [
+            "Kartoffel",
+            "Kartoffeln",
+            "Heurige"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            11,
+            12
+        ],
+        "unavailable_months": []
+    },
+    {
+        "name_de": "Erdbeeren",
+        "synonyms": [
+            "Erdbeere"
+        ],
+        "category": "Obst",
+        "fresh_months": [
+            5,
+            6,
+            7,
+            8
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            9,
+            10,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Fenchel",
+        "synonyms": [
+            "Gemüsefenchel",
+            "Fenchelknolle"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Gurken",
+        "synonyms": [
+            "Gurke",
+            "Salatgurke",
+            "Feldgurke"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Haselnüsse",
+        "synonyms": [
+            "Haselnuss"
+        ],
+        "category": "Nüsse",
+        "fresh_months": [
+            9,
+            10
+        ],
+        "storage_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            11,
+            12
+        ],
+        "unavailable_months": []
+    },
+    {
+        "name_de": "Häuptelsalat",
+        "synonyms": [
+            "Kopfsalat"
+        ],
+        "category": "Salat",
+        "fresh_months": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Heidelbeeren",
+        "synonyms": [
+            "Blaubeeren"
+        ],
+        "category": "Obst",
+        "fresh_months": [
+            6,
+            7,
+            8,
+            9
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            10,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Himbeeren",
+        "synonyms": [
+            "Himbeere"
+        ],
+        "category": "Obst",
+        "fresh_months": [
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Holunder",
+        "synonyms": [
+            "Holunderbeeren",
+            "Holler"
+        ],
+        "category": "Obst",
+        "fresh_months": [
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Ribisel",
+        "synonyms": [
+            "Johannisbeeren",
+            "Rote Johannisbeeren",
+            "Schwarze Johannisbeeren"
+        ],
+        "category": "Obst",
+        "fresh_months": [
+            6,
+            7,
+            8
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            9,
+            10,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Karotten",
+        "synonyms": [
+            "Möhren",
+            "Mohrrüben"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            11,
+            12
+        ],
+        "unavailable_months": []
+    },
+    {
+        "name_de": "Kirschen",
+        "synonyms": [
+            "Süßkirschen",
+            "Sauerkirschen",
+            "Weichseln"
+        ],
+        "category": "Obst",
+        "fresh_months": [
+            6,
+            7,
+            8
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            9,
+            10,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Knoblauch",
+        "synonyms": [],
+        "category": "Gemüse",
+        "fresh_months": [
+            7,
+            8,
+            9
+        ],
+        "storage_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            10,
+            11,
+            12
+        ],
+        "unavailable_months": []
+    },
+    {
+        "name_de": "Kohl",
+        "synonyms": [
+            "Wirsing",
+            "Wirsingkohl"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            1,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+        ],
+        "storage_months": [
+            2,
+            3
+        ],
+        "unavailable_months": [
+            4,
+            5
+        ]
+    },
+    {
+        "name_de": "Kohlrabi",
+        "synonyms": [],
+        "category": "Gemüse",
+        "fresh_months": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "name_de": "Kohlsprossen",
+        "synonyms": [
+            "Rosenkohl"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            1,
+            2,
+            3,
+            9,
+            10,
+            11,
+            12
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            4,
+            5,
+            6,
+            7,
+            8
+        ]
+    },
+    {
+        "name_de": "Kürbis",
+        "synonyms": [
+            "Speisekürbis",
+            "Hokkaido",
+            "Butternuss"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            8,
+            9,
+            10,
+            11
+        ],
+        "storage_months": [
+            1,
+            2,
+            12
+        ],
+        "unavailable_months": [
+            3,
+            4,
+            5,
+            6,
+            7
+        ]
+    },
+    {
+        "name_de": "Lollo rosso/bionda",
+        "synonyms": [
+            "Lollo Rosso",
+            "Lollo Bionda"
+        ],
+        "category": "Salat",
+        "fresh_months": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Mangold",
+        "synonyms": [],
+        "category": "Gemüse",
+        "fresh_months": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            12
+        ]
+    },
+    {
+        "name_de": "Mirabellen",
+        "synonyms": [
+            "Renekloden",
+            "Ringlotten"
+        ],
+        "category": "Obst",
+        "fresh_months": [
+            7,
+            8,
+            9
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            10,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Paprika",
+        "synonyms": [
+            "Gemüsepaprika"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Paradeiser",
+        "synonyms": [
+            "Tomate",
+            "Tomaten"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Pastinaken",
+        "synonyms": [
+            "Pastinake"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            1,
+            2,
+            3,
+            4,
+            8,
+            9,
+            10,
+            11,
+            12
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            5,
+            6,
+            7
+        ]
+    },
+    {
+        "name_de": "Petersilie",
+        "synonyms": [
+            "Blattpetersilie",
+            "Krause Petersilie"
+        ],
+        "category": "Kräuter",
+        "fresh_months": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Petersilwurzel",
+        "synonyms": [
+            "Petersilienwurzel",
+            "Wurzelpetersilie"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            9,
+            10,
+            11,
+            12
+        ],
+        "storage_months": [
+            1,
+            2
+        ],
+        "unavailable_months": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+        ]
+    },
+    {
+        "name_de": "Pfirsiche",
+        "synonyms": [
+            "Pfirsich",
+            "Nektarinen",
+            "Nektarine"
+        ],
+        "category": "Obst",
+        "fresh_months": [
+            7,
+            8,
+            9
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            10,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Porree",
+        "synonyms": [
+            "Lauch"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            1,
+            2,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+        ],
+        "storage_months": [
+            3,
+            4
+        ],
+        "unavailable_months": [
+            5
+        ]
+    },
+    {
+        "name_de": "Preiselbeeren",
+        "synonyms": [
+            "Preiselbeere"
+        ],
+        "category": "Obst",
+        "fresh_months": [
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Quitten",
+        "synonyms": [
+            "Quitte"
+        ],
+        "category": "Obst",
+        "fresh_months": [
+            9,
+            10,
+            11
+        ],
+        "storage_months": [
+            12
+        ],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+        ]
+    },
+    {
+        "name_de": "Radicchio",
+        "synonyms": [],
+        "category": "Salat",
+        "fresh_months": [
+            8,
+            9,
+            10,
+            11
+        ],
+        "storage_months": [
+            1,
+            12
+        ],
+        "unavailable_months": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+        ]
+    },
+    {
+        "name_de": "Radieschen",
+        "synonyms": [],
+        "category": "Gemüse",
+        "fresh_months": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            12
+        ]
+    },
+    {
+        "name_de": "Rettich",
+        "synonyms": [
+            "Weißer Rettich",
+            "Schwarzer Rettich"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [
+            1,
+            2,
+            3,
+            11,
+            12
+        ],
+        "unavailable_months": [
+            4
+        ]
+    },
+    {
+        "name_de": "Rhabarber",
+        "synonyms": [],
+        "category": "Gemüse",
+        "fresh_months": [
+            4,
+            5,
+            6
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Rote Rüben",
+        "synonyms": [
+            "Rote Bete",
+            "Rote Beete"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            7,
+            8,
+            9,
+            10,
+            11
+        ],
+        "storage_months": [
+            1,
+            2,
+            3,
+            4,
+            12
+        ],
+        "unavailable_months": [
+            5,
+            6
+        ]
+    },
+    {
+        "name_de": "Rotkraut",
+        "synonyms": [
+            "Rotkohl",
+            "Blaukraut"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+        ],
+        "storage_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            12
+        ],
+        "unavailable_months": []
+    },
+    {
+        "name_de": "Rucola",
+        "synonyms": [
+            "Rauke"
+        ],
+        "category": "Salat",
+        "fresh_months": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Schnittlauch",
+        "synonyms": [],
+        "category": "Kräuter",
+        "fresh_months": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Schwarzwurzel",
+        "synonyms": [
+            "Schwarzwurzeln"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            1,
+            2,
+            10,
+            11,
+            12
+        ],
+        "storage_months": [
+            3,
+            4
+        ],
+        "unavailable_months": [
+            5,
+            6,
+            7,
+            8,
+            9
+        ]
+    },
+    {
+        "name_de": "Sellerie",
+        "synonyms": [
+            "Knollensellerie"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            8,
+            9,
+            10,
+            11
+        ],
+        "storage_months": [
+            1,
+            2,
+            3,
+            4,
+            12
+        ],
+        "unavailable_months": [
+            5,
+            6,
+            7
+        ]
+    },
+    {
+        "name_de": "Spargel",
+        "synonyms": [
+            "Bleichspargel",
+            "Grünspargel"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            4,
+            5,
+            6
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Spinat",
+        "synonyms": [
+            "Blattspinat"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            3,
+            4,
+            5,
+            6,
+            9,
+            10,
+            11
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            7,
+            8,
+            12
+        ]
+    },
+    {
+        "name_de": "Spitzkohl",
+        "synonyms": [],
+        "category": "Gemüse",
+        "fresh_months": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            12
+        ]
+    },
+    {
+        "name_de": "Stachelbeeren",
+        "synonyms": [
+            "Stachelbeere"
+        ],
+        "category": "Obst",
+        "fresh_months": [
+            6,
+            7,
+            8
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            9,
+            10,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Stangensellerie",
+        "synonyms": [
+            "Bleichsellerie",
+            "Staudensellerie"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            12
+        ]
+    },
+    {
+        "name_de": "Steckrüben",
+        "synonyms": [
+            "Kohlrüben"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            9,
+            10,
+            11,
+            12
+        ],
+        "storage_months": [
+            1,
+            2,
+            3
+        ],
+        "unavailable_months": [
+            4,
+            5,
+            6,
+            7,
+            8
+        ]
+    },
+    {
+        "name_de": "Topinambur",
+        "synonyms": [],
+        "category": "Gemüse",
+        "fresh_months": [
+            1,
+            2,
+            3,
+            10,
+            11,
+            12
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+        ]
+    },
+    {
+        "name_de": "Vogerlsalat",
+        "synonyms": [
+            "Feldsalat",
+            "Rapunzel"
+        ],
+        "category": "Salat",
+        "fresh_months": [
+            1,
+            2,
+            3,
+            4,
+            9,
+            10,
+            11,
+            12
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            5,
+            6,
+            7,
+            8
+        ]
+    },
+    {
+        "name_de": "Walnüsse",
+        "synonyms": [
+            "Walnuss"
+        ],
+        "category": "Nüsse",
+        "fresh_months": [
+            9,
+            10
+        ],
+        "storage_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            11,
+            12
+        ],
+        "unavailable_months": []
+    },
+    {
+        "name_de": "Weißkraut",
+        "synonyms": [
+            "Weißkohl",
+            "Kraut"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+        ],
+        "storage_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            12
+        ],
+        "unavailable_months": []
+    },
+    {
+        "name_de": "Weintrauben",
+        "synonyms": [
+            "Tafeltrauben",
+            "Trauben"
+        ],
+        "category": "Obst",
+        "fresh_months": [
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Zucchini",
+        "synonyms": [],
+        "category": "Gemüse",
+        "fresh_months": [
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Zuckerhut",
+        "synonyms": [],
+        "category": "Salat",
+        "fresh_months": [
+            9,
+            10,
+            11,
+            12
+        ],
+        "storage_months": [
+            1
+        ],
+        "unavailable_months": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+        ]
+    },
+    {
+        "name_de": "Zuckermais",
+        "synonyms": [
+            "Maiskolben"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Zwetschken",
+        "synonyms": [
+            "Zwetschgen",
+            "Pflaumen"
+        ],
+        "category": "Obst",
+        "fresh_months": [
+            8,
+            9,
+            10
+        ],
+        "storage_months": [],
+        "unavailable_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            11,
+            12
+        ]
+    },
+    {
+        "name_de": "Zwiebel",
+        "synonyms": [
+            "Zwiebeln",
+            "Speisezwiebel"
+        ],
+        "category": "Gemüse",
+        "fresh_months": [
+            7,
+            8,
+            9,
+            10
+        ],
+        "storage_months": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            11,
+            12
+        ],
+        "unavailable_months": []
+    }
+]

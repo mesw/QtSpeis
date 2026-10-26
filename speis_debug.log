@@ -1,0 +1,33 @@
+Loaded emoji font from resources, id: 0
+QQmlApplicationEngine failed to load component
+QML ERROR: "qrc:/qt/qml/QtSpeis/Main.qml:670:5: Type RecipeLibraryDialog unavailable"
+QML ERROR: "qrc:/qt/qml/QtSpeis/RecipeLibraryDialog.qml:577:25: Cannot assign to non-existent property \"bottomMargin\""
+qrc:/qt/qml/QtSpeis/Main.qml:670:5: Type RecipeLibraryDialog unavailable
+qrc:/qt/qml/QtSpeis/RecipeLibraryDialog.qml:577:25: Cannot assign to non-existent property "bottomMargin"
+Failed to load root QML object: QUrl("qrc:/qt/qml/QtSpeis/Main.qml")
+Loaded emoji font from resources, id: 0
+QQmlApplicationEngine failed to load component
+QML ERROR: "qrc:/qt/qml/QtSpeis/Main.qml:728:5: AboutLegalDialog is not a type"
+qrc:/qt/qml/QtSpeis/Main.qml:728:5: AboutLegalDialog is not a type
+Failed to load root QML object: QUrl("qrc:/qt/qml/QtSpeis/Main.qml")
+Loaded emoji font from resources, id: 0
+Successfully loaded recipes from: "C:/Users/MiCHi/Documents/QtSpeis/all_32_recipes_detailed.json" ( 91659 bytes )
+RecipeManager loaded 32 categorized recipes.
+Loaded emoji font from resources, id: 0
+Successfully loaded recipes from: ":/qt/qml/QtSpeis/all_32_recipes_detailed.json" ( 91659 bytes )
+RecipeManager loaded 32 categorized recipes.
+Loaded emoji font from resources, id: 0
+Successfully loaded recipes from: ":/qt/qml/QtSpeis/all_32_recipes_detailed.json" ( 91659 bytes )
+RecipeManager loaded 32 categorized recipes.
+Loaded emoji font from resources, id: 0
+Successfully loaded recipes from: ":/qt/qml/QtSpeis/all_32_recipes_detailed.json" ( 91659 bytes )
+RecipeManager loaded 32 categorized recipes.
+Loaded emoji font from resources, id: 0
+Successfully loaded recipes from: ":/qt/qml/QtSpeis/all_32_recipes_detailed.json" ( 91659 bytes )
+RecipeManager loaded 32 categorized recipes.
+Loaded emoji font from resources, id: 0
+Successfully loaded recipes from: ":/qt/qml/QtSpeis/all_32_recipes_detailed.json" ( 91659 bytes )
+RecipeManager loaded 32 categorized recipes.
+Loaded emoji font from resources, id: 0
+Successfully loaded recipes from: ":/qt/qml/QtSpeis/all_32_recipes_detailed.json" ( 91659 bytes )
+RecipeManager loaded 32 categorized recipes.

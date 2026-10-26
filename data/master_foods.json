@@ -1,0 +1,5902 @@
+[
+  {
+    "name_de": "Haferflocken",
+    "name_en": "Oats",
+    "synonyms_at": "Hafermark; Rolled Oats",
+    "flavordb_alias": "oats",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "oats",
+      "oatmeal",
+      "oat bran"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 1,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 850.0,
+      "oxalate_mg": 20.0
+    },
+    "allergens": [
+      "GLUTEN"
+    ]
+  },
+  {
+    "name_de": "Hirse",
+    "name_en": "Millet",
+    "synonyms_at": "Goldhirse",
+    "flavordb_alias": "millet",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "millet"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 800.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Quinoa",
+    "name_en": "Quinoa",
+    "synonyms_at": "Inkareis",
+    "flavordb_alias": "quinoa",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "quinoa"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 1,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 1000.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Amaranth",
+    "name_en": "Amaranth",
+    "synonyms_at": "Amarant",
+    "flavordb_alias": "amaranth",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "amaranth"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 1,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 950.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Couscous",
+    "name_en": "Couscous",
+    "synonyms_at": "Hartweizengrieß",
+    "flavordb_alias": "couscous",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "couscous"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 450.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "GLUTEN"
+    ]
+  },
+  {
+    "name_de": "Bulgur",
+    "name_en": "Bulgur",
+    "synonyms_at": "Weizengrütze",
+    "flavordb_alias": "bulgur",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "bulgur"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 600.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "GLUTEN"
+    ]
+  },
+  {
+    "name_de": "Reis",
+    "name_en": "Rice",
+    "synonyms_at": "Basmatireis; Rundkornreis; Milchreis; Naturreis",
+    "flavordb_alias": "rice",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "rice, white",
+      "rice, brown"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 250.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Buchweizen",
+    "name_en": "Buckwheat",
+    "synonyms_at": "Heidensterz; Buchweizenmehl",
+    "flavordb_alias": "buckwheat",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "buckwheat"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 1,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 900.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Teigwaren",
+    "name_en": "Pasta",
+    "synonyms_at": "Nudeln; Spaghetti; Penne; Makkaroni; Vollkornnudeln",
+    "flavordb_alias": "macaroni",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "pasta",
+      "spaghetti",
+      "macaroni",
+      "noodles, egg"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 400.0,
+      "oxalate_mg": 15.0
+    },
+    "allergens": [
+      "GLUTEN"
+    ]
+  },
+  {
+    "name_de": "Vollkornbrot",
+    "name_en": "Whole wheat bread",
+    "synonyms_at": "Schwarzbrot; Vollkornweckerl; Kornspitz; Grahamweckerl",
+    "flavordb_alias": "whole wheat bread",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "bread, whole-wheat",
+      "bread, rye",
+      "rolls, dinner, whole-wheat"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 650.0,
+      "oxalate_mg": 25.0
+    },
+    "allergens": [
+      "GLUTEN"
+    ]
+  },
+  {
+    "name_de": "Weißbrot",
+    "name_en": "White bread",
+    "synonyms_at": "Semmel; Ciabatta; Toastbrot; Weizentortilla",
+    "flavordb_alias": "white bread",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "high",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "bread, white",
+      "rolls, dinner",
+      "tortillas, ready-to-bake or -fry, flour"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 150.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "GLUTEN"
+    ]
+  },
+  {
+    "name_de": "Reiswaffeln",
+    "name_en": "Rice cakes",
+    "synonyms_at": "Puffreis",
+    "flavordb_alias": "rice cake",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "high",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "rice cakes",
+      "rice, puffed"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 250.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Cornflakes",
+    "name_en": "Cornflakes",
+    "synonyms_at": "Maisflocken",
+    "flavordb_alias": "corn flake",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "high",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "corn flake",
+      "corn flakes",
+      "cereals ready-to-eat, corn"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "medium",
+      "phytate_mg": 150.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Biskotten",
+    "name_en": "Ladyfingers",
+    "synonyms_at": "Löffelbiskuits; Zwieback; Butterkeks",
+    "flavordb_alias": "cookie",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "high",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "ladyfingers",
+      "zwieback",
+      "cookies, butter"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 100.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "GLUTEN",
+      "EGGS"
+    ]
+  },
+  {
+    "name_de": "Erdäpfel",
+    "name_en": "Potato",
+    "synonyms_at": "Kartoffeln; Heurige; Salzkartoffeln; Kartoffelpüree",
+    "flavordb_alias": "potato",
+    "category": "Gemüse",
+    "meal_role": "carb_base",
+    "gi_class": "high",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "potatoes, boiled",
+      "potatoes, mashed",
+      "potatoes, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 1,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 20.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Süßkartoffel",
+    "name_en": "Sweet potato",
+    "synonyms_at": "Batate",
+    "flavordb_alias": "sweet potato",
+    "category": "Gemüse",
+    "meal_role": "carb_base",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "sweet potato"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 1,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 35.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Linsen",
+    "name_en": "Lentils",
+    "synonyms_at": "Rote Linsen; Berglinsen",
+    "flavordb_alias": "lentils",
+    "category": "Hülsenfrüchte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.5,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "lentils"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 650.0,
+      "oxalate_mg": 20.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Kichererbsen",
+    "name_en": "Chickpea",
+    "synonyms_at": "Garbanzo; Hummus",
+    "flavordb_alias": "chickpea",
+    "category": "Hülsenfrüchte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.5,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "chickpeas",
+      "hummus"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 700.0,
+      "oxalate_mg": 18.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Käferbohnen",
+    "name_en": "Kidney beans",
+    "synonyms_at": "Bohnen; Rote Bohnen; Baked Beans",
+    "flavordb_alias": "kidney bean",
+    "category": "Hülsenfrüchte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 4.0,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "beans, kidney",
+      "beans, baked",
+      "beans, pinto"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 900.0,
+      "oxalate_mg": 25.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Erbsen",
+    "name_en": "Green peas",
+    "synonyms_at": "Zuckererbsen; Markerbsen",
+    "flavordb_alias": "pea",
+    "category": "Hülsenfrüchte",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "peas, green"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 400.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Fisolen",
+    "name_en": "Green beans",
+    "synonyms_at": "Grüne Bohnen; Buschbohnen; Stangenbohnen",
+    "flavordb_alias": "green bean",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "beans, snap, green"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 20.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Sojabohnen",
+    "name_en": "Soybean",
+    "synonyms_at": "Sojabohne; Sojasprossen",
+    "flavordb_alias": "soybean",
+    "category": "Hülsenfrüchte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "soybeans",
+      "tofu"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 1,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 1300.0,
+      "oxalate_mg": 30.0
+    },
+    "allergens": [
+      "SOYBEANS"
+    ]
+  },
+  {
+    "name_de": "Magertopfen",
+    "name_en": "Quark",
+    "synonyms_at": "Speisequark mager; Topfen",
+    "flavordb_alias": "cottage cheese",
+    "category": "Milchprodukte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "cheese, cottage, nonfat",
+      "cheese, quark"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Hüttenkäse",
+    "name_en": "Cottage cheese",
+    "synonyms_at": "Cottage Cheese; Körniger Frischkäse",
+    "flavordb_alias": "cottage cheese",
+    "category": "Milchprodukte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "cheese, cottage"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Frischkäse",
+    "name_en": "Cream cheese",
+    "synonyms_at": "Frischkäse light; Streichkäse; Ricotta",
+    "flavordb_alias": "cream cheese",
+    "category": "Milchprodukte",
+    "meal_role": "dairy_base",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "cheese, cream, low fat",
+      "cheese, ricotta",
+      "cheese, neufchatel"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Naturjogurt",
+    "name_en": "Yogurt",
+    "synonyms_at": "Jogurt fettarm; Vanillejogurt",
+    "flavordb_alias": "yogurt",
+    "category": "Milchprodukte",
+    "meal_role": "dairy_base",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "yogurt, plain, low fat",
+      "yogurt, greek",
+      "yogurt, plain, whole milk"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Magermilch",
+    "name_en": "Skim milk",
+    "synonyms_at": "Kuhmilch fettarm; Vollmilch",
+    "flavordb_alias": "milk",
+    "category": "Milchprodukte",
+    "meal_role": "beverage",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "milk, nonfat",
+      "milk, lowfat",
+      "milk, whole"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Buttermilch",
+    "name_en": "Buttermilk",
+    "synonyms_at": "Sauermilch; Molke",
+    "flavordb_alias": "buttermilk",
+    "category": "Milchprodukte",
+    "meal_role": "beverage",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "milk, buttermilk",
+      "whey"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Sauerrahm",
+    "name_en": "Sour cream",
+    "synonyms_at": "Schmand; Creme fraiche; Schlagobers",
+    "flavordb_alias": "sour cream",
+    "category": "Milchprodukte",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.5,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "cream, sour",
+      "cream, fluid, heavy whipping"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Schnittkäse",
+    "name_en": "Cheese",
+    "synonyms_at": "Magerkäse; Gouda; Emmentaler",
+    "flavordb_alias": "cheddar cheese",
+    "category": "Milchprodukte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.5,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "cheese, gouda",
+      "cheese, swiss",
+      "cheese, mozzarella, part skim"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Schafkäse",
+    "name_en": "Feta cheese",
+    "synonyms_at": "Feta",
+    "flavordb_alias": "feta cheese",
+    "category": "Milchprodukte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.5,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "cheese, feta"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Parmesan",
+    "name_en": "Parmesan cheese",
+    "synonyms_at": "Hartkäse; Bergkäse",
+    "flavordb_alias": "parmesan cheese",
+    "category": "Milchprodukte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.5,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "cheese, parmesan"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Whey Protein",
+    "name_en": "Whey protein",
+    "synonyms_at": "Molkenpulver; Eiweißpulver",
+    "flavordb_alias": "whey",
+    "category": "Milchprodukte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "whey, sweet, dried",
+      "protein powder"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Putenbrust",
+    "name_en": "Turkey breast",
+    "synonyms_at": "Putenfleisch; Putenschnitzel; Putenschinken",
+    "flavordb_alias": "turkey",
+    "category": "Fleisch",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "turkey, fryer-roasters, breast, meat only",
+      "turkey, breast"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Hühnerbrust",
+    "name_en": "Chicken breast",
+    "synonyms_at": "Huhn; Hühnerfleisch; Hendel",
+    "flavordb_alias": "chicken",
+    "category": "Fleisch",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "chicken, broilers or fryers, breast, meat only"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Rindfleisch",
+    "name_en": "Beef",
+    "synonyms_at": "Rinderfilet; Rindersteak; Faschiertes; Kalbfleisch",
+    "flavordb_alias": "beef",
+    "category": "Fleisch",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 4.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "beef, round",
+      "beef, ground",
+      "beef, tenderloin",
+      "veal"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Schinken",
+    "name_en": "Ham",
+    "synonyms_at": "Kochschinken; Beinschinken mager",
+    "flavordb_alias": "ham",
+    "category": "Fleisch",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "ham, sliced, extra lean",
+      "pork, cured, ham"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Lachs",
+    "name_en": "Salmon",
+    "synonyms_at": "Wildlachs; Lachsfilet",
+    "flavordb_alias": "salmon",
+    "category": "Fisch",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "fish, salmon, atlantic",
+      "fish, salmon, sockeye"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "FISH"
+    ]
+  },
+  {
+    "name_de": "Dorsch",
+    "name_en": "Cod",
+    "synonyms_at": "Kabeljau; Zander; Scholle; Hokki",
+    "flavordb_alias": "cod",
+    "category": "Fisch",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "fish, cod, atlantic",
+      "fish, trout",
+      "fish, pollock",
+      "fish, flounder"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "FISH"
+    ]
+  },
+  {
+    "name_de": "Tunfisch",
+    "name_en": "Tuna",
+    "synonyms_at": "Thunfisch in Salzlake",
+    "flavordb_alias": "tuna",
+    "category": "Fisch",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "fish, tuna, light, canned in water"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "FISH"
+    ]
+  },
+  {
+    "name_de": "Hering",
+    "name_en": "Herring",
+    "synonyms_at": "Marinierter Hering; Rollmops",
+    "flavordb_alias": "herring",
+    "category": "Fisch",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 4.0,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "fish, herring, atlantic"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "FISH"
+    ]
+  },
+  {
+    "name_de": "Hühnerei",
+    "name_en": "Egg",
+    "synonyms_at": "Ei; Eiklar; Eigelb; weiches Ei",
+    "flavordb_alias": "egg",
+    "category": "Eier",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "egg, whole",
+      "egg, white, raw",
+      "egg, yolk"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 1,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "EGGS"
+    ]
+  },
+  {
+    "name_de": "Brokkoli",
+    "name_en": "Broccoli",
+    "synonyms_at": "Broccoli",
+    "flavordb_alias": "broccoli",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "broccoli"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "medium",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Karfiol",
+    "name_en": "Cauliflower",
+    "synonyms_at": "Blumenkohl",
+    "flavordb_alias": "cauliflower",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "cauliflower"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "medium",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Karotten",
+    "name_en": "Carrot",
+    "synonyms_at": "Möhren; Mohrrüben",
+    "flavordb_alias": "carrot",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "carrots"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 15.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Spinat",
+    "name_en": "Spinach",
+    "synonyms_at": "Blattspinat; Jungspinat",
+    "flavordb_alias": "spinach",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "spinach"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 2,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 750.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Mangold",
+    "name_en": "Chard",
+    "synonyms_at": "Schweizer Mangold",
+    "flavordb_alias": "chard",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "chard, swiss"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 2,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 650.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Zucchini",
+    "name_en": "Zucchini",
+    "synonyms_at": "Zucchetti",
+    "flavordb_alias": "zucchini",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "squash, summer, zucchini"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Melanzani",
+    "name_en": "Eggplant",
+    "synonyms_at": "Aubergine; Auberginen",
+    "flavordb_alias": "eggplant",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "eggplant"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 1,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Paradeiser",
+    "name_en": "Tomato",
+    "synonyms_at": "Tomate; Tomaten; Geschälte Tomaten; Tomatenmark",
+    "flavordb_alias": "tomato",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "tomatoes, red, ripe",
+      "tomato products, canned, paste"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 1,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Paprika",
+    "name_en": "Bell pepper",
+    "synonyms_at": "Gemüsepaprika; Paprikaschote",
+    "flavordb_alias": "bell pepper",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "peppers, sweet, red",
+      "peppers, sweet, green"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 1,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Gurken",
+    "name_en": "Cucumber",
+    "synonyms_at": "Salatgurke; Feldgurke; Essiggurken",
+    "flavordb_alias": "cucumber",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "cucumber, with peel, raw",
+      "pickles, cucumber"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Kürbis",
+    "name_en": "Pumpkin",
+    "synonyms_at": "Hokkaido; Butternuss; Speisekürbis",
+    "flavordb_alias": "pumpkin",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "pumpkin"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Fenchel",
+    "name_en": "Fennel",
+    "synonyms_at": "Gemüsefenchel; Fenchelknolle",
+    "flavordb_alias": "fennel",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "fennel, bulb"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "medium",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Spargel",
+    "name_en": "Asparagus",
+    "synonyms_at": "Grünspargel; Bleichspargel; Spargelspitzen",
+    "flavordb_alias": "asparagus",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "asparagus"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "medium",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Rote Rüben",
+    "name_en": "Beetroot",
+    "synonyms_at": "Rote Bete; Rote Beete",
+    "flavordb_alias": "beet",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "beets"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 2,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "medium",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 110.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Sellerie",
+    "name_en": "Celery",
+    "synonyms_at": "Knollensellerie; Stangensellerie; Bleichsellerie",
+    "flavordb_alias": "celery",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "celery, raw",
+      "celeriac"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "CELERY"
+    ]
+  },
+  {
+    "name_de": "Pastinaken",
+    "name_en": "Parsnip",
+    "synonyms_at": "Pastinake; Petersilwurzel; Schwarzwurzel; Topinambur",
+    "flavordb_alias": "parsnip",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "parsnips",
+      "salsify",
+      "jerusalem-artichokes"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Porree",
+    "name_en": "Leek",
+    "synonyms_at": "Lauch; Jungzwiebel",
+    "flavordb_alias": "leek",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "leeks",
+      "onions, spring"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Zwiebel",
+    "name_en": "Onion",
+    "synonyms_at": "Zwiebeln; Rote Zwiebel",
+    "flavordb_alias": "onion",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "onions, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Knoblauch",
+    "name_en": "Garlic",
+    "synonyms_at": "Knofel",
+    "flavordb_alias": "garlic",
+    "category": "Gemüse",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "garlic, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Kohlsprossen",
+    "name_en": "Brussels sprouts",
+    "synonyms_at": "Rosenkohl",
+    "flavordb_alias": "brussels sprout",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.5,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "brussels sprouts"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "medium",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Kohl",
+    "name_en": "Savoy cabbage",
+    "synonyms_at": "Wirsing; Grünkohl; Spitzkohl; Chinakohl",
+    "flavordb_alias": "cabbage",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.5,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "cabbage, savoy",
+      "kale",
+      "cabbage, chinese"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "medium",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Weißkraut",
+    "name_en": "White cabbage",
+    "synonyms_at": "Kraut; Weißkohl; Sauerkraut; Rotkraut",
+    "flavordb_alias": "cabbage",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.5,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "cabbage, raw",
+      "sauerkraut",
+      "cabbage, red"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "medium",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Kohlrabi",
+    "name_en": "Kohlrabi",
+    "synonyms_at": "Oberkohlrabi",
+    "flavordb_alias": "kohlrabi",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "kohlrabi"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Radieschen",
+    "name_en": "Radish",
+    "synonyms_at": "Rettich; Kren",
+    "flavordb_alias": "radish",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "radishes",
+      "horseradish"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Rhabarber",
+    "name_en": "Rhubarb",
+    "synonyms_at": "Rhabarberstangen",
+    "flavordb_alias": "rhubarb",
+    "category": "Gemüse",
+    "meal_role": "fruit",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "rhubarb"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 2,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 500.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Zuckermais",
+    "name_en": "Sweet corn",
+    "synonyms_at": "Mais; Maiskolben",
+    "flavordb_alias": "corn",
+    "category": "Gemüse",
+    "meal_role": "carb_base",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "corn, sweet, yellow"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Pilze",
+    "name_en": "Mushroom",
+    "synonyms_at": "Champignons; Eierschwammerl; Steinpilze",
+    "flavordb_alias": "mushroom",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "mushrooms, white",
+      "mushrooms, chanterelle"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Vogerlsalat",
+    "name_en": "Corn salad",
+    "synonyms_at": "Feldsalat; Rapunzel",
+    "flavordb_alias": "lettuce",
+    "category": "Salat",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "cornsalad",
+      "lettuce, green leaf"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Häuptelsalat",
+    "name_en": "Lettuce",
+    "synonyms_at": "Kopfsalat; Eisbergsalat; Lollo rosso/bionda; Endivien; Romanasalat",
+    "flavordb_alias": "lettuce",
+    "category": "Salat",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "lettuce, iceberg",
+      "lettuce, cos or romaine",
+      "endive"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Rucola",
+    "name_en": "Arugula",
+    "synonyms_at": "Rauke; Radicchio; Chicorée",
+    "flavordb_alias": "arugula",
+    "category": "Salat",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "arugula",
+      "radicchio",
+      "chicory"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 20.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Apfel",
+    "name_en": "Apple",
+    "synonyms_at": "Äpfel; Apfelmus",
+    "flavordb_alias": "apple",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "apples, raw",
+      "applesauce"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Birnen",
+    "name_en": "Pear",
+    "synonyms_at": "Birne; Birnensaft",
+    "flavordb_alias": "pear",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "pears, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Banane",
+    "name_en": "Banana",
+    "synonyms_at": "Bananen",
+    "flavordb_alias": "banana",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "high",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "bananas, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Marillen",
+    "name_en": "Apricot",
+    "synonyms_at": "Aprikosen; Trockenmarillen",
+    "flavordb_alias": "apricot",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "apricots, raw",
+      "apricots, dried"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Pfirsiche",
+    "name_en": "Peach",
+    "synonyms_at": "Pfirsich; Nektarine; Dosenpfirsich",
+    "flavordb_alias": "peach",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "peaches, raw",
+      "nectarines, raw",
+      "peaches, canned"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Zwetschken",
+    "name_en": "Plum",
+    "synonyms_at": "Zwetschgen; Pflaumen; Dörrzwetschken; Mirabellen",
+    "flavordb_alias": "plum",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "plums, raw",
+      "plums, dried (prunes)"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Kirschen",
+    "name_en": "Cherry",
+    "synonyms_at": "Süßkirschen; Sauerkirschen; Weichseln",
+    "flavordb_alias": "cherry",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "cherries, sweet, raw",
+      "cherries, sour"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Erdbeeren",
+    "name_en": "Strawberry",
+    "synonyms_at": "Erdbeere",
+    "flavordb_alias": "strawberry",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "strawberries, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 15.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Himbeeren",
+    "name_en": "Raspberry",
+    "synonyms_at": "Himbeere",
+    "flavordb_alias": "raspberry",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "raspberries, raw",
+      "raspberries, frozen"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 18.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Heidelbeeren",
+    "name_en": "Blueberry",
+    "synonyms_at": "Blaubeeren; Schwarzbeeren",
+    "flavordb_alias": "blueberry",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "blueberries, raw",
+      "blueberries, wild, frozen"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 15.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Brombeeren",
+    "name_en": "Blackberry",
+    "synonyms_at": "Brombeere; Stachelbeeren; Preiselbeeren; Holunder",
+    "flavordb_alias": "blackberry",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "blackberries, raw",
+      "currants",
+      "cranberries",
+      "gooseberries",
+      "elderberries"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 25.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Weintrauben",
+    "name_en": "Grape",
+    "synonyms_at": "Tafeltrauben; Rosinen",
+    "flavordb_alias": "grape",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "grapes, red or green",
+      "raisins"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Zitrusfrüchte",
+    "name_en": "Citrus",
+    "synonyms_at": "Orangen; Grapefruit; Mandarinen; Blutorangen",
+    "flavordb_alias": "orange",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "oranges, raw",
+      "lemon juice",
+      "orange juice"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Ananas",
+    "name_en": "Pineapple",
+    "synonyms_at": "Mango; Papaya; Kiwi; Wassermelone; Zuckermelone; Quitten",
+    "flavordb_alias": "pineapple",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "pineapple, raw",
+      "mangos, raw",
+      "kiwifruit",
+      "watermelon",
+      "quinces"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Avocado",
+    "name_en": "Avocado",
+    "synonyms_at": "Avocado-Aufstrich",
+    "flavordb_alias": "avocado",
+    "category": "Obst",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "avocados, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "medium",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Walnüsse",
+    "name_en": "Walnut",
+    "synonyms_at": "Walnuss",
+    "flavordb_alias": "walnut",
+    "category": "Nüsse",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "nuts, walnuts"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 1,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 950.0,
+      "oxalate_mg": 25.0
+    },
+    "allergens": [
+      "NUTS"
+    ]
+  },
+  {
+    "name_de": "Haselnüsse",
+    "name_en": "Hazelnut",
+    "synonyms_at": "Haselnuss; Haselnussmus; Haselnusskerne",
+    "flavordb_alias": "hazelnut",
+    "category": "Nüsse",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "nuts, hazelnuts",
+      "nuts, almonds",
+      "almond butter"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 1,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 900.0,
+      "oxalate_mg": 20.0
+    },
+    "allergens": [
+      "NUTS"
+    ]
+  },
+  {
+    "name_de": "Kürbiskerne",
+    "name_en": "Pumpkin seed",
+    "synonyms_at": "Kürbiskern; Steirische Kürbiskerne; Mohn",
+    "flavordb_alias": "pumpkin seed",
+    "category": "Nüsse",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "seeds, pumpkin",
+      "seeds, sunflower",
+      "seeds, chia",
+      "seeds, flaxseed",
+      "poppy seed"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 1,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 1,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 1400.0,
+      "oxalate_mg": 25.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Olivenöl",
+    "name_en": "Olive oil",
+    "synonyms_at": "Olivenöl Extra Vergine",
+    "flavordb_alias": "olive oil",
+    "category": "Öle & Fette",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "oil, olive"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Rapsöl",
+    "name_en": "Canola oil",
+    "synonyms_at": "Sonnenblumenöl; Kürbiskernöl; Weizenkeimöl",
+    "flavordb_alias": "canola oil",
+    "category": "Öle & Fette",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "oil, canola",
+      "oil, sunflower",
+      "oil, wheat germ"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Butter",
+    "name_en": "Butter",
+    "synonyms_at": "Teebutter; Margarine",
+    "flavordb_alias": "butter",
+    "category": "Öle & Fette",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "butter, salted",
+      "butter, without salt"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Petersilie",
+    "name_en": "Parsley",
+    "synonyms_at": "Blattpetersilie",
+    "flavordb_alias": "parsley",
+    "category": "Kräuter",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "parsley, fresh"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Schnittlauch",
+    "name_en": "Chives",
+    "synonyms_at": "Schnittgrün",
+    "flavordb_alias": "chive",
+    "category": "Kräuter",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "chives, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Dille",
+    "name_en": "Dill",
+    "synonyms_at": "Dill; Dillspitzen",
+    "flavordb_alias": "dill",
+    "category": "Kräuter",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "dill weed, fresh"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Basilikum",
+    "name_en": "Basil",
+    "synonyms_at": "Basilikumblätter",
+    "flavordb_alias": "basil",
+    "category": "Kräuter",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "basil, fresh"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Rosmarin",
+    "name_en": "Rosemary",
+    "synonyms_at": "Thymian; Majoran; Oregano; Liebstöckel; Estragon; Kerbel; Bohnenkraut",
+    "flavordb_alias": "rosemary",
+    "category": "Kräuter",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "rosemary, fresh",
+      "thyme, fresh",
+      "spices, marjoram",
+      "spices, oregano",
+      "spices, tarragon"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Zimt",
+    "name_en": "Cinnamon",
+    "synonyms_at": "Zimtpulver; Muskatnuss; Kümmel",
+    "flavordb_alias": "cinnamon",
+    "category": "Kräuter",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "spices, cinnamon",
+      "spices, nutmeg",
+      "spices, caraway seed"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Kurkuma",
+    "name_en": "Turmeric",
+    "synonyms_at": "Gelbwurz; Currypulver; Paprikapulver; Pfeffer; Chili",
+    "flavordb_alias": "turmeric",
+    "category": "Kräuter",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "spices, turmeric",
+      "spices, curry powder",
+      "spices, paprika",
+      "spices, pepper, black"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Estragonsenf",
+    "name_en": "Mustard",
+    "synonyms_at": "Senf; Sojasoße",
+    "flavordb_alias": "mustard",
+    "category": "Kräuter",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "mustard, prepared",
+      "soy sauce"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MUSTARD"
+    ]
+  },
+  {
+    "name_de": "Honig",
+    "name_en": "Honey",
+    "synonyms_at": "Bienenhonig; Ahornsirup; Marmelade; Zucker",
+    "flavordb_alias": "honey",
+    "category": "Süßungsmittel",
+    "meal_role": "sweetener",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "honey",
+      "syrups, maple",
+      "jams and preserves",
+      "sugars, granulated"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Kakaopulver",
+    "name_en": "Cocoa",
+    "synonyms_at": "Instantkakao; Dunkle Schokolade",
+    "flavordb_alias": "cocoa",
+    "category": "Süßungsmittel",
+    "meal_role": "sweetener",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "cocoa, dry powder, unsweetened",
+      "chocolate, dark"
+    ],
+    "biochem": {
+      "contains_caffeine": 1,
+      "polyphenol_level": 2,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 2,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 600.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Kaffee",
+    "name_en": "Coffee",
+    "synonyms_at": "Espresso; Filterkaffee; Schwarztee; Grüntee",
+    "flavordb_alias": "coffee",
+    "category": "Getränke",
+    "meal_role": "beverage",
+    "gi_class": "low",
+    "gastric_emptying_hours": 0.5,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "beverages, coffee, brewed",
+      "beverages, tea, black, brewed"
+    ],
+    "biochem": {
+      "contains_caffeine": 1,
+      "polyphenol_level": 2,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Mandeln",
+    "name_en": "Almonds",
+    "synonyms_at": "Mandel; Mandelmus; Mandelkerne",
+    "flavordb_alias": "almond",
+    "category": "Nüsse",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "nuts, almonds, raw",
+      "nuts, almonds",
+      "nuts, almond butter"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 2,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 1200.0,
+      "oxalate_mg": 120.0
+    },
+    "allergens": [
+      "NUTS"
+    ]
+  },
+  {
+    "name_de": "Cashewkerne",
+    "name_en": "Cashews",
+    "synonyms_at": "Cashewnüsse; Kaschunuss; Cashewmus",
+    "flavordb_alias": "cashew nut",
+    "category": "Nüsse",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "nuts, cashew nuts, raw",
+      "nuts, cashew nuts, dry roasted",
+      "cashew"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 1,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 850.0,
+      "oxalate_mg": 60.0
+    },
+    "allergens": [
+      "NUTS"
+    ]
+  },
+  {
+    "name_de": "Chiasamen",
+    "name_en": "Chia seeds",
+    "synonyms_at": "Chia; Chiasaat",
+    "flavordb_alias": "chia",
+    "category": "Nüsse",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "seeds, chia seeds, dried"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 1,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 1,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 1200.0,
+      "oxalate_mg": 70.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Sonnenblumenkerne",
+    "name_en": "Sunflower seeds",
+    "synonyms_at": "Sonnenblumenkern; Sonnenblumen; Sonnenblumenkerne geschält",
+    "flavordb_alias": "sunflower",
+    "category": "Nüsse",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "seeds, sunflower seed kernels, dried",
+      "seeds, sunflower seed kernels"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 1,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 1500.0,
+      "oxalate_mg": 25.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Leinsamen",
+    "name_en": "Flaxseed",
+    "synonyms_at": "Leinsaat; Flachssamen; geschroteter Leinsamen",
+    "flavordb_alias": "flaxseed",
+    "category": "Nüsse",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "seeds, flaxseed"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 1,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 1,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 1900.0,
+      "oxalate_mg": 30.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Tofu",
+    "name_en": "Tofu",
+    "synonyms_at": "Naturtofu; Räuchertofu; Seidentofu; Sojaquark",
+    "flavordb_alias": "tofu",
+    "category": "Hülsenfrüchte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "tofu, firm, prepared with calcium sulfate and magnesium chloride",
+      "tofu, regular, prepared with calcium sulfate",
+      "tofu, soft"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 200.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "SOYBEANS"
+    ]
+  },
+  {
+    "name_de": "Edamame",
+    "name_en": "Edamame",
+    "synonyms_at": "Sojabohnen grün; junge Sojabohnen",
+    "flavordb_alias": "soybean",
+    "category": "Hülsenfrüchte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "edamame, frozen, unprepared",
+      "edamame, frozen, prepared"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 350.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "SOYBEANS"
+    ]
+  },
+  {
+    "name_de": "Tempeh",
+    "name_en": "Tempeh",
+    "synonyms_at": "Fermentierter Sojablock; Tempeh natur",
+    "flavordb_alias": "soybean",
+    "category": "Hülsenfrüchte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "tempeh, cooked",
+      "tempeh"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "low",
+      "phytate_mg": 250.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "SOYBEANS"
+    ]
+  },
+  {
+    "name_de": "Seitan",
+    "name_en": "Seitan",
+    "synonyms_at": "Weizengluten; Weizenfleisch",
+    "flavordb_alias": "wheat",
+    "category": "Getreide",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "vital wheat gluten",
+      "wheat gluten"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "medium",
+      "phytate_mg": 50.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "GLUTEN"
+    ]
+  },
+  {
+    "name_de": "Körniger Frischkäse",
+    "name_en": "Cottage cheese (low fat)",
+    "synonyms_at": "Cottage Cheese mager; Hüttenkäse light",
+    "flavordb_alias": "cottage cheese",
+    "category": "Milchprodukte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "cheese, cottage, lowfat, 1% milkfat",
+      "cheese, cottage, nonfat, uncreamed, dry curd"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Dinkel",
+    "name_en": "Spelt",
+    "synonyms_at": "Dinkelweizen; Dinkelkörner; Dinkelmehl; Dinkelbrot; Dinkelgrieß",
+    "flavordb_alias": "spelt",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "spelt, uncooked",
+      "spelt, cooked",
+      "flour, spelt, whole-grain"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "medium",
+      "phytate_mg": 900.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "GLUTEN"
+    ]
+  },
+  {
+    "name_de": "Roggen",
+    "name_en": "Rye",
+    "synonyms_at": "Roggenkorn; Roggenmehl; Roggenvollkornbrot",
+    "flavordb_alias": "bread-rye",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "rye grain",
+      "flour, rye, medium",
+      "flour, rye, dark"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 1,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 950.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "GLUTEN"
+    ]
+  },
+  {
+    "name_de": "Gerste",
+    "name_en": "Barley",
+    "synonyms_at": "Rollgerste; Graupen; Gerstengraupen; Gerstenflocken",
+    "flavordb_alias": "barley",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "barley, pearled, raw",
+      "barley, pearled, cooked",
+      "barley flour or meal"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 1,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 800.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "GLUTEN"
+    ]
+  },
+  {
+    "name_de": "Polenta",
+    "name_en": "Polenta / Cornmeal",
+    "synonyms_at": "Maisgrieß; Maismehl; Bramata",
+    "flavordb_alias": "corn",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "cornmeal, yellow, whole-grain",
+      "cornmeal, degermed, enriched, yellow"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 350.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Forelle",
+    "name_en": "Trout",
+    "synonyms_at": "Regenbogenforelle; Bachforelle; Seeforelle",
+    "flavordb_alias": "Rainbow trout",
+    "category": "Fisch",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "fish, trout, mixed species, cooked, dry heat",
+      "fish, trout, rainbow, farmed, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "FISH"
+    ]
+  },
+  {
+    "name_de": "Sardinen",
+    "name_en": "Sardines",
+    "synonyms_at": "Sardine; Ölsardinen; Sardinen in Öl",
+    "flavordb_alias": "Pacific sardine",
+    "category": "Fisch",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "fish, sardine, atlantic, canned in oil, drained solids with bone",
+      "fish, sardine, pacific, canned in tomato sauce"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "FISH"
+    ]
+  },
+  {
+    "name_de": "Garnelen",
+    "name_en": "Shrimp",
+    "synonyms_at": "Shrimps; Crevetten; Gambas; King Prawns",
+    "flavordb_alias": "shrimp",
+    "category": "Fisch",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "crustaceans, shrimp, mixed species, raw",
+      "crustaceans, shrimp, mixed species, cooked, moist heat"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "CRUSTACEANS"
+    ]
+  },
+  {
+    "name_de": "Ingwer",
+    "name_en": "Ginger",
+    "synonyms_at": "Ingwerwurzel; Ingwer frisch",
+    "flavordb_alias": "ginger",
+    "category": "Kräuter",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "ginger root, raw",
+      "spices, ginger, ground"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Chili",
+    "name_en": "Chili pepper",
+    "synonyms_at": "Chilischote; Peperoncini; Jalapeno; Pfefferoni",
+    "flavordb_alias": "chili",
+    "category": "Gemüse",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "peppers, hot chili, red, raw",
+      "peppers, hot chili, green, raw",
+      "peppers, jalapeno, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 1,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Cranberry",
+    "name_en": "Cranberry",
+    "synonyms_at": "Kranbeere; Moosbeere; getrocknete Cranberries",
+    "flavordb_alias": "cranberry",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "cranberries, raw",
+      "cranberries, dried, sweetened",
+      "cranberries, wild, bush, raw (alaska native)"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 2,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 1,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 20.0
+    },
+    "seasonality": {
+      "fresh_months": [
+        9,
+        10,
+        11
+      ],
+      "storage_months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        12
+      ]
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Ribisel",
+    "name_en": "Redcurrant",
+    "synonyms_at": "Rote Johannisbeere; Johannisbeeren; Schwarze Johannisbeere",
+    "flavordb_alias": "currant-red",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "currants, red and white, raw",
+      "currants, european black, raw",
+      "currants, zante, dried"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 2,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 20.0
+    },
+    "seasonality": {
+      "fresh_months": [
+        6,
+        7,
+        8
+      ],
+      "storage_months": []
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Zitrone",
+    "name_en": "Lemon",
+    "synonyms_at": "Zitronensaft; Zitronenschale; Zitrone frisch",
+    "flavordb_alias": "lemon",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "lemons, raw, without peel",
+      "lemon juice, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Limette",
+    "name_en": "Lime",
+    "synonyms_at": "Limettensaft; Limonelle",
+    "flavordb_alias": "lime",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "limes, raw",
+      "lime juice, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Schweinefleisch",
+    "name_en": "Pork",
+    "synonyms_at": "Schwein; Schweinsschnitzel; Schweinsbraten; Schweinekarree; Schweinefilet",
+    "flavordb_alias": "pork",
+    "category": "Fleisch",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.5,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "pork, fresh, leg (ham), rump half, separable lean and fat, raw",
+      "pork, fresh, loin, whole, separable lean and fat, cooked, braised",
+      "pork, fresh, loin, whole, separable lean and fat, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Kalbfleisch",
+    "name_en": "Veal",
+    "synonyms_at": "Kalb; Kalbsschnitzel; Kalbsrücken; Kalbsbraten",
+    "flavordb_alias": "beef",
+    "category": "Fleisch",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "veal, leg (top round), separable lean and fat, cooked, braised",
+      "veal, leg (top round), separable lean and fat, raw",
+      "veal, ground"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Faschiertes",
+    "name_en": "Minced meat (Pork & Beef)",
+    "synonyms_at": "Hackfleisch gemischt; Faschiertes gemischt; Faschierte Laibchen",
+    "flavordb_alias": "beef",
+    "category": "Fleisch",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.5,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "beef, ground, 85% lean meat / 15% fat, raw",
+      "beef, ground, 85% lean meat / 15% fat, cooked",
+      "pork, ground, 80% lean / 20% fat, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Bergkäse",
+    "name_en": "Alpine cheese",
+    "synonyms_at": "Almkäse; Vorarlberger Bergkäse; Tiroler Bergkäse; Schweizer Bergkäse",
+    "flavordb_alias": "gruyere",
+    "category": "Milchprodukte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.5,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "cheese, gruyere",
+      "cheese, swiss"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Tiroler Graukäse",
+    "name_en": "Tyrolean grey cheese",
+    "synonyms_at": "Graukäse; Sauermilchkäse; Tiroler Graukäse g.U.",
+    "flavordb_alias": "cottage cheese",
+    "category": "Milchprodukte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "cheese, cottage, nonfat, uncreamed, dry, large or small curd",
+      "cheese, cottage, lowfat, 1% milkfat"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Saibling",
+    "name_en": "Arctic char / Brook trout",
+    "synonyms_at": "Seesaibling; Bachsaibling; Salvelinus",
+    "flavordb_alias": "Rainbow trout",
+    "category": "Fisch",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "fish, trout, brook, raw",
+      "fish, trout, mixed species, raw",
+      "fish, trout, rainbow, wild, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "FISH"
+    ]
+  },
+  {
+    "name_de": "Kren",
+    "name_en": "Horseradish",
+    "synonyms_at": "Meerrettich; Steirischer Kren; Krenwurzel",
+    "flavordb_alias": "horseradish",
+    "category": "Gemüse",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "horseradish, prepared",
+      "horseradish, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Bärlauch",
+    "name_en": "Wild garlic",
+    "synonyms_at": "Waldknoblauch; Wilder Knoblauch; Bärlauchblätter",
+    "flavordb_alias": "garlic",
+    "category": "Kräuter",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "seasonality": {
+      "fresh_months": [
+        3,
+        4,
+        5
+      ],
+      "storage_months": []
+    },
+    "usda_search_terms": [
+      "chives, raw",
+      "garlic, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Sauerkraut",
+    "name_en": "Sauerkraut",
+    "synonyms_at": "Sauerkohl; Gärungskohl; Sauerkraut mild",
+    "flavordb_alias": "cabbage",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "sauerkraut, canned, solids and liquids",
+      "sauerkraut, canned"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Rotkraut",
+    "name_en": "Red cabbage",
+    "synonyms_at": "Blaukraut; Rotkohl; Roter Kappes",
+    "flavordb_alias": "cabbage",
+    "category": "Gemüse",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 0,
+    "seasonality": {
+      "fresh_months": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "storage_months": [
+        1,
+        2,
+        3,
+        4,
+        12
+      ]
+    },
+    "usda_search_terms": [
+      "cabbage, red, raw",
+      "cabbage, red, cooked, boiled, drained, with salt"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "medium",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Preiselbeeren",
+    "name_en": "Lingonberries",
+    "synonyms_at": "Preiselbeere; Kronsbeere; Grante; Moosbeere",
+    "flavordb_alias": "cranberry",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "seasonality": {
+      "fresh_months": [
+        8,
+        9,
+        10
+      ],
+      "storage_months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        11,
+        12
+      ]
+    },
+    "usda_search_terms": [
+      "cranberries, raw",
+      "cranberries, wild, bush, raw (alaska native)"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 2,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 1,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 20.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Maroni",
+    "name_en": "Chestnuts",
+    "synonyms_at": "Edelkastanien; Maronen; Esskastanien",
+    "flavordb_alias": "chestnut",
+    "category": "Nüsse",
+    "meal_role": "carb_base",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "seasonality": {
+      "fresh_months": [
+        10,
+        11,
+        12
+      ],
+      "storage_months": [
+        1,
+        2
+      ]
+    },
+    "usda_search_terms": [
+      "nuts, chestnuts, european, roasted",
+      "nuts, chestnuts, european, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 150.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Kürbiskernöl",
+    "name_en": "Pumpkin seed oil",
+    "synonyms_at": "Steirisches Kürbiskernöl; Kernöl; Grünes Gold",
+    "flavordb_alias": "pumpkin",
+    "category": "Öle & Fette",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "oil, salad or cooking",
+      "oil, canola"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Mohn",
+    "name_en": "Poppy seeds",
+    "synonyms_at": "Waldviertler Graumohn; Blaumohn; Mohnsamen; Mohn gemahlen",
+    "flavordb_alias": "poppy",
+    "category": "Nüsse",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "spices, poppy seed"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 1,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 1400.0,
+      "oxalate_mg": 30.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Weizengrieß",
+    "name_en": "Durum semolina",
+    "synonyms_at": "Grieß; Hartweizengrieß; Weichweizengrieß; Nockerlgrieß",
+    "flavordb_alias": "wheat",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "semolina, unenriched",
+      "semolina, enriched"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 300.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "GLUTEN"
+    ]
+  },
+  {
+    "name_de": "Knödelbrot",
+    "name_en": "Bread cubes (for dumplings)",
+    "synonyms_at": "Semmelwürfel; Knödelbrot getrocknet; geröstete Semmelwürfel",
+    "flavordb_alias": "white bread",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "high",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "croutons, plain",
+      "bread, white, commercially prepared"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 150.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "GLUTEN"
+    ]
+  },
+  {
+    "name_de": "Kümmel",
+    "name_en": "Caraway seeds",
+    "synonyms_at": "Wiesenkümmel; Kümmel ganz; Kümmel gemahlen",
+    "flavordb_alias": "caraway",
+    "category": "Kräuter",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "spices, caraway seed"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Liebstöckel",
+    "name_en": "Lovage",
+    "synonyms_at": "Maggikraut; Luststock; Liebstöckelblätter",
+    "flavordb_alias": "lovage",
+    "category": "Kräuter",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "parsley, fresh",
+      "spices, lovage"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "CELERY"
+    ]
+  },
+  {
+    "name_de": "Majoran",
+    "name_en": "Marjoram",
+    "synonyms_at": "Gartenmajoran; Wurstkraut; Majoran gerebelt",
+    "flavordb_alias": "marjoram",
+    "category": "Kräuter",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "spices, marjoram, dried"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Mandarinen",
+    "name_en": "Tangerines",
+    "synonyms_at": "Mandarine;Mandarinen;Clementine;Klementine;Satsuma",
+    "flavordb_alias": "mandarin orange",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "Tangerines, (mandarin oranges), raw",
+      "Tangerines, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Wassermelone",
+    "name_en": "Watermelon",
+    "synonyms_at": "Wassermelone;Wassermelonen",
+    "flavordb_alias": "watermelon",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "high",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "Watermelon, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Zuckermelone",
+    "name_en": "Cantaloupe melon",
+    "synonyms_at": "Zuckermelone;Cantaloupe;Honigmelone;Netzmelone",
+    "flavordb_alias": "cantaloupe",
+    "category": "Obst",
+    "meal_role": "fruit",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 1.2,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "Melons, cantaloupe, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "medium",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Eisbergsalat",
+    "name_en": "Iceberg lettuce",
+    "synonyms_at": "Eisbergsalat;Krachsalat;Eissalat",
+    "flavordb_alias": "lettuce",
+    "category": "Salat",
+    "meal_role": "vegetable",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "Lettuce, iceberg (includes crisphead types), raw",
+      "Lettuce, iceberg, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Speck",
+    "name_en": "Bacon",
+    "synonyms_at": "Speck;Bauchspeck;Schinkenspeck;Frühstücksspeck;Bacon",
+    "flavordb_alias": "pork",
+    "category": "Fleisch",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.5,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "Pork, cured, bacon, unprepared",
+      "Pork, cured, bacon, cooked, baked"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Frankfurter",
+    "name_en": "Frankfurter sausage",
+    "synonyms_at": "Frankfurter;Wiener Würstchen;Sacherwürstel;Würstel;Knackwurst",
+    "flavordb_alias": "frankfurter sausage",
+    "category": "Fleisch",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "Frankfurter, meat",
+      "Frankfurter, meat and poultry, cooked, boiled"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Extrawurst",
+    "name_en": "Bologna sausage",
+    "synonyms_at": "Extrawurst;Feine Extrawurst;Jagdwurst;Mortadella;Pariser",
+    "flavordb_alias": "sausage",
+    "category": "Fleisch",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.8,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "Bologna, beef and pork",
+      "Bologna, beef",
+      "Bologna"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Schlagobers",
+    "name_en": "Heavy whipping cream",
+    "synonyms_at": "Schlagobers;Schlagsahne;Obers;Kaffeesahne;Schlagrahm",
+    "flavordb_alias": "cream",
+    "category": "Milchprodukte",
+    "meal_role": "dairy_base",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.5,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "Cream, fluid, heavy whipping"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Kefir",
+    "name_en": "Kefir",
+    "synonyms_at": "Kefir;Milchkefir;Sauermilch",
+    "flavordb_alias": "kefir",
+    "category": "Milchprodukte",
+    "meal_role": "dairy_base",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.8,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "Kefir, lowfat, plain, LIFEWAY",
+      "Kefir"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Haferdrink",
+    "name_en": "Oat milk",
+    "synonyms_at": "Haferdrink;Hafermilch;Pflanzendrink Hafer",
+    "flavordb_alias": "oats",
+    "category": "Getränke",
+    "meal_role": "beverage",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "Oat milk, unsweetened, plain, refrigerated",
+      "Oat milk"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 1,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "medium",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "GLUTEN"
+    ]
+  },
+  {
+    "name_de": "Sojadrink",
+    "name_en": "Soy milk",
+    "synonyms_at": "Sojadrink;Sojamilch;Pflanzendrink Soja",
+    "flavordb_alias": "soy cream",
+    "category": "Getränke",
+    "meal_role": "beverage",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.8,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "Soy milk, unsweetened, plain, shelf stable",
+      "Soy milk, sweetened, plain, refrigerated"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "SOYBEANS"
+    ]
+  },
+  {
+    "name_de": "Weizenmehl",
+    "name_en": "Wheat flour",
+    "synonyms_at": "Weizenmehl;Mehl glatt;Mehl griffig;Universalmehl;Type 480;Type 700;Kuchenmehl",
+    "flavordb_alias": "flour",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "high",
+    "gastric_emptying_hours": 2.2,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "Flour, wheat, all-purpose, enriched, bleached",
+      "Flour, wheat, all-purpose"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 250.0,
+      "oxalate_mg": 15.0
+    },
+    "allergens": [
+      "GLUTEN"
+    ]
+  },
+  {
+    "name_de": "Knäckebrot",
+    "name_en": "Crispbread",
+    "synonyms_at": "Knäckebrot;Roggenknäckebrot;Knäcke",
+    "flavordb_alias": "ryeflour",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "Crackers, crispbread, rye",
+      "crispbread"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 1,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 650.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "GLUTEN"
+    ]
+  },
+  {
+    "name_de": "Laugengebäck",
+    "name_en": "Soft pretzel",
+    "synonyms_at": "Laugengebäck;Laugenstangerl;Laugenbrezel;Brezel;Laugenweckerl",
+    "flavordb_alias": "flour",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "high",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "Pretzels, soft",
+      "Pretzel"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 200.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "GLUTEN"
+    ]
+  },
+  {
+    "name_de": "Tomatenmark",
+    "name_en": "Tomato paste",
+    "synonyms_at": "Tomatenmark;Paradeismark;Passierte Tomaten;Tomatenkonzentrat",
+    "flavordb_alias": "tomato",
+    "category": "Gemüse",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "Tomato products, canned, paste, without salt added",
+      "Tomato paste"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 1,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "high",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Apfelessig",
+    "name_en": "Cider vinegar",
+    "synonyms_at": "Apfelessig;Essig;Weinessig;Tafelessig;Obstessig",
+    "flavordb_alias": "vinegar-cidervinegar",
+    "category": "Kräuter",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 0.8,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "Vinegar, cider"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Speisesalz",
+    "name_en": "Table salt",
+    "synonyms_at": "Speisesalz;Salz;Meersalz;Jodsalz;Kochsalz",
+    "flavordb_alias": "salt",
+    "category": "Kräuter",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 0.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "Salt, table"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Schwarzer Pfeffer",
+    "name_en": "Black pepper",
+    "synonyms_at": "Schwarzer Pfeffer;Pfeffer;Pfefferkörner",
+    "flavordb_alias": "pepper c. baccatum",
+    "category": "Kräuter",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "Spices, pepper, black"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 1,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Kristallzucker",
+    "name_en": "Granulated sugar",
+    "synonyms_at": "Kristallzucker;Zucker;Haushaltszucker;Rohrzucker;Staubzucker",
+    "flavordb_alias": "sugar",
+    "category": "Süßungsmittel",
+    "meal_role": "sweetener",
+    "gi_class": "high",
+    "gastric_emptying_hours": 0.8,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "Sugars, granulated"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Hefe",
+    "name_en": "Baker yeast",
+    "synonyms_at": "Hefe;Germ;Frischgerm;Trockengerm;Backhefe",
+    "flavordb_alias": "",
+    "category": "Getreide",
+    "meal_role": "herb_spice",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "Leavening agents, yeast, baker's, active dry",
+      "Leavening agents, yeast, baker's, compressed"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "low",
+      "phytate_mg": 100.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Speisestärke",
+    "name_en": "Cornstarch",
+    "synonyms_at": "Speisestärke;Maisstärke;Gustin;Kartoffelstärke;Mondamin",
+    "flavordb_alias": "flour",
+    "category": "Getreide",
+    "meal_role": "carb_base",
+    "gi_class": "high",
+    "gastric_emptying_hours": 1.8,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "Cornstarch"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 20.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Erdnüsse",
+    "name_en": "Peanuts",
+    "synonyms_at": "Erdnüsse;Aschanuss;Erdnusskerne",
+    "flavordb_alias": "peanut oil",
+    "category": "Nüsse",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.2,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "Peanuts, all types, raw",
+      "Peanuts, raw"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 1,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 1100.0,
+      "oxalate_mg": 40.0
+    },
+    "allergens": [
+      "PEANUTS"
+    ]
+  },
+  {
+    "name_de": "Erdnussbutter",
+    "name_en": "Peanut butter",
+    "synonyms_at": "Erdnussbutter;Erdnussmus;Peanut Butter",
+    "flavordb_alias": "peanut-peanutoil",
+    "category": "Nüsse",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 3.0,
+    "pre_workout_suitability": -1,
+    "usda_search_terms": [
+      "Peanut butter, smooth style, without salt",
+      "Peanut butter, smooth style"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 2,
+      "oxalate_level": 1,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 950.0,
+      "oxalate_mg": 35.0
+    },
+    "allergens": [
+      "PEANUTS"
+    ]
+  },
+  {
+    "name_de": "Marmelade",
+    "name_en": "Fruit jam",
+    "synonyms_at": "Marmelade;Fruchtaufstrich;Konfitüre;Marillenmarmelade;Erdbeermarmelade",
+    "flavordb_alias": "strawberry jam",
+    "category": "Süßungsmittel",
+    "meal_role": "sweetener",
+    "gi_class": "medium",
+    "gastric_emptying_hours": 1.2,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "Jams and preserves",
+      "Jams and preserves, apricot"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 1,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Dunkle Schokolade",
+    "name_en": "Dark chocolate",
+    "synonyms_at": "Dunkle Schokolade;Bitterschokolade;Zartbitterschokolade;Kochschokolade",
+    "flavordb_alias": "chocolate spread",
+    "category": "Süßungsmittel",
+    "meal_role": "fat_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.8,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "Chocolate, dark, 60-69% cacao solids",
+      "Chocolate, dark, 70-85% cacao solids"
+    ],
+    "biochem": {
+      "contains_caffeine": 1,
+      "polyphenol_level": 2,
+      "is_dairy_calcium": 0,
+      "phytate_level": 1,
+      "oxalate_level": 2,
+      "is_viscous_fiber": 0,
+      "iron_type": "non_heme",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 120.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Tee",
+    "name_en": "Brewed tea",
+    "synonyms_at": "Tee;Schwarztee;Grüntee;Kräutertee;Früchtetee",
+    "flavordb_alias": "tea",
+    "category": "Getränke",
+    "meal_role": "beverage",
+    "gi_class": "low",
+    "gastric_emptying_hours": 0.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "Beverages, tea, green, brewed, regular",
+      "Beverages, tea, black, brewed, prepared with tap water"
+    ],
+    "biochem": {
+      "contains_caffeine": 1,
+      "polyphenol_level": 2,
+      "is_dairy_calcium": 0,
+      "phytate_level": 0,
+      "oxalate_level": 1,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 0,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": []
+  },
+  {
+    "name_de": "Griechisches Joghurt 10%",
+    "name_en": "Greek Yogurt (10% fat)",
+    "synonyms_at": "Griechischer Joghurt 10%; Griechisches Joghurt Vollfett; Sahnejoghurt griechischer Art",
+    "flavordb_alias": "yogurt",
+    "category": "Milchprodukte",
+    "meal_role": "dairy_base",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "yogurt, greek, plain, whole milk"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "medium",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Griechisches Joghurt 2%",
+    "name_en": "Greek Yogurt (2% fat)",
+    "synonyms_at": "Griechischer Joghurt 2%; Griechisches Joghurt fettarm; Greek Yogurt low fat",
+    "flavordb_alias": "yogurt",
+    "category": "Milchprodukte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 1.5,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "yogurt, greek, plain, lowfat"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "medium",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Speisetopfen 20%",
+    "name_en": "Quark (20% F.i.T. / Semi-fat)",
+    "synonyms_at": "Topfen 20%; Topfen halbfett; Speisequark 20%; Halbfettquark; Topfen 20% F.i.T.",
+    "flavordb_alias": "cheese-cottage",
+    "category": "Milchprodukte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.0,
+    "pre_workout_suitability": 1,
+    "usda_search_terms": [
+      "cheese, quark",
+      "cheese, cottage, lowfat, 2% milkfat"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "medium",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Rahmtopfen 40%",
+    "name_en": "Quark (40% F.i.T. / Cream Quark)",
+    "synonyms_at": "Topfen 40%; Topfen 40% F.i.T.; Rahmquark; Sahnequark 40%; Speisetopfen 40%",
+    "flavordb_alias": "cheese-cream",
+    "category": "Milchprodukte",
+    "meal_role": "dairy_base",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "cheese, quark",
+      "cheese, cream"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "medium",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Mozzarella",
+    "name_en": "Mozzarella (Whole Milk)",
+    "synonyms_at": "Mozzarella 45% F.i.T.; Mozzarellakugel; Mozzarella di Bufala",
+    "flavordb_alias": "cheese-mozzarella",
+    "category": "Milchprodukte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "cheese, mozzarella, whole milk"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  },
+  {
+    "name_de": "Camembert",
+    "name_en": "Camembert (45% F.i.T.)",
+    "synonyms_at": "Camembert Weichkäse; Brie; Weichkäse mit Weißschimmel",
+    "flavordb_alias": "cheese-camembert",
+    "category": "Milchprodukte",
+    "meal_role": "protein_source",
+    "gi_class": "low",
+    "gastric_emptying_hours": 2.5,
+    "pre_workout_suitability": 0,
+    "usda_search_terms": [
+      "cheese, camembert"
+    ],
+    "biochem": {
+      "contains_caffeine": 0,
+      "polyphenol_level": 0,
+      "is_dairy_calcium": 1,
+      "phytate_level": 0,
+      "oxalate_level": 0,
+      "is_viscous_fiber": 0,
+      "iron_type": "none",
+      "is_nightshade": 0,
+      "is_seed": 0,
+      "has_phosvitin": 0,
+      "is_fermented": 1,
+      "fodmap_level": "low",
+      "phytate_mg": 0.0,
+      "oxalate_mg": 0.0
+    },
+    "allergens": [
+      "MILK"
+    ]
+  }
+]

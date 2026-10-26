@@ -4,7 +4,7 @@ project(QtSpeis VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick Network)
+find_package(Qt6 REQUIRED COMPONENTS Quick Network Sql QuickControls2)
 
 qt_standard_project_setup(REQUIRES 6.8)
 
@@ -19,12 +19,78 @@ qt_add_qml_module(appQtSpeis
         dayplanmodel.cpp
         tvprogramfetcher.h
         tvprogramfetcher.cpp
+        fooddatabase.h
+        fooddatabase.cpp
+        openfoodfactsfetcher.h
+        openfoodfactsfetcher.cpp
+        mealplanmanager.h
+        mealplanmanager.cpp
+        gamelevelmanager.h
+        gamelevelmanager.cpp
+        languagemanager.h
+        languagemanager.cpp
+        savegamemanager.h
+        savegamemanager.cpp
+        recipemanager.h
+        recipemanager.cpp
     QML_FILES
         Main.qml
         TemporalPieChart.qml
         TemporalSpiralChart.qml
         TemporalTableChart.qml
+        CozyShoppingList.qml
+        GoalSummaryCard.qml
+        BarcodeLookupDialog.qml
+        LevelSelectView.qml
+        EvaluationResultDialog.qml
+        SavegameDialog.qml
+        UserProfileDialog.qml
+        WorkoutDialog.qml
+        RecipeLibraryDialog.qml
+        WorkoutLibraryDialog.qml
+        AboutLegalDialog.qml
+        IngredientExplorerDialog.qml
+    RESOURCES
+        qtquickcontrols2.conf
+        all_32_recipes_detailed.json
 )
+
+# ── Translations ────────────────────────────────────────────────────────────
+set(SPEIS_QM "${CMAKE_CURRENT_SOURCE_DIR}/translations/qtspeis_de.qm")
+if(EXISTS "${SPEIS_QM}")
+    set_source_files_properties("${SPEIS_QM}"
+        PROPERTIES QT_RESOURCE_ALIAS "translations/qtspeis_de.qm"
+    )
+    qt_add_resources(appQtSpeis "speis_i18n_res"
+        PREFIX "/"
+        FILES "${SPEIS_QM}"
+    )
+    message(STATUS "Embedded qtspeis_de.qm into resources: ${SPEIS_QM}")
+endif()
+
+find_program(SPEIS_LRELEASE lrelease HINTS "C:/Qt/6.8.3/mingw_64/bin")
+if(SPEIS_LRELEASE AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/translations/qtspeis_de.ts")
+    add_custom_target(speis_update_translations
+        COMMAND ${SPEIS_LRELEASE} "${CMAKE_CURRENT_SOURCE_DIR}/translations/qtspeis_de.ts" -qm "${CMAKE_CURRENT_SOURCE_DIR}/translations/qtspeis_de.qm"
+        WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+        COMMENT "Compiling Qt Linguist translations/qtspeis_de.ts to translations/qtspeis_de.qm"
+    )
+    add_dependencies(appQtSpeis speis_update_translations)
+endif()
+
+# ── Speis SQLite Database ───────────────────────────────────────────────────
+set(SPEIS_DB "${CMAKE_CURRENT_SOURCE_DIR}/speis.db")
+if(EXISTS "${SPEIS_DB}")
+    set_source_files_properties("${SPEIS_DB}"
+        PROPERTIES QT_RESOURCE_ALIAS "speis.db"
+    )
+    qt_add_resources(appQtSpeis "speis_db_res"
+        PREFIX "/"
+        FILES "${SPEIS_DB}"
+        BIG_RESOURCES
+    )
+    message(STATUS "Embedded speis.db into resources: ${SPEIS_DB}")
+endif()
 
 # ── Emoji font ────────────────────────────────────────────────────────────────
 # Source: git submodule at third_party/noto-emoji
@@ -65,7 +131,7 @@ set_target_properties(appQtSpeis PROPERTIES
 )
 
 target_link_libraries(appQtSpeis
-    PRIVATE Qt6::Quick Qt6::Network
+    PRIVATE Qt6::Quick Qt6::Network Qt6::Sql Qt6::QuickControls2
 )
 
 # ── WebAssembly ───────────────────────────────────────────────────────────────
@@ -74,7 +140,6 @@ if(EMSCRIPTEN)
 
     target_link_options(appQtSpeis PRIVATE
         "SHELL:-s ALLOW_MEMORY_GROWTH=1"
-        "SHELL:-s EXPORTED_RUNTIME_METHODS=[getValue]"
     )
 
     set_target_properties(appQtSpeis PROPERTIES
@@ -82,7 +147,7 @@ if(EMSCRIPTEN)
     )
 endif()
 
-file(COPY plan.yaml schedule_week.yaml schedule_1440_minutes.yaml DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY speis.db plan.yaml schedule_week.yaml schedule_1440_minutes.yaml DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 include(GNUInstallDirs)
 install(TARGETS appQtSpeis
