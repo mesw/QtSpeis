@@ -75,7 +75,7 @@ flowchart TD
         L6 --> L7["L7: Bone Mineral Axis (Ca:Mg = 1.5–2.0)"]
         L7 --> L8["L8: Trace Metals (Zn:Cu = 10:1–15:1)"]
         L8 --> L9["L9: Local Terroir (100% Seasonal)"]
-        L9 --> L10["L10: Rule 3 (Vit C Pairing 50–80mg)"]
+        L9 --> L10["L10: Rule 3 (Iron-Booster / Eisen-Booster)"]
         L10 --> L11["L11: Rule 5a (Lipid Matrix 10–15g)"]
         L11 --> L12["L12: Rule 5b (Vit E Transporter Sep)"]
     end
@@ -85,14 +85,14 @@ flowchart TD
         L13 --> L14["L14: Evening Magnesium (≥ 50% PM)"]
         L14 --> L15["L15: Rule 2 (Ca & Fe Decoupling)"]
         L15 --> L16["L16: Rule 1 (Polyphenol Decoupling)"]
-        L16 --> L17["L17: Rule 4 (De-Phytinization)"]
+        L16 --> L17["L17: Rule 4 (Phytate Reduction / Phytat-Reduktion)"]
         L17 --> L18["L18: Viscous Fiber Decoupling (≥ 90m)"]
     end
 
     subgraph T4["Tier IV: Molecular Kinetics & Mastery (Levels 19–24)"]
         L18 --> L19["L19: Rule 6a (Post-WO PepT1 Kinetics)"]
-        L19 --> L20["L20: Pre-WO Glycemic Clearance"]
-        L20 --> L21["L21: Rule 7 (Post-WO Hepcidin Window)"]
+        L19 --> L20["L20: Pre-WO Glycemic & Gastric Clearance"]
+        L20 --> L21["L21: Rule 7 (Hepcidin Window / Hepcidin-Fenster)"]
         L21 --> L22["L22: Leucine Trigger (≥ 2.5g / meal)"]
         L22 --> L23["L23: Rule 6b (Pre-Sleep LAT1 Blood-Brain)"]
         L23 --> L24["L24: Grandmaster Bio-Architect (24/24)"]
@@ -172,7 +172,7 @@ flowchart TD
 * **Compatibility:** Supported directly by `speis.db` month-by-month availability records.
 * **Coaching Tip:** In autumn/winter, rely on root vegetables, cabbage, squash, and regional apples rather than imported summer berries.
 
-#### Level 10: Stoichiometric Enhancer Pairing (Rule 3)
+#### Level 10: Iron-Booster / Eisen-Booster (Rule 3)
 * **Badge:** `🍋 50–80mg Vit C with Non-Heme Fe` • **Difficulty:** ★★★☆☆
 * **Standalone Constraint:** Any meal containing $\ge 2\text{ mg}$ of non-heme plant iron must co-ingest **$50\text{–}80\text{ mg}$ of Vitamin C** within the same meal.
 * **Biochemical Rationale:** Ascorbic acid reduces ferric iron ($\text{Fe}^{3+}$) to ferrous iron ($\text{Fe}^{2+}$) at duodenal $p\text{H}$, maintaining solubility and neutralizing up to $25\text{ mg}$ of phytate phosphorus, increasing absorption by $+68\text{–}164\%$.
@@ -227,7 +227,7 @@ flowchart TD
 * **Compatibility:** Morning coffee at 09:30 is finished $> 3\text{ hours}$ before a 13:00 lunch, and afternoon tea is enjoyed at 15:30.
 * **Coaching Tip:** Don't drink your coffee or tea with your iron-rich lunch; enjoy your cup 1 to 2 hours after you finish eating.
 
-#### Level 17: Culinary De-Phytinization (Rule 4)
+#### Level 17: Phytate Reduction / Phytat-Reduktion (Rule 4)
 * **Badge:** `🍞 Phy:Fe < 1.0 & Phy:Zn < 15` • **Difficulty:** ★★★★☆
 * **Standalone Constraint:** All grains, pseudocereals, and legumes must achieve meal molar ratios of **$\text{Phy}:\text{Fe} < 1.0$** and **$\text{Phy}:\text{Zn} < 15$** via either:
   1. Long-fermented sourdough preparation ($p\text{H} \approx 4.0$).

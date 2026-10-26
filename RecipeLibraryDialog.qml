@@ -173,7 +173,7 @@ Dialog {
                     id: searchField
                     Layout.fillWidth: true
                     Layout.preferredHeight: 32
-                    placeholderText: "🔍 " + (langManager ? langManager.t("add_ingredient") : "Search recipes or ingredients...")
+                    placeholderText: "🔍 " + (langManager ? langManager.t("search_recipes_placeholder") : "Search recipes or ingredients...")
                     font.pixelSize: 12
                     selectByMouse: true
                     onTextChanged: root.searchQuery = text
@@ -202,7 +202,7 @@ Dialog {
                         Label {
                             id: allLabel
                             anchors.centerIn: parent
-                            text: "🌟 All (32)"
+                            text: "🌟 " + qsTr("All (32)")
                             font.bold: root.activeCategory === "All"
                             font.pixelSize: 11
                             color: root.activeCategory === "All" ? "#FFFFFF" : "#475569"
@@ -442,7 +442,7 @@ Dialog {
                         Label {
                             visible: recipeListView.count === 0
                             anchors.centerIn: parent
-                            text: "No recipes matched your search filter."
+                            text: qsTr("No recipes matched your search filter.")
                             font.pixelSize: 12
                             color: "#78716C"
                         }
@@ -476,7 +476,7 @@ Dialog {
                                         spacing: 2
 
                                         Label {
-                                            text: modelData.title
+                                            text: qsTr(modelData.title)
                                             font.bold: true
                                             font.pixelSize: 13
                                             color: "#1C1917"
@@ -518,7 +518,7 @@ Dialog {
                                             Layout.alignment: Qt.AlignRight
                                         }
                                         Label {
-                                            text: "per serving"
+                                            text: qsTr("per serving")
                                             font.pixelSize: 9
                                             color: "#94A3B8"
                                             Layout.alignment: Qt.AlignRight
@@ -580,7 +580,7 @@ Dialog {
                                 spacing: 2
 
                                 Label {
-                                    text: root.currentRecipe ? root.currentRecipe.title : ""
+                                    text: root.currentRecipe ? qsTr(root.currentRecipe.title) : ""
                                     font.bold: true
                                     font.pixelSize: 17
                                     color: "#1C1917"
@@ -707,7 +707,7 @@ Dialog {
                                         Layout.alignment: Qt.AlignRight
                                     }
                                     Label {
-                                        text: "scaled total"
+                                        text: qsTr("scaled total")
                                         font.pixelSize: 10
                                         color: "#78716C"
                                         Layout.alignment: Qt.AlignRight
@@ -808,7 +808,7 @@ Dialog {
                         // Ingredients Breakdown Table
                         Label {
                             property int count: root.currentRecipe && root.currentRecipe.ingredients ? root.currentRecipe.ingredients.length : 0
-                            text: "Ingredients Breakdown (" + count + " items):"
+                            text: qsTr("Ingredients Breakdown") + " (" + count + "):"
                             font.bold: true
                             font.pixelSize: 12
                             color: "#334155"

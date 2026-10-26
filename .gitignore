@@ -3,6 +3,8 @@
 *.user
 *.user.*
 
+translations/qtspeis*.qm
+
 # Desktop builds
 build/Desktop_*
 
@@ -27,3 +29,6 @@ build/*/*.cpp
 build/*/*.o
 build/*/*.obj
 build/*/*.aotstats
+build
+build_*
+speis_debug.log

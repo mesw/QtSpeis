@@ -129,7 +129,7 @@ Dialog {
                     Layout.fillWidth: true
                 }
                 Label {
-                    text: "Burns energy & macronutrients, increasing daily caloric need"
+                    text: langManager ? langManager.t("workout_desc") : "Burns energy & macronutrients, increasing daily caloric need"
                     font.pixelSize: 10
                     color: "#78716C"
                     wrapMode: Text.WordWrap
@@ -493,7 +493,7 @@ Dialog {
                         spacing: 8
 
                         Label {
-                            text: "⚙️ Custom Expenditure Overrides"
+                            text: langManager ? langManager.t("custom_expenditure_overrides") : "⚙️ Custom Expenditure Overrides"
                             font.bold: true
                             font.pixelSize: 11
                             color: "#7E22CE"
@@ -507,11 +507,11 @@ Dialog {
                             ColumnLayout {
                                 Layout.fillWidth: true
                                 spacing: 1
-                                Label { text: "Burn (kcal)"; font.pixelSize: 9; color: "#6B21A8" }
+                                Label { text: qsTr("Burn (kcal)"); font.pixelSize: 9; color: "#6B21A8" }
                                 TextField {
                                     Layout.fillWidth: true
                                     text: root.customCalories > 0 ? Math.round(root.customCalories).toString() : ""
-                                    placeholderText: "Auto"
+                                    placeholderText: qsTr("Auto")
                                     font.pixelSize: 11
                                     background: Rectangle { radius: 6; color: "#FFFFFF"; border.color: "#D8B4FE" }
                                     onTextEdited: {
@@ -529,11 +529,11 @@ Dialog {
                             ColumnLayout {
                                 Layout.fillWidth: true
                                 spacing: 1
-                                Label { text: "Carbs (g)"; font.pixelSize: 9; color: "#6B21A8" }
+                                Label { text: qsTr("Carbs (g)"); font.pixelSize: 9; color: "#6B21A8" }
                                 TextField {
                                     Layout.fillWidth: true
                                     text: root.customCarbs >= 0 ? root.customCarbs.toString() : ""
-                                    placeholderText: "Auto"
+                                    placeholderText: qsTr("Auto")
                                     font.pixelSize: 11
                                     background: Rectangle { radius: 6; color: "#FFFFFF"; border.color: "#D8B4FE" }
                                     onTextEdited: {
@@ -551,11 +551,11 @@ Dialog {
                             ColumnLayout {
                                 Layout.fillWidth: true
                                 spacing: 1
-                                Label { text: "Protein (g)"; font.pixelSize: 9; color: "#6B21A8" }
+                                Label { text: qsTr("Protein (g)"); font.pixelSize: 9; color: "#6B21A8" }
                                 TextField {
                                     Layout.fillWidth: true
                                     text: root.customProtein >= 0 ? root.customProtein.toString() : ""
-                                    placeholderText: "Auto"
+                                    placeholderText: qsTr("Auto")
                                     font.pixelSize: 11
                                     background: Rectangle { radius: 6; color: "#FFFFFF"; border.color: "#D8B4FE" }
                                     onTextEdited: {
@@ -573,11 +573,11 @@ Dialog {
                             ColumnLayout {
                                 Layout.fillWidth: true
                                 spacing: 1
-                                Label { text: "Fat (g)"; font.pixelSize: 9; color: "#6B21A8" }
+                                Label { text: qsTr("Fat (g)"); font.pixelSize: 9; color: "#6B21A8" }
                                 TextField {
                                     Layout.fillWidth: true
                                     text: root.customFat >= 0 ? root.customFat.toString() : ""
-                                    placeholderText: "Auto"
+                                    placeholderText: qsTr("Auto")
                                     font.pixelSize: 11
                                     background: Rectangle { radius: 6; color: "#FFFFFF"; border.color: "#D8B4FE" }
                                     onTextEdited: {
@@ -645,7 +645,7 @@ Dialog {
                                 ColumnLayout {
                                     anchors.centerIn: parent
                                     spacing: 0
-                                    Label { text: "🌾 Carbs"; font.pixelSize: 9; font.bold: true; color: "#92400E" }
+                                    Label { text: "🌾 " + qsTr("Carbs"); font.pixelSize: 9; font.bold: true; color: "#92400E" }
                                     Label { text: "-" + Math.round(root.liveMetrics.carbs || 0) + "g"; font.bold: true; font.pixelSize: 11; color: "#B45309" }
                                 }
                             }
@@ -659,7 +659,7 @@ Dialog {
                                 ColumnLayout {
                                     anchors.centerIn: parent
                                     spacing: 0
-                                    Label { text: "🍗 Protein"; font.pixelSize: 9; font.bold: true; color: "#065F46" }
+                                    Label { text: "🍗 " + qsTr("Protein"); font.pixelSize: 9; font.bold: true; color: "#065F46" }
                                     Label { text: "-" + Math.round(root.liveMetrics.protein || 0) + "g"; font.bold: true; font.pixelSize: 11; color: "#047857" }
                                 }
                             }
@@ -673,7 +673,7 @@ Dialog {
                                 ColumnLayout {
                                     anchors.centerIn: parent
                                     spacing: 0
-                                    Label { text: "🥑 Fat"; font.pixelSize: 9; font.bold: true; color: "#1E40AF" }
+                                    Label { text: "🥑 " + qsTr("Fat"); font.pixelSize: 9; font.bold: true; color: "#1E40AF" }
                                     Label { text: "-" + Math.round(root.liveMetrics.fat || 0) + "g"; font.bold: true; font.pixelSize: 11; color: "#1D4ED8" }
                                 }
                             }
@@ -691,7 +691,7 @@ Dialog {
             // Delete button if editing existing
             Button {
                 visible: root.editMealIndex >= 0
-                text: "🗑️ Delete"
+                text: langManager ? langManager.t("delete_workout_btn") : "🗑️ Delete"
                 font.pixelSize: 12
                 Layout.preferredHeight: 40
                 palette.buttonText: "#DC2626"
@@ -709,7 +709,7 @@ Dialog {
             }
 
             Button {
-                text: "Cancel"
+                text: langManager ? langManager.t("cancel_btn") : "Cancel"
                 font.pixelSize: 12
                 Layout.preferredHeight: 40
                 background: Rectangle {

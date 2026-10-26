@@ -223,7 +223,7 @@ Rectangle {
             // Quick Golden Plan button
             Button {
                 visible: false //root.mealPlanManager !== null && root.width >= 560
-                text: "🌟 Golden Plan"
+                text: "🌟 " + qsTr("Golden Plan")
                 font.bold: true
                 font.pixelSize: 11
                 palette.buttonText: "#92400E"
@@ -234,9 +234,7 @@ Rectangle {
                     border.width: 1
                 }
                 ToolTip.visible: hovered
-                ToolTip.text: (langManager && langManager.currentLanguage === "de")
-                    ? "Mathematisch verifizierten Golden Day Plan laden (erfüllt alle 24 Level gleichzeitig)"
-                    : "Load mathematically verified Golden Day Plan (satisfies all 24 levels simultaneously)"
+                ToolTip.text: qsTr("Load mathematically verified Golden Day Plan (satisfies all 24 levels simultaneously)")
                 onClicked: {
                     if (gameLevelManager && mealPlanManager) {
                         gameLevelManager.loadGoldenPlan(mealPlanManager, foodDatabase);
@@ -248,7 +246,7 @@ Rectangle {
             // Quick Cheat Solve All button
             Button {
                 visible: false //root.mealPlanManager !== null && root.width >= 560
-                text: "👑 Cheat (Solve All 24★)"
+                text: "👑 " + qsTr("Cheat (Solve All 24★)")
                 font.bold: true
                 font.pixelSize: 11
                 palette.buttonText: "#7C2D12"
@@ -259,9 +257,7 @@ Rectangle {
                     border.width: 1
                 }
                 ToolTip.visible: hovered
-                ToolTip.text: (langManager && langManager.currentLanguage === "de")
-                    ? "Cheat: Idealplan laden und alle 24 Level mit 3 Sternen lösen"
-                    : "Cheat: Load ideal plan and unlock/solve all 24 levels with 3 stars!"
+                ToolTip.text: qsTr("Cheat: Load ideal plan and unlock/solve all 24 levels with 3 stars!")
                 onClicked: {
                     if (gameLevelManager && mealPlanManager) {
                         gameLevelManager.cheatSolveAll(mealPlanManager, foodDatabase);

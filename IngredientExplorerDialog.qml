@@ -254,9 +254,7 @@ Dialog {
                         TextField {
                             id: searchInput
                             Layout.fillWidth: true
-                            placeholderText: (langManager && langManager.currentLanguage === "de")
-                                ? "Zutat suchen (z.B. Haferflocken, Lachs, Banane)..."
-                                : "Search ingredients (e.g. Oats, Salmon, Banana)..."
+                            placeholderText: langManager ? langManager.t("search_food_placeholder") : "Search ingredients (e.g. Oats, Salmon, Banana)..."
                             placeholderTextColor: "#A8A29E"
                             font.pixelSize: 11
                             color: "#1C1917"

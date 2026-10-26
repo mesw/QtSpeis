@@ -161,7 +161,9 @@ bool RecipeManager::loadRecipeIntoPlan(int recipeId, int servings, const QString
     int targetServings = (servings > 0) ? servings : baseServings;
     double scale = static_cast<double>(targetServings) / static_cast<double>(baseServings);
 
-    QString title = recipe.value(QStringLiteral("title")).toString();
+    QString rawTitle = recipe.value(QStringLiteral("title")).toString();
+    QString title = QCoreApplication::translate("QtSpeis", rawTitle.toUtf8().constData());
+    if (title.isEmpty()) title = rawTitle;
     if (targetServings != 1 && targetServings != baseServings) {
         title += QStringLiteral(" (%1x)").arg(targetServings);
     }

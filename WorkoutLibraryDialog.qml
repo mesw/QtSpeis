@@ -231,7 +231,7 @@ Dialog {
                         Label {
                             visible: workoutListView.count === 0
                             anchors.centerIn: parent
-                            text: "No workouts in this category."
+                            text: langManager ? langManager.t("no_workouts_in_category") : "No workouts in this category."
                             font.pixelSize: 12
                             color: "#78716C"
                         }
@@ -443,7 +443,7 @@ Dialog {
                                     ColumnLayout {
                                         spacing: 1
                                         Label {
-                                            text: "Total Burned Energy"
+                                            text: langManager ? langManager.t("total_burned_energy") : "Total Burned Energy"
                                             font.pixelSize: 11
                                             color: "#9A3412"
                                         }
@@ -480,7 +480,7 @@ Dialog {
                                 Rectangle { Layout.fillWidth: true; height: 1; color: "#FED7AA" }
 
                                 Label {
-                                    text: "Substrates Burned (Metabolic Demand):"
+                                    text: langManager ? langManager.t("substrates_burned") : "Substrates Burned (Metabolic Demand):"
                                     font.bold: true
                                     font.pixelSize: 11
                                     color: "#9A3412"
@@ -499,7 +499,7 @@ Dialog {
                                         ColumnLayout {
                                             anchors.centerIn: parent
                                             spacing: 1
-                                            Label { text: "Carbohydrates"; font.pixelSize: 9; color: "#78716C" }
+                                            Label { text: langManager ? langManager.t("carbs") : "Carbohydrates"; font.pixelSize: 9; color: "#78716C" }
                                             Label { text: Math.round(root.scaledCarbs) + "g"; font.bold: true; font.pixelSize: 12; color: "#D97706" }
                                         }
                                     }
@@ -513,7 +513,7 @@ Dialog {
                                         ColumnLayout {
                                             anchors.centerIn: parent
                                             spacing: 1
-                                            Label { text: "Protein"; font.pixelSize: 9; color: "#78716C" }
+                                            Label { text: langManager ? langManager.t("protein") : "Protein"; font.pixelSize: 9; color: "#78716C" }
                                             Label { text: Math.round(root.scaledProtein) + "g"; font.bold: true; font.pixelSize: 12; color: "#2563EB" }
                                         }
                                     }
@@ -527,7 +527,7 @@ Dialog {
                                         ColumnLayout {
                                             anchors.centerIn: parent
                                             spacing: 1
-                                            Label { text: "Fat"; font.pixelSize: 9; color: "#78716C" }
+                                            Label { text: langManager ? langManager.t("fat") : "Fat"; font.pixelSize: 9; color: "#78716C" }
                                             Label { text: Math.round(root.scaledFat) + "g"; font.bold: true; font.pixelSize: 12; color: "#DC2626" }
                                         }
                                     }
@@ -543,7 +543,7 @@ Dialog {
                             Button {
                                 Layout.fillWidth: true
                                 height: 44
-                                text: "🏃 Add Workout to Plan"
+                                text: langManager ? langManager.t("add_workout_to_plan") : "🏃 Add Workout to Plan"
                                 font.bold: true
                                 font.pixelSize: 13
                                 palette.buttonText: "#FFFFFF"
@@ -569,7 +569,7 @@ Dialog {
 
                             Button {
                                 height: 44
-                                text: "⚙️ Custom Details..."
+                                text: langManager ? langManager.t("custom_workout_details") : "⚙️ Custom Details..."
                                 font.pixelSize: 11
                                 palette.buttonText: "#475569"
                                 background: Rectangle {

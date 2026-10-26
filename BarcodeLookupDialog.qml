@@ -60,13 +60,13 @@ Dialog {
                 Layout.fillWidth: true
                 spacing: 2
                 Label {
-                    text: "Scan Barcode / Open Food Facts"
+                    text: qsTr("Scan Barcode / Open Food Facts")
                     font.bold: true
                     font.pixelSize: 18
                     color: "#292524"
                 }
                 Label {
-                    text: "Fetch real nutritional data directly via Open Food Facts API"
+                    text: qsTr("Fetch real nutritional data directly via Open Food Facts API")
                     font.pixelSize: 12
                     color: "#78716C"
                 }
@@ -96,7 +96,7 @@ Dialog {
             TextField {
                 id: barcodeField
                 Layout.fillWidth: true
-                placeholderText: "Enter EAN/UPC Barcode (e.g. 5201051001078)..."
+                placeholderText: langManager ? langManager.t("barcode_placeholder") : "Enter EAN/UPC Barcode (e.g. 5201051001078)..."
                 font.pixelSize: 13
                 selectByMouse: true
                 color: "#1C1917"
@@ -174,7 +174,7 @@ Dialog {
                 anchors.centerIn: parent
                 spacing: 6
                 Label {
-                    text: "📷 Point EAN-13 / UPC barcode at camera viewfinder"
+                    text: "📷 " + qsTr("Point EAN-13 / UPC barcode at camera viewfinder")
                     color: "#FAFAF9"
                     font.bold: true
                     font.pixelSize: 12
@@ -207,7 +207,7 @@ Dialog {
             Layout.fillWidth: true
             spacing: 4
             Label {
-                text: "Quick Test Presets (Click to test):"
+                text: qsTr("Quick Test Presets (Click to test):")
                 font.pixelSize: 11
                 font.bold: true
                 color: "#78716C"
@@ -346,7 +346,7 @@ Dialog {
 
                 // Nutrition per 100g grid
                 Label {
-                    text: "Nutritional Values (per 100g):"
+                    text: qsTr("Nutritional Values (per 100g):")
                     font.bold: true
                     font.pixelSize: 12
                     color: "#44403C"
@@ -366,7 +366,7 @@ Dialog {
                         ColumnLayout {
                             anchors.centerIn: parent
                             spacing: 1
-                            Label { text: "Calories"; font.pixelSize: 10; color: "#991B1B"; horizontalAlignment: Text.AlignHCenter }
+                            Label { text: qsTr("Calories"); font.pixelSize: 10; color: "#991B1B"; horizontalAlignment: Text.AlignHCenter }
                             Label {
                                 text: root.currentProduct ? (root.currentProduct.calories + " kcal") : "-"
                                 font.bold: true; font.pixelSize: 12; color: "#DC2626"; horizontalAlignment: Text.AlignHCenter
@@ -382,7 +382,7 @@ Dialog {
                         ColumnLayout {
                             anchors.centerIn: parent
                             spacing: 1
-                            Label { text: "Carbohydrates"; font.pixelSize: 10; color: "#92400E"; horizontalAlignment: Text.AlignHCenter }
+                            Label { text: qsTr("Carbohydrates"); font.pixelSize: 10; color: "#92400E"; horizontalAlignment: Text.AlignHCenter }
                             Label {
                                 text: root.currentProduct ? (root.currentProduct.carbs + " g") : "-"
                                 font.bold: true; font.pixelSize: 12; color: "#D97706"; horizontalAlignment: Text.AlignHCenter
@@ -398,7 +398,7 @@ Dialog {
                         ColumnLayout {
                             anchors.centerIn: parent
                             spacing: 1
-                            Label { text: "Protein"; font.pixelSize: 10; color: "#166534"; horizontalAlignment: Text.AlignHCenter }
+                            Label { text: qsTr("Protein"); font.pixelSize: 10; color: "#166534"; horizontalAlignment: Text.AlignHCenter }
                             Label {
                                 text: root.currentProduct ? (root.currentProduct.protein + " g") : "-"
                                 font.bold: true; font.pixelSize: 12; color: "#16A34A"; horizontalAlignment: Text.AlignHCenter
@@ -414,7 +414,7 @@ Dialog {
                         ColumnLayout {
                             anchors.centerIn: parent
                             spacing: 1
-                            Label { text: "Fat"; font.pixelSize: 10; color: "#1E40AF"; horizontalAlignment: Text.AlignHCenter }
+                            Label { text: qsTr("Fat"); font.pixelSize: 10; color: "#1E40AF"; horizontalAlignment: Text.AlignHCenter }
                             Label {
                                 text: root.currentProduct ? (root.currentProduct.fat + " g") : "-"
                                 font.bold: true; font.pixelSize: 12; color: "#2563EB"; horizontalAlignment: Text.AlignHCenter
@@ -430,7 +430,7 @@ Dialog {
 
                     RowLayout {
                         spacing: 6
-                        Label { text: "Amount:"; font.bold: true; font.pixelSize: 12; color: "#44403C" }
+                        Label { text: qsTr("Amount:"); font.bold: true; font.pixelSize: 12; color: "#44403C" }
                         SpinBox {
                             id: amountSpin
                             from: 10
@@ -439,14 +439,14 @@ Dialog {
                             value: 100
                             editable: true
                         }
-                        Label { text: "grams"; font.pixelSize: 12; color: "#78716C" }
+                        Label { text: qsTr("grams"); font.pixelSize: 12; color: "#78716C" }
                     }
 
                     Item { Layout.fillWidth: true }
 
                     RowLayout {
                         spacing: 6
-                        Label { text: "Target Meal:"; font.bold: true; font.pixelSize: 12; color: "#44403C" }
+                        Label { text: qsTr("Target Meal:"); font.bold: true; font.pixelSize: 12; color: "#44403C" }
                         ComboBox {
                             id: mealCombo
                             model: {
@@ -480,7 +480,7 @@ Dialog {
             spacing: 10
 
             Button {
-                text: "Cancel"
+                text: qsTr("Cancel")
                 Layout.preferredHeight: 38
                 flat: true
                 palette.buttonText: "#78716C"
@@ -490,7 +490,7 @@ Dialog {
             Item { Layout.fillWidth: true }
 
             Button {
-                text: "➕ Add to Meal Plan"
+                text: "➕ " + qsTr("Add to Meal Plan")
                 Layout.preferredHeight: 40
                 Layout.preferredWidth: 160
                 enabled: root.currentProduct !== null && root.mealPlanManager !== null

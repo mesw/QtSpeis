@@ -57,26 +57,52 @@ qt_add_qml_module(appQtSpeis
 )
 
 # ── Translations ────────────────────────────────────────────────────────────
-set(SPEIS_QM "${CMAKE_CURRENT_SOURCE_DIR}/translations/qtspeis_de.qm")
-if(EXISTS "${SPEIS_QM}")
-    set_source_files_properties("${SPEIS_QM}"
+set(SPEIS_DE_QM "${CMAKE_CURRENT_SOURCE_DIR}/translations/qtspeis_de.qm")
+set(SPEIS_EN_QM "${CMAKE_CURRENT_SOURCE_DIR}/translations/qtspeis_en.qm")
+
+set(SPEIS_QM_FILES "")
+if(EXISTS "${SPEIS_DE_QM}")
+    set_source_files_properties("${SPEIS_DE_QM}"
         PROPERTIES QT_RESOURCE_ALIAS "translations/qtspeis_de.qm"
     )
+    list(APPEND SPEIS_QM_FILES "${SPEIS_DE_QM}")
+endif()
+if(EXISTS "${SPEIS_EN_QM}")
+    set_source_files_properties("${SPEIS_EN_QM}"
+        PROPERTIES QT_RESOURCE_ALIAS "translations/qtspeis_en.qm"
+    )
+    list(APPEND SPEIS_QM_FILES "${SPEIS_EN_QM}")
+endif()
+
+if(SPEIS_QM_FILES)
     qt_add_resources(appQtSpeis "speis_i18n_res"
         PREFIX "/"
-        FILES "${SPEIS_QM}"
+        FILES ${SPEIS_QM_FILES}
     )
-    message(STATUS "Embedded qtspeis_de.qm into resources: ${SPEIS_QM}")
+    message(STATUS "Embedded translation files into resources: ${SPEIS_QM_FILES}")
 endif()
 
 find_program(SPEIS_LRELEASE lrelease HINTS "C:/Qt/6.8.3/mingw_64/bin")
-if(SPEIS_LRELEASE AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/translations/qtspeis_de.ts")
-    add_custom_target(speis_update_translations
-        COMMAND ${SPEIS_LRELEASE} "${CMAKE_CURRENT_SOURCE_DIR}/translations/qtspeis_de.ts" -qm "${CMAKE_CURRENT_SOURCE_DIR}/translations/qtspeis_de.qm"
-        WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-        COMMENT "Compiling Qt Linguist translations/qtspeis_de.ts to translations/qtspeis_de.qm"
-    )
-    add_dependencies(appQtSpeis speis_update_translations)
+if(SPEIS_LRELEASE)
+    set(SPEIS_LRELEASE_CMDS "")
+    if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/translations/qtspeis_de.ts")
+        list(APPEND SPEIS_LRELEASE_CMDS
+            COMMAND ${SPEIS_LRELEASE} "${CMAKE_CURRENT_SOURCE_DIR}/translations/qtspeis_de.ts" -qm "${CMAKE_CURRENT_SOURCE_DIR}/translations/qtspeis_de.qm"
+        )
+    endif()
+    if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/translations/qtspeis_en.ts")
+        list(APPEND SPEIS_LRELEASE_CMDS
+            COMMAND ${SPEIS_LRELEASE} "${CMAKE_CURRENT_SOURCE_DIR}/translations/qtspeis_en.ts" -qm "${CMAKE_CURRENT_SOURCE_DIR}/translations/qtspeis_en.qm"
+        )
+    endif()
+    if(SPEIS_LRELEASE_CMDS)
+        add_custom_target(speis_update_translations
+            ${SPEIS_LRELEASE_CMDS}
+            WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+            COMMENT "Compiling Qt Linguist translations (.ts to .qm)"
+        )
+        add_dependencies(appQtSpeis speis_update_translations)
+    endif()
 endif()
 
 # ── Speis SQLite Database ───────────────────────────────────────────────────

@@ -157,7 +157,7 @@ Item {
                         spacing: 4
 
                         Button {
-                            text: root.areAllCollapsed() ? "📂 Expand All" : "📁 Collapse All"
+                            text: root.areAllCollapsed() ? ("📂 " + qsTr("Expand All")) : ("📁 " + qsTr("Collapse All"))
                             flat: true
                             font.pixelSize: 11
                             palette.buttonText: "#57534E"
@@ -189,7 +189,7 @@ Item {
                         }
 
                         Button {
-                            text: "🗑️ Clear"
+                            text: "🗑️ " + qsTr("Clear Plan")
                             flat: true
                             font.pixelSize: 11
                             palette.buttonText: "#DC2626"
@@ -297,7 +297,7 @@ Item {
                             palette.buttonText: "#1D4ED8"
                             background: Rectangle { radius: 6; color: "#DBEAFE"; border.color: "#93C5FD" }
                             ToolTip.visible: hovered
-                            ToolTip.text: "Browse 32 real balanced chef recipes"
+                            ToolTip.text: qsTr("Browse 32 real balanced chef recipes")
                             onClicked: root.openRecipeLibraryRequested("All")
                         }
 
@@ -309,7 +309,7 @@ Item {
                             palette.buttonText: "#047857"
                             background: Rectangle { radius: 6; color: "#D1FAE5"; border.color: "#6EE7B7" }
                             ToolTip.visible: hovered
-                            ToolTip.text: "Load your saved custom meals"
+                            ToolTip.text: qsTr("Load your saved custom meals")
                             onClicked: root.openRecipeLibraryRequested("Custom")
                         }
 
@@ -320,12 +320,12 @@ Item {
                             palette.buttonText: "#C2410C"
                             background: Rectangle { radius: 6; color: "#FFEDD5"; border.color: "#FDBA74" }
                             ToolTip.visible: hovered
-                            ToolTip.text: "Browse athletic workout presets"
+                            ToolTip.text: qsTr("Browse athletic workout presets")
                             onClicked: root.openWorkoutLibraryRequested()
                         }
 
                         Button {
-                            text: (langManager && langManager.currentLanguage === "de") ? "🔬 Zutaten-Explorer" : "🔬 Ingredient Explorer"
+                            text: "🔬 " + qsTr("Ingredient Explorer")
                             font.bold: true
                             font.pixelSize: 11
                             palette.buttonText: "#B45309"
@@ -364,7 +364,7 @@ Item {
                         }
 
                         Button {
-                            text: "➕ Custom Meal"
+                            text: "➕ " + qsTr("Custom Meal")
                             font.bold: true
                             font.pixelSize: 11
                             palette.buttonText: "#15803D"
@@ -504,7 +504,7 @@ Item {
                                 Layout.preferredWidth: 28
                                 Layout.preferredHeight: 28
                                 ToolTip.visible: hovered
-                                ToolTip.text: "Delete Workout"
+                                ToolTip.text: qsTr("Delete Workout")
                                 onClicked: {
                                     if (mealPlanManager) mealPlanManager.removeMeal(mealIndex);
                                 }
@@ -746,7 +746,7 @@ Item {
                                     Layout.preferredWidth: 28
                                     Layout.preferredHeight: 28
                                     ToolTip.visible: hovered
-                                    ToolTip.text: "Remove Meal"
+                                    ToolTip.text: qsTr("Remove Meal")
                                     onClicked: {
                                         if (mealPlanManager) mealPlanManager.removeMeal(mealIndex);
                                     }
@@ -1333,7 +1333,7 @@ Item {
                             // Empty items placeholder
                             Label {
                                 visible: (!mealData.items || mealData.items.length === 0)
-                                text: "No ingredients added yet. Type below to search or scan a barcode!"
+                                text: qsTr("No ingredients added yet. Type below to search or scan a barcode!")
                                 font.italic: true
                                 font.pixelSize: 12
                                 color: "#A8A29E"
@@ -1355,7 +1355,7 @@ Item {
                                 TextField {
                                     id: ingredientInput
                                     anchors.fill: parent
-                                    placeholderText: langManager ? langManager.t("add_ingredient") : "Type ingredient (e.g. Oats, Egg, Avocado)..."
+                                    placeholderText: langManager ? langManager.t("add_ingredient_placeholder") : "Type ingredient (e.g. Oats, Egg, Avocado)..."
                                     font.pixelSize: 12
                                     selectByMouse: true
                                     color: "#1C1917"
@@ -1550,7 +1550,7 @@ Item {
     // Custom Meal Creation Dialog
     Dialog {
         id: customMealDialog
-        title: "Add Custom Meal"
+        title: qsTr("Add Custom Meal")
         anchors.centerIn: parent
         modal: true
         width: Math.min(380, parent.width - 24)
@@ -1568,13 +1568,13 @@ Item {
             TextField {
                 id: customMealName
                 Layout.fillWidth: true
-                placeholderText: "Meal Name (e.g. Post-Workout Snack)..."
+                placeholderText: langManager ? langManager.t("meal_name_placeholder") : "Meal Name (e.g. Post-Workout Snack)..."
                 font.pixelSize: 13
             }
 
             RowLayout {
                 Layout.fillWidth: true
-                Label { text: "Time:" }
+                Label { text: qsTr("Time:") }
                 TextField {
                     id: customMealTime
                     text: "15:00"
@@ -1587,12 +1587,12 @@ Item {
                 Layout.fillWidth: true
                 spacing: 8
                 Button {
-                    text: "Cancel"
+                    text: qsTr("Cancel")
                     Layout.fillWidth: true
                     onClicked: customMealDialog.close()
                 }
                 Button {
-                    text: "Add Meal"
+                    text: qsTr("Add Meal")
                     font.bold: true
                     Layout.fillWidth: true
                     palette.buttonText: "#FFFFFF"
@@ -1860,7 +1860,7 @@ Item {
             spacing: 12
 
             Label {
-                text: "Save this meal with all its ingredients and portion sizes into your personal recipe library:"
+                text: qsTr("Save this meal with all its ingredients and portion sizes into your personal recipe library:")
                 font.pixelSize: 12
                 color: "#57534E"
                 wrapMode: Text.WordWrap
@@ -1893,7 +1893,7 @@ Item {
 
                 Button {
                     Layout.fillWidth: true
-                    text: "💾 Save"
+                    text: "💾 " + qsTr("Save")
                     font.bold: true
                     palette.buttonText: "#FFFFFF"
                     background: Rectangle {

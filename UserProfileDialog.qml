@@ -90,7 +90,7 @@ Dialog {
                     Layout.fillWidth: true
                 }
                 Label {
-                    text: "Personalize your resting energy needs (Grundumsatz)"
+                    text: qsTr("Personalize your resting energy needs (Grundumsatz)")
                     font.pixelSize: 10
                     color: "#78716C"
                     wrapMode: Text.WordWrap
@@ -153,7 +153,7 @@ Dialog {
                             id: nameField
                             Layout.fillWidth: true
                             text: root.formName
-                            placeholderText: "e.g. Alex, Runner99"
+                            placeholderText: langManager ? langManager.t("name_placeholder") : "e.g. Alex, Runner99"
                             font.pixelSize: 13
                             background: Rectangle {
                                 radius: 8
@@ -184,7 +184,7 @@ Dialog {
                         RowLayout {
                             Layout.fillWidth: true
                             Label {
-                                text: "🔥 " + (langManager ? langManager.t("base_calories") : "Base Calorie Need (BMR)")
+                                text: "🔥 " + qsTr("Base Calorie Need (BMR)")
                                 font.bold: true
                                 font.pixelSize: 12
                                 color: "#44403C"
@@ -540,10 +540,10 @@ Dialog {
 
                                 // Calorie percentages
                                 Label {
-                                    text: "🎯 Ziel-Verteilung (Kalorien-%): " +
-                                          (macroPreviewCol.sd ? (Math.round(macroPreviewCol.sd.carbPercent) + "% Kohlenhydrate • " +
-                                           Math.round(macroPreviewCol.sd.minProtein) + (macroPreviewCol.sd.minProtein !== macroPreviewCol.sd.maxProtein ? ("–" + Math.round(macroPreviewCol.sd.maxProtein)) : "") + "% Eiweiß • " +
-                                           Math.round(macroPreviewCol.sd.minFat) + (macroPreviewCol.sd.minFat !== macroPreviewCol.sd.maxFat ? ("–" + Math.round(macroPreviewCol.sd.maxFat)) : "") + "% Fette") : "")
+                                    text: "🎯 " + qsTr("Target Split (Calorie-%):") + " " +
+                                          (macroPreviewCol.sd ? (Math.round(macroPreviewCol.sd.carbPercent) + "% " + qsTr("Carbohydrates") + " • " +
+                                           Math.round(macroPreviewCol.sd.minProtein) + (macroPreviewCol.sd.minProtein !== macroPreviewCol.sd.maxProtein ? ("–" + Math.round(macroPreviewCol.sd.maxProtein)) : "") + "% " + qsTr("Protein") + " • " +
+                                           Math.round(macroPreviewCol.sd.minFat) + (macroPreviewCol.sd.minFat !== macroPreviewCol.sd.maxFat ? ("–" + Math.round(macroPreviewCol.sd.maxFat)) : "") + "% " + qsTr("Fat")) : "")
                                     font.bold: true
                                     font.pixelSize: 11
                                     color: "#1E40AF"
@@ -559,10 +559,10 @@ Dialog {
                                     readonly property real fatMinG: macroPreviewCol.sd ? (macroPreviewCol.baseKcal * (macroPreviewCol.sd.minFat / 100.0) / 9.0) : 0
                                     readonly property real fatMaxG: macroPreviewCol.sd ? (macroPreviewCol.baseKcal * (macroPreviewCol.sd.maxFat / 100.0) / 9.0) : 0
 
-                                    text: "⚖️ Grammbudget bei " + Math.round(macroPreviewCol.baseKcal) + " kcal: " +
-                                          Math.round(carbG) + "g Carbs (4 kcal/g) • " +
-                                          Math.round(protMinG) + (Math.round(protMinG) !== Math.round(protMaxG) ? ("–" + Math.round(protMaxG)) : "") + "g Protein (4 kcal/g) • " +
-                                          Math.round(fatMinG) + (Math.round(fatMinG) !== Math.round(fatMaxG) ? ("–" + Math.round(fatMaxG)) : "") + "g Fett (9 kcal/g)"
+                                    text: "⚖️ " + qsTr("Gram budget at") + " " + Math.round(macroPreviewCol.baseKcal) + " kcal: " +
+                                          Math.round(carbG) + "g " + qsTr("Carbs") + " (4 kcal/g) • " +
+                                          Math.round(protMinG) + (Math.round(protMinG) !== Math.round(protMaxG) ? ("–" + Math.round(protMaxG)) : "") + "g " + qsTr("Protein") + " (4 kcal/g) • " +
+                                          Math.round(fatMinG) + (Math.round(fatMinG) !== Math.round(fatMaxG) ? ("–" + Math.round(fatMaxG)) : "") + "g " + qsTr("Fat") + " (9 kcal/g)"
                                     font.pixelSize: 11
                                     font.bold: true
                                     color: "#2563EB"
@@ -589,14 +589,14 @@ Dialog {
                                 spacing: 3
 
                                 Label {
-                                    text: "💡 Warum Kalorien-% nicht gleich Gramm-% sind"
+                                    text: langManager ? langManager.t("why_cal_pct_not_gram_pct") : "💡 Why Calorie-% and Gram-% Differ"
                                     font.bold: true
                                     font.pixelSize: 11
                                     color: "#854D0E"
                                 }
 
                                 Label {
-                                    text: "Die Makronährstoffe liefern pro Gramm unterschiedlich viel Energie (physiologischer Brennwert):\n• 1 g Kohlenhydrate = 4 kcal (17 kJ)\n• 1 g Eiweiß = 4 kcal (17 kJ)\n• 1 g Fett = 9 kcal (37 kJ)\nFett liefert mehr als doppelt so viele Kalorien wie Kohlenhydrate oder Eiweiß. Wenn du deine Kalorien-% in Gramm umrechnest, teilst du die jeweiligen Kalorien bei Kohlenhydraten und Eiweiß durch 4 und bei Fett durch 9."
+                                    text: langManager ? langManager.t("fuel_values_explanation") : "Die Makronährstoffe liefern pro Gramm unterschiedlich viel Energie (physiologischer Brennwert):\n• 1 g Kohlenhydrate = 4 kcal (17 kJ)\n• 1 g Eiweiß = 4 kcal (17 kJ)\n• 1 g Fett = 9 kcal (37 kJ)\nFett liefert mehr als doppelt so viele Kalorien wie Kohlenhydrate oder Eiweiß. Wenn du deine Kalorien-% in Gramm umrechnest, teilst du die jeweiligen Kalorien bei Kohlenhydraten und Eiweiß durch 4 und bei Fett durch 9."
                                     font.pixelSize: 10
                                     color: "#713F12"
                                     wrapMode: Text.WordWrap
@@ -624,7 +624,7 @@ Dialog {
                         spacing: 4
 
                         Label {
-                            text: "📊 Daily Energy Target Calculation"
+                            text: langManager ? langManager.t("daily_energy_calculation_title") : "📊 Daily Energy Target Calculation"
                             font.bold: true
                             font.pixelSize: 11
                             color: "#92400E"
@@ -858,7 +858,7 @@ Dialog {
             spacing: 8
 
             Button {
-                text: "Cancel"
+                text: langManager ? langManager.t("cancel_btn") : "Cancel"
                 font.pixelSize: 12
                 Layout.preferredHeight: 40
                 background: Rectangle {

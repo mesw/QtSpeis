@@ -80,6 +80,14 @@ int main(int argc, char *argv[])
         } else {
             qWarning() << "Failed to load qtspeis_de.qm from resources or local directory";
         }
+    } else {
+        if (translator.load(QStringLiteral(":/translations/qtspeis_en.qm")) ||
+            translator.load(QStringLiteral("translations/qtspeis_en.qm"))) {
+            app.installTranslator(&translator);
+            qInfo() << "Installed English QTranslator from qtspeis_en.qm";
+        } else {
+            qWarning() << "Failed to load qtspeis_en.qm from resources or local directory";
+        }
     }
 
     QQmlApplicationEngine engine;

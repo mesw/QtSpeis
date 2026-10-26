@@ -74,7 +74,7 @@ Dialog {
                     Layout.fillWidth: true
                 }
                 Label {
-                    text: "Named slots in local storage, files (.json), and autosave"
+                    text: langManager ? langManager.t("savegame_dialog_subtitle") : "Named slots in local storage, files (.json), and autosave"
                     font.pixelSize: 10
                     color: "#78716C"
                     wrapMode: Text.WordWrap
@@ -183,7 +183,7 @@ Dialog {
                             spacing: 8
 
                             Label {
-                                text: "💾 Save Current Plan to Named Slot:"
+                                text: qsTr("💾 Save Current Plan to Named Slot:")
                                 font.bold: true
                                 font.pixelSize: 12
                                 color: "#1C1917"
@@ -196,7 +196,7 @@ Dialog {
                                 TextField {
                                     id: slotNameInput
                                     Layout.fillWidth: true
-                                    placeholderText: langManager ? langManager.t("new_slot_placeholder") : "Slot name (e.g. Level 2 - Balanced)..."
+                                    placeholderText: qsTr("Slot name (e.g. Level 2 - Balanced)...")
                                     font.pixelSize: 12
                                     selectByMouse: true
                                     background: Rectangle {
@@ -209,7 +209,7 @@ Dialog {
 
                                 Button {
                                     id: saveSlotBtn
-                                    text: langManager ? langManager.t("save_to_slot_btn") : "💾 Save Slot"
+                                    text: qsTr("💾 Save Slot")
                                     font.bold: true
                                     font.pixelSize: 11
                                     palette.buttonText: "#FFFFFF"
@@ -235,7 +235,7 @@ Dialog {
                             }
 
                             Label {
-                                text: "Saves your current meals, workout, level stars, and user profile locally (persists across reloads)."
+                                text: qsTr("Saves your current meals, workout, level stars, and user profile locally (persists across reloads).")
                                 font.pixelSize: 10
                                 color: "#78716C"
                                 wrapMode: Text.WordWrap
@@ -260,7 +260,7 @@ Dialog {
                             spacing: 8
 
                             Label {
-                                text: "📁 Saved Slots (" + (savegameManager ? savegameManager.slotCount : 0) + "):"
+                                text: qsTr("📁 Saved Slots") + " (" + (savegameManager ? savegameManager.slotCount : 0) + "):"
                                 font.bold: true
                                 font.pixelSize: 12
                                 color: "#1C1917"
@@ -463,7 +463,7 @@ Dialog {
                             }
 
                             Label {
-                                text: "Last autosaved: " + (savegameManager ? savegameManager.lastSavedTime : "-")
+                                text: qsTr("Last autosaved:") + " " + (savegameManager ? savegameManager.lastSavedTime : "-")
                                 font.pixelSize: 10
                                 color: "#64748B"
                             }
@@ -481,7 +481,7 @@ Dialog {
                         Button {
                             Layout.fillWidth: true
                             Layout.preferredHeight: root.isNarrow ? 38 : 42
-                            text: "📤 Export File (.json)"
+                            text: qsTr("📤 Export File (.json)")
                             font.bold: true
                             font.pixelSize: 11
                             palette.buttonText: "#15803D"
@@ -502,7 +502,7 @@ Dialog {
                         Button {
                             Layout.fillWidth: true
                             Layout.preferredHeight: root.isNarrow ? 38 : 42
-                            text: "📥 Import File (.json)"
+                            text: qsTr("📥 Import File (.json)")
                             font.bold: true
                             font.pixelSize: 11
                             palette.buttonText: "#2563EB"
@@ -523,7 +523,7 @@ Dialog {
                         Button {
                             Layout.fillWidth: true
                             Layout.preferredHeight: root.isNarrow ? 38 : 42
-                            text: "📋 Copy JSON"
+                            text: qsTr("📋 Copy JSON")
                             font.bold: true
                             font.pixelSize: 11
                             palette.buttonText: "#475569"
@@ -545,7 +545,7 @@ Dialog {
                         Button {
                             Layout.fillWidth: true
                             Layout.preferredHeight: root.isNarrow ? 38 : 42
-                            text: "🔄 Reset Sample Plan"
+                            text: qsTr("🔄 Reset Sample Plan")
                             visible: false
                             font.bold: true
                             font.pixelSize: 11
@@ -582,7 +582,7 @@ Dialog {
                             spacing: 6
 
                             Label {
-                                text: "Paste JSON Savegame Directly:"
+                                text: qsTr("Paste JSON Savegame Directly:")
                                 font.bold: true
                                 font.pixelSize: 11
                                 color: "#44403C"
@@ -592,7 +592,7 @@ Dialog {
                                 id: pasteArea
                                 Layout.fillWidth: true
                                 Layout.preferredHeight: 70
-                                placeholderText: "Paste {\"app\":\"Speis\", ...} JSON here..."
+                                placeholderText: langManager ? langManager.t("paste_json_placeholder") : "Paste {\"app\":\"Speis\", ...} JSON here..."
                                 font.pixelSize: 11
                                 wrapMode: Text.WrapAnywhere
                                 selectByMouse: true
@@ -608,7 +608,7 @@ Dialog {
                                 spacing: 8
 
                                 Button {
-                                    text: "Load Pasted Plan"
+                                    text: langManager ? langManager.t("load_pasted_plan") : "Load Pasted Plan"
                                     font.bold: true
                                     font.pixelSize: 11
                                     palette.buttonText: "#FFFFFF"
@@ -618,17 +618,17 @@ Dialog {
                                         if (text.length > 0 && savegameManager && mealPlanManager && gameLevelManager) {
                                             let ok = savegameManager.importSavegameJson(text, mealPlanManager, gameLevelManager, langManager);
                                             if (ok) {
-                                                feedbackBanner.show("Savegame successfully restored!");
+                                                feedbackBanner.show(langManager ? langManager.t("savegame_restored_success") : "Savegame successfully restored!");
                                                 pasteArea.text = "";
                                             } else {
-                                                feedbackBanner.show("Failed to load JSON. Please verify structure.");
+                                                feedbackBanner.show(langManager ? langManager.t("savegame_json_invalid") : "Failed to load JSON. Please verify structure.");
                                             }
                                         }
                                     }
                                 }
 
                                 Button {
-                                    text: "Clear"
+                                    text: langManager ? langManager.t("clear_btn") : "Clear"
                                     font.pixelSize: 11
                                     flat: true
                                     onClicked: pasteArea.text = ""

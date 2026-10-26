@@ -30,17 +30,23 @@
 4. **Educational Game Progression & Level Evaluation (`GameLevelManager`, `EvaluationResultDialog.qml`)**
    - **Level 1: Calorie Balance**
      - Target: Exactly 2,000 kcal total daily energy (±50 kcal for 3 stars, ±150 kcal for 2 stars, ±300 kcal for 1 star). Flexible macronutrient distribution.
-   - **Level 2: Balanced Macros**
-     - Target: 2,000 kcal with the classic balanced distribution: **50% Carbs, 25% Protein, 25% Fat**.
-   - **20+ Locked Campaign Levels:**
-     - Level selection grid displaying 22 deactivated, "?" captioned challenge tiles with lock badges (e.g. Ketogenic Shift, High-Protein Athlete, Plant Power, Longevity).
-   - **Grading & Feedback Modal:**
-     - 0 to 3 gold star rating, accuracy percentages, constraint validation breakdown, and personalized educational coaching advice.
+   - **Level 2: Balanced Macros & Athletic Discipline Calibration**
+     - Target: 2,000 kcal evaluated dynamically against the player's active sport profile (default: **55% Carbs, 12–18% Protein, 27–33% Fat** for *Ausdauersport mit hohem Krafteinsatz*).
+   - **24-Level Progressive Campaign (4 Tiers):**
+     - Tier I: Energetics & Core Fuel Balance (Levels 1–6)
+     - Tier II: Micronutrient Stoichiometry & Food Quality (Levels 7–12)
+     - Tier III: Chrono-Nutrition & Transporter Decoupling (Levels 13–18)
+     - Tier IV: Molecular Kinetics & Grandmaster Synthesis (Levels 19–24)
+     - Culminates in the mathematically verified **"Golden Day Plan"** that satisfies all 24 biochemical constraints simultaneously.
+   - **Grading & Dual Chrono-Nutrient Timeline:**
+     - 0 to 3 gold star rating, multi-criteria validation breakdown, and personalized biochemical coaching hints.
+     - Dual-axis 24-hour chrono-nutrient timeline charting meal-by-meal timing (bar plot) and cumulative nutrient accrual (superimposed line plot) across optimal diurnal absorption windows.
 
 5. **Display Language Selection & Multilingual Prioritized Search (`LanguageManager`)**
-   - In-app display language selector in the header bar supporting 🇬🇧 English, 🇩🇪 Deutsch, 🇫🇷 Français, 🇪🇸 Español, and 🇮🇹 Italiano.
-   - **Cross-language search ranking:** The user can search in any language (e.g. typing `"oats"` in English while German display language is active). Results from other languages appear at the **bottom of the list** with a matched-language indicator, while the ingredient is **always displayed in the selected app language** (e.g. `"Haferflocken"`).
-   - Dynamic language switching updates the shopping list, day plan, and UI labels reactively.
+   - Full bilingual support in English and German via native Qt `qsTr(...)` and compiled `.qm` catalogs (`translations/qtspeis_de.qm` and `translations/qtspeis_en.qm`).
+   - Dynamic in-app language switching with instant reactive retranslation via `QQmlEngine::retranslate()`.
+   - **Bilingual Recipe Data:** 32 authentic chef recipes with Austrian/German titles in German and translated culinary names in English.
+   - **Cross-language search ranking:** Search in any language (e.g. typing `"oats"` while German is active); results from alternate languages appear with match indicators while rendering in the active app language.
 
 ---
 
@@ -48,20 +54,38 @@
 
 ```
 QtSpeis/
-├── CMakeLists.txt                 # Build configuration (Desktop MinGW & WASM)
-├── languagemanager.h / .cpp       # Display language manager & multi-language dictionaries
+├── CMakeLists.txt                 # Build configuration & lrelease translation targets
+├── languagemanager.h / .cpp       # Display language manager & dynamic retranslation
 ├── fooddatabase.h / .cpp          # Multilingual SQLite food catalog with prioritized search
 ├── openfoodfactsfetcher.h / .cpp  # Open Food Facts API network fetcher
-├── mealplanmanager.h / .cpp       # Daily meals data model & multilingual sync
-├── gamelevelmanager.h / .cpp      # Game level rules, progression & scoring
-├── Main.qml                       # Main application window, language menu & tab switcher
+├── mealplanmanager.h / .cpp       # Daily meals data model, sport profiles & sync
+├── gamelevelmanager.h / .cpp      # 24-level rules engine, progression & chrono-nutrition
+├── recipemanager.h / .cpp         # 32 balanced chef recipes & custom meal templates
+├── savegamemanager.h / .cpp       # Multi-slot local savegames & JSON export/import
+├── translations/                  # Qt Linguist translation catalogs (.ts and .qm)
+│   ├── qtspeis_de.ts / .qm        # German translation catalog
+│   └── qtspeis_en.ts / .qm        # English translation catalog
+├── all_32_recipes_detailed.json   # 32 authentic categorized chef recipes
+├── build_translations.py          # Developer tool: synchronizes .ts catalogs, .qm binaries & C++ dictionaries
+├── build_speis_db.py              # Developer ETL pipeline: generates speis.db from USDA/BLS/Ciqual sources
+├── validate_speis_db.py           # Database validation test suite (nutrient ranges & integrity)
+├── publish-gh-pages.ps1           # PowerShell deployment script for GitHub Pages
+├── LEVEL_GUIDE.md                 # 24-level biochemical design & balancing guide
+├── WALKTHROUGH.md                 # UX playtest findings & completed action plan
+├── Main.qml                       # Main application window & navigation
 ├── CozyShoppingList.qml           # Cozy shopping list meal creation UI & autocomplete
-├── GoalSummaryCard.qml            # Live calorie gauge & macro ratio bar
+├── GoalSummaryCard.qml            # Live calorie gauge, macro ratio bar & level goals
 ├── BarcodeLookupDialog.qml        # Barcode scanner & Open Food Facts lookup modal
-├── LevelSelectView.qml            # Level selection screen (Levels 1, 2 + 22 locked "?")
-├── EvaluationResultDialog.qml     # 0-3 star scorecard & constraints breakdown
-├── AboutLegalDialog.qml           # In-app legal notices, copyright, AI disclaimer & privacy policy
-├── TemporalTableChart.qml         # Reused 24-hour tabular schedule chart
+├── LevelSelectView.qml            # 24-level campaign selection screen & golden plan
+├── EvaluationResultDialog.qml     # 0-3 star scorecard & chrono-nutrient dual chart
+├── UserProfileDialog.qml          # Athlete profile, BMR calculator & sport profiles
+├── WorkoutDialog.qml              # Athletic workout expenditure & substrate overrides
+├── WorkoutLibraryDialog.qml       # Categorized workout presets library
+├── RecipeLibraryDialog.qml        # 32 chef recipes & custom meals browser
+├── SavegameDialog.qml             # Slot-based savegame manager & JSON backup
+├── OnboardingDialog.qml           # 3-step first-launch introduction walkthrough
+├── AboutLegalDialog.qml           # In-app legal notices, copyright & privacy policy
+├── TemporalTableChart.qml         # 24-hour tabular schedule chart
 ├── TemporalPieChart.qml           # Circular 24h dial (preserved)
 └── TemporalSpiralChart.qml        # Multi-day coiled spiral (preserved)
 ```

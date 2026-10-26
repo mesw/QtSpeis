@@ -69,7 +69,7 @@ static const LevelLocalization s_deLevels[] = {
     { 7, "Calcium-Magnesium-Verhältnis", "Calcium-zu-Magnesium Massenverhältnis 1.5:1 bis 2.0:1", "Kombiniere Joghurt mit Kürbiskernen, Haferflocken und grünem Gemüse." },
     { 8, "Spurenelement-Stöchiometrie (Zn : Cu)", "Zink-zu-Kupfer Massenverhältnis 10:1 bis 15:1 • Zn ≥ 11mg", "Mageres Fleisch, Kürbiskerne und Vollkorngetreide halten das Spurenelement-Gleichgewicht." },
     { 9, "Regionale & Saisonale Ökologie", "100% Saisonale Frische- und Lagerware", "Wähle regionale Äpfel, Wurzelgemüse, Kohl und Kürbis." },
-    { 10, "Stoichiometrische Resorptionsförderung (Regel 3)", "50–80mg Vit C mit pflanzl. Eisen (≥ 2.0mg) • Ca < 100mg", "Gib rote Paprikastreifen oder Zitronensaft zu Linsen- und Getreidegerichten." },
+    { 10, "Eisen-Booster (Regel 3)", "50–80mg Vit C mit pflanzl. Eisen (≥ 2.0mg) • Ca < 100mg", "Gib rote Paprikastreifen oder Zitronensaft zu Linsen- und Getreidegerichten." },
     { 11, "Lipidmatrix für fettlösliche Vitamine (Regel 5a)", "10–15g Fett in Mahlzeiten mit ≥ 30% RDA Vit A/D/E/K", "Verfeinere Salate und gedämpftes Gemüse mit 10g Olivenöl oder Avocado." },
     { 12, "Transporter-Entkopplung (Regel 5b)", "Hohe Dosis Vit E getrennt von Vit D & K um ≥ 2h", "Nimm Vitamin D3/K2 zum Frühstück und verzehre Vitamin-E-Snacks am Nachmittag." },
     { 13, "Morgendliches Calcium-Fenster (< 13:00)", "≥ 60% des täglichen Calciums vor 13:00 konsumiert", "Platziere Joghurt, Quark oder Käse im Frühstück und Vormittagssnack." },
@@ -80,7 +80,7 @@ static const LevelLocalization s_deLevels[] = {
     { 18, "Viskose Ballaststoffe (Regel 7)", "Flohsamen ≥ 90 Min. getrennt von Mineralstoff-Mahlzeiten", "Plane lösliche Ballaststoff-Getränke im Nachmittags-Fastenfenster ein." },
     { 19, "Post-Workout PepT1-Kinetik (Regel 6a)", "20–40g Protein innerhalb 105 Min. post-WO", "Trinke einen Whey-Shake oder verzehre schnelle Peptide direkt nach dem Training." },
     { 20, "Pre-Workout Glykämie & Magenverweildauer", "Niedriger/mittl. GI • Fett ≤ 28g • Beendet > 2.5h Pre-WO", "Verzehre magere Proteine mit Süßkartoffeln rechtzeitig vor der Einheit." },
-    { 21, "Hepcidin-Bypass (Regel 7)", "Eisen-Hauptmahlzeit außerhalb 3–6h post-WO", "Platziere die Haupteisenmahlzeit mittags, weit entfernt vom abendlichen Hepcidin-Peak." },
+    { 21, "Hepcidin-Fenster (Regel 7)", "Eisen-Hauptmahlzeit außerhalb 3–6h post-WO", "Platziere die Haupteisenmahlzeit mittags, weit entfernt vom abendlichen Hepcidin-Peak." },
     { 22, "Zirkadiane Leucin- & MPS-Verteilung", "≥ 2.0g L-Leucin in jeder der Hauptmahlzeiten", "Verteile hochwertiges Protein gleichmäßig auf Frühstück, Mittag- und Abendessen." },
     { 23, "Abendlicher LAT1 Tryptophan-Transport (Regel 6b)", "Tryptophan:LNAA Verhältnis ≥ 0.07 am Abend • Kein BCAA-Bolus", "Verzichte abends auf BCAA-Präparate und setze auf komplexe Kohlenhydrate und Kürbiskerne." },
     { 24, "Großmeister der Bio-Architektur", "Alle 23 Bedingungen gleichzeitig erfüllt", "Vollständige Synchronisation erreicht durch den verifizierten Golden Day Plan." }

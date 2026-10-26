@@ -66,6 +66,13 @@ This document collects architectural enhancements, biological edge cases, and us
 * **Proposed Feature:**
   * On native Android and iOS devices, integrate live camera viewfinder scanning using Qt Multimedia (`QMediaCaptureSession`, `QVideoSink`) or a lightweight WASM/native barcode decoder library (such as ZXing-C++).
 
+### 3.4 Additional Language Localizations (Français, Español, Italiano) & Statutory Legal Texts
+* **Current Behavior:** German (`de`) and English (`en`) are 100% localized with 12,900+ entries across all 17 QML views, 32 recipes, and biochem coaching tips. `LanguageManager::availableLanguages()` supports toggling French, Spanish, and Italian via `showAllLanguages`, but those languages currently fall back to English.
+* **Proposed Feature:**
+  * Add `qtspeis_fr.ts`, `qtspeis_es.ts`, and `qtspeis_it.ts` translation catalogs.
+  * Translate the UI, nutrients, and common ingredients into French, Spanish, and Italian.
+  * Keep the verbatim statutory legal texts in `AboutLegalDialog.qml` (GNU GPLv3, USDA public domain, ANSES Licence Ouverte, FSVO Swiss OGD) in their statutory original languages, while providing optional localized plain-language summaries.
+
 ---
 
 ## 4. Scope & Architecture

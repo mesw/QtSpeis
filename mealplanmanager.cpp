@@ -140,7 +140,7 @@ struct SportInfo {
 };
 
 static const SportInfo s_sports[] = {
-    { "endurance_power", "Ausdauersport mit hohem Krafteinsatz", "Endurance with High Power",
+    { "endurance_power", "Ausdauersport mit hohem Krafteinsatz", "Endurance with high strength demand",
       "Radsport, Schwimmen, Triathlon, Rudern, Biathlon, Bergsteigen", "Cycling, Swimming, Triathlon, Rowing, Biathlon, Mountaineering",
       55.0, 50.0, 58.0, 15.0, 12.0, 18.0, 30.0, 27.0, 33.0 },
     { "endurance_pure", "Ausdauersportarten", "Pure Endurance",
