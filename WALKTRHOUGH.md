@@ -393,12 +393,23 @@
 19. **Mnemonic Underscore Typos (`⭐ Finish _Grade Meal Plan`, `💾 Files _Backup`) & Duplicate Stars (`⭐⭐⭐` + `★★★`) (#2, #17, #39).**
 20. **Hardcoded `50% C • 25% P • 25% F` Subtitle in Grading Modal (#16):** Contradicts both the athlete's sport profile and actual meal macros.
 
-### Priority 3: Localization, Onboarding & Core UX Architecture
-21. **Incomplete German Localization ("Denglish" UI) (#6, #17, #39):** ~85% of QML labels remain hardcoded in English after switching to German and restarting.
-22. **Zero-State Onboarding & Level Briefings (#1, #18, #28):** Add a first-launch welcome/profile setup flow and clear plain-language level objective briefings (with live pass/fail sub-goal checklists in the sidebar).
-23. **Meal-Scoped Ingredient Selection (#11):** Add ingredients directly from the Meal Card context rather than choosing a target meal inside the global Explorer.
-24. **Show Sorted Nutrient Value on Explorer Rows & Realistic Spice Portions (#31, #32a, #49):** Dynamically display the sorted nutrient's value on each row, link level constraints directly to sorted Explorer views, and use `1g–5g` serving sizes/steps for spices like `Kurkuma` and `Salz`.
-25. **Gate `Next Level →` Behind Passing the Level's Core Constraint (#23):** Prevent `1 Star (Teilerfolg)` (calories-only) from unlocking the next level when the level's biochemical constraint failed.
+### Priority 3: Localization, Onboarding & Core UX Architecture (COMPLETED ✅)
+21. **Incomplete German Localization ("Denglish" UI) (#6, #17, #39):** ✅ RESOLVED. Added dynamic runtime dictionary cross-lookup (`initGermanDictionary`) in `LanguageManager`, wired dynamic `QTranslator` installation/removal on language change, persisted language selection directly in WebAssembly `localStorage` (preventing reload loss), and localized all dialogs, chips, headers, and evaluation cards.
+22. **Zero-State Onboarding & Level Briefings (#1, #18, #28):** ✅ RESOLVED. Created `OnboardingDialog.qml` with a 3-step introductory walkthrough (Athlete Profile & BMR, Daily Meal Planning, Level Progression & Biochemical Mastery) triggered automatically on first launch and accessible via `❓ Einführung / Guide` in the top bar. Added live pass/fail sub-goal checklists in `GoalSummaryCard.qml` with dynamic target tracking and multi-criteria breakdown (e.g. Level 5 Omega-3 and Ω-6 : Ω-3 ratio).
+23. **Meal-Scoped Ingredient Selection (#11):** ✅ RESOLVED. Added `🔬 Explorer` button directly inside each meal card header in `CozyShoppingList.qml` that opens `IngredientExplorerDialog.qml` pre-scoped to that specific meal (`openForMeal(mealIndex)`).
+24. **Show Sorted Nutrient Value on Explorer Rows & Realistic Spice Portions (#31, #32a, #49):** ✅ RESOLVED. Added dynamic sorted nutrient badges on each ingredient card (`🐟 Ω-3: 17.80g`, `⚡ K: 2525mg`, etc.) in `IngredientExplorerDialog.qml`. Added `🔬 Passende Zutaten im Explorer finden` direct shortcut from the sidebar level constraint card. Added spice/condiment detection for realistic serving sizes (`1g–5g`), fine-grained `1g` step increments, and quick-add chips `[1, 2, 5, 10, 15]g`.
+25. **Gate `Next Level →` Behind Passing the Level's Core Constraint (#23):** ✅ RESOLVED. Gated level progression so `1 Star (Teilerfolg)` (calories-only) no longer unlocks subsequent levels when the biochemical constraint fails (`unlocked = (lvlNum == 1) || (prevStars >= 2)`). Gated `Next Level →` button in `EvaluationResultDialog.qml` behind `root.resultData.stars >= 2 && Boolean(root.resultData.primaryConstraintMet)`, with a clear warning callout explaining why the next level is locked.
+
+### Results Screen Feature: Chrono-Nutrient Intake & Timing Dual Chart (COMPLETED ✅)
+- **Interactive Chrono-Nutrient Timeline (`EvaluationResultDialog.qml` & `GameLevelManager`):**
+  - Displays meal timing and nutrient intake across a 24-hour timeline (`00:00` to `24:00`).
+  - **Dual Visualization:**
+    - **Bar Plot (Meal Intake):** Vertical bars positioned at each meal's scheduled time, with meal icons and amount badges.
+    - **Superimposed Line Plot (Cumulative Total):** Smooth curve showing cumulative daily intake with gradient fill and data point markers.
+    - **Target Reference Line:** Dashed horizontal indicator displaying daily requirement thresholds.
+    - **Diurnal Target Windows:** Shaded active time windows for timing-critical levels (e.g., Level 14 Evening Mg window ≥ 18:00, Level 13 Morning Ca window < 13:00, Level 19 Post-workout PepT1 window, Level 20 Pre-workout energy window).
+  - **Quick Nutrient Switcher:** Interactive pill selector to toggle chart between active level goal, calories, protein, carbs, fat, fiber, magnesium, calcium, omega-3, and potassium.
+  - **Contextual Timing Feedback:** Dynamic badge summarizing whether the nutrient was consumed inside optimal chronobiological windows.
 
 
 

@@ -9,6 +9,10 @@
 #include <QSettings>
 #include <cstdio>
 
+#if defined(QTSPEIS_WASM) || defined(__EMSCRIPTEN__)
+#include <emscripten.h>
+#endif
+
 static void customLogHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
     Q_UNUSED(type); Q_UNUSED(context);
@@ -48,6 +52,25 @@ int main(int argc, char *argv[])
 
     QSettings settings;
     QString appLang = settings.value(QStringLiteral("appLanguage"), QStringLiteral("en")).toString().trimmed().toLower();
+#if defined(QTSPEIS_WASM) || defined(__EMSCRIPTEN__)
+    char *wasmSavedLang = (char*)EM_ASM_PTR({
+        try {
+            var l = localStorage.getItem('appLanguage');
+            if (!l) return 0;
+            var len = lengthBytesUTF8(l) + 1;
+            var p = _malloc(len);
+            stringToUTF8(l, p, len);
+            return p;
+        } catch(e) { return 0; }
+    });
+    if (wasmSavedLang) {
+        QString s = QString::fromUtf8(wasmSavedLang).trimmed().toLower();
+        free(wasmSavedLang);
+        if (s == QStringLiteral("de") || s == QStringLiteral("en")) {
+            appLang = s;
+        }
+    }
+#endif
     QTranslator translator;
     if (appLang == QStringLiteral("de")) {
         if (translator.load(QStringLiteral(":/translations/qtspeis_de.qm")) ||

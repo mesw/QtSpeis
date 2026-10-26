@@ -76,6 +76,10 @@ Window {
         foodDb.currentLanguage = langManager.currentLanguage;
         mealPlanManager.updateLanguage(langManager.currentLanguage, foodDb);
         mealPlanManager.syncToDayPlanModel(dayPlanModel);
+
+        if (gameLevelManager && !gameLevelManager.isOnboardingCompleted()) {
+            onboardingDialog.open();
+        }
     }
 
     // --- Main Layout ---
@@ -310,6 +314,38 @@ Window {
                     }
                 }
 
+                // Guide & Onboarding Button
+                Rectangle {
+                    implicitHeight: 36
+                    Layout.preferredHeight: 36
+                    radius: 8
+                    color: guideHover.containsMouse ? "#EFF6FF" : "#F5F5F4"
+                    border.color: guideHover.containsMouse ? "#93C5FD" : "#E7E5E4"
+                    implicitWidth: guideBtnRow.implicitWidth + 16
+                    Layout.preferredWidth: implicitWidth
+
+                    MouseArea {
+                        id: guideHover
+                        anchors.fill: parent
+                        hoverEnabled: true
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: onboardingDialog.open()
+                    }
+
+                    RowLayout {
+                        id: guideBtnRow
+                        anchors.centerIn: parent
+                        spacing: 6
+                        Label { text: "❓"; font.pixelSize: 13 }
+                        Label {
+                            text: (langManager && langManager.currentLanguage === "de") ? "Einführung" : "Guide"
+                            font.bold: true
+                            font.pixelSize: 11
+                            color: "#1E40AF"
+                        }
+                    }
+                }
+
                 // Grade / Finish Plan Button
                 Button {
                     id: headerGradeBtn
@@ -510,6 +546,7 @@ Window {
                         onOpenRecipeLibraryRequested: (category) => recipeLibraryDialog.openWithCategory(category)
                         onOpenWorkoutLibraryRequested: () => workoutLibraryDialog.open()
                         onOpenIngredientExplorerRequested: () => ingredientExplorerDialog.open()
+                        onBrowseMealRequested: (mealIndex) => ingredientExplorerDialog.openForMeal(mealIndex)
                     }
 
                     GoalSummaryCard {
@@ -520,6 +557,7 @@ Window {
                         langManager: langManager
                         onEvaluateRequested: evaluateCurrentPlan()
                         onProfileRequested: profileDialog.open()
+                        onOpenSortedExplorerRequested: (nutrientKey) => ingredientExplorerDialog.openWithSort(nutrientKey)
                     }
                 }
 
@@ -559,6 +597,7 @@ Window {
                                     onOpenRecipeLibraryRequested: (category) => recipeLibraryDialog.openWithCategory(category)
                                     onOpenWorkoutLibraryRequested: () => workoutLibraryDialog.open()
                                     onOpenIngredientExplorerRequested: () => ingredientExplorerDialog.open()
+                                    onBrowseMealRequested: (mealIndex) => ingredientExplorerDialog.openForMeal(mealIndex)
                                 }
 
                                 // Sticky Bottom Summary Pill on Mobile
@@ -659,6 +698,7 @@ Window {
     EvaluationResultDialog {
         id: evalDialog
         gameLevelManager: gameLevelManager
+        mealPlanManager: mealPlanManager
         langManager: langManager
         onLevelSelectRequested: viewStack.currentIndex = 1
     }
@@ -711,5 +751,12 @@ Window {
     AboutLegalDialog {
         id: aboutLegalDialog
         langManager: langManager
+    }
+
+    OnboardingDialog {
+        id: onboardingDialog
+        gameLevelManager: gameLevelManager
+        langManager: langManager
+        onCustomizeProfileRequested: profileDialog.open()
     }
 }

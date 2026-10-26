@@ -113,11 +113,15 @@ Dialog {
                     border.color: root.currentTab === 0 ? "#CBD5E1" : "transparent"
                     Button {
                         anchors.fill: parent
-                        text: (langManager ? langManager.t("tab_slots") : "📁 Save Slots") + " (" + (savegameManager ? savegameManager.slotCount : 0) + ")"
                         flat: true
-                        font.bold: root.currentTab === 0
-                        font.pixelSize: 11
-                        palette.buttonText: root.currentTab === 0 ? "#D97706" : "#64748B"
+                        contentItem: Label {
+                            text: (langManager ? langManager.t("tab_slots") : "📁 Save Slots") + " (" + (savegameManager ? savegameManager.slotCount : 0) + ")"
+                            font.bold: root.currentTab === 0
+                            font.pixelSize: 11
+                            color: root.currentTab === 0 ? "#D97706" : "#64748B"
+                            horizontalAlignment: Text.AlignHCenter
+                            verticalAlignment: Text.AlignVCenter
+                        }
                         onClicked: root.currentTab = 0
                     }
                 }
@@ -130,11 +134,15 @@ Dialog {
                     border.color: root.currentTab === 1 ? "#CBD5E1" : "transparent"
                     Button {
                         anchors.fill: parent
-                        text: (langManager ? langManager.t("tab_files") : "💾 Files & Backup").replace(/&/g, "&&")
                         flat: true
-                        font.bold: root.currentTab === 1
-                        font.pixelSize: 11
-                        palette.buttonText: root.currentTab === 1 ? "#D97706" : "#64748B"
+                        contentItem: Label {
+                            text: langManager ? langManager.t("tab_files") : "💾 Files & Backup"
+                            font.bold: root.currentTab === 1
+                            font.pixelSize: 11
+                            color: root.currentTab === 1 ? "#D97706" : "#64748B"
+                            horizontalAlignment: Text.AlignHCenter
+                            verticalAlignment: Text.AlignVCenter
+                        }
                         onClicked: root.currentTab = 1
                     }
                 }
@@ -473,7 +481,7 @@ Dialog {
                         Button {
                             Layout.fillWidth: true
                             Layout.preferredHeight: root.isNarrow ? 38 : 42
-                            text: "📥 Export File (.json)"
+                            text: "📤 Export File (.json)"
                             font.bold: true
                             font.pixelSize: 11
                             palette.buttonText: "#15803D"
@@ -494,7 +502,7 @@ Dialog {
                         Button {
                             Layout.fillWidth: true
                             Layout.preferredHeight: root.isNarrow ? 38 : 42
-                            text: "📤 Import File (.json)"
+                            text: "📥 Import File (.json)"
                             font.bold: true
                             font.pixelSize: 11
                             palette.buttonText: "#2563EB"

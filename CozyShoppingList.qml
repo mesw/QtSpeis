@@ -19,6 +19,7 @@ Item {
     signal openRecipeLibraryRequested(string category)
     signal openWorkoutLibraryRequested()
     signal openIngredientExplorerRequested()
+    signal browseMealRequested(int mealIndex)
 
     readonly property bool isNarrow: root.width < 560
 
@@ -1462,6 +1463,26 @@ Item {
                                         }
                                     }
                                 }
+                            }
+
+                            // Browse in Ingredient Explorer scoped to this meal
+                            Button {
+                                id: mealExplorerBtn
+                                text: mealCard.isNarrowCard ? "🔬" : ("🔬 " + (langManager ? langManager.t("browse_explorer_btn") : "Explorer"))
+                                font.pixelSize: 11
+                                font.bold: true
+                                Layout.preferredHeight: 36
+                                Layout.preferredWidth: mealCard.isNarrowCard ? 38 : -1
+                                palette.buttonText: "#B45309"
+                                background: Rectangle {
+                                    radius: 8
+                                    color: mealExplorerBtn.down ? "#FDE68A" : (mealExplorerBtn.hovered ? "#FEF3C7" : "#FFFBEB")
+                                    border.color: "#FDE68A"
+                                    border.width: 1
+                                }
+                                ToolTip.visible: hovered
+                                ToolTip.text: langManager ? langManager.t("open_explorer_for_meal") : "Browse full ingredient database for this meal"
+                                onClicked: root.browseMealRequested(mealIndex)
                             }
 
                             // Scan Barcode Button

@@ -104,7 +104,7 @@ void GameLevelManager::initializeLevels()
                 while (q.next()) {
                     int lvlNum = q.value(QStringLiteral("level_number")).toInt();
                     int stars = getStars(lvlNum);
-                    bool unlocked = (lvlNum == 1) || (prevStars >= 1);
+                    bool unlocked = (lvlNum == 1) || (prevStars >= 2);
 
                     QVariantMap l;
                     l[QStringLiteral("id")] = lvlNum;
@@ -132,7 +132,9 @@ void GameLevelManager::initializeLevels()
                         }
                     }
                     if (lvlNum == 2) {
-                        l[QStringLiteral("subtitle")] = QStringLiteral("55% Carbs • 12–18% Protein • 27–33% Fat (Sport Profile)");
+                        if (!isDe) {
+                            l[QStringLiteral("subtitle")] = QStringLiteral("55% Carbs • 12–18% Protein • 27–33% Fat (Sport Profile)");
+                        }
                         l[QStringLiteral("badge")] = QStringLiteral("⚖ 55 / 15 / 30");
                     } else if (lvlNum == 5) {
                         l[QStringLiteral("badge")] = QStringLiteral("🐟 Omega-6 : Omega-3 ≤ 4:1");
@@ -197,7 +199,7 @@ void GameLevelManager::initializeLevels()
         int prevStars = 3;
         for (const auto &fb : fallbacks) {
             int stars = getStars(fb.num);
-            bool unlocked = (fb.num == 1) || (prevStars >= 1);
+            bool unlocked = (fb.num == 1) || (prevStars >= 2);
 
             QVariantMap l;
             l[QStringLiteral("id")] = fb.num;
@@ -428,6 +430,17 @@ void GameLevelManager::resetAllProgress()
     emit currentLevelChanged();
     emit activeHeroModifiersChanged();
     emit heroModifiersChanged();
+}
+
+bool GameLevelManager::isOnboardingCompleted() const
+{
+    return m_settings.value(QStringLiteral("onboardingDone"), false).toBool();
+}
+
+void GameLevelManager::setOnboardingCompleted(bool completed)
+{
+    m_settings.setValue(QStringLiteral("onboardingDone"), completed);
+    m_settings.sync();
 }
 
 QVariantMap GameLevelManager::checkAllLevelConstraints(MealPlanManager *planManager)
@@ -1309,6 +1322,7 @@ QVariantMap GameLevelManager::evaluatePlan(MealPlanManager *planManager)
     res[QStringLiteral("levelId")] = levelId;
     res[QStringLiteral("stars")] = stars;
     res[QStringLiteral("starTitle")] = title;
+    res[QStringLiteral("primaryConstraintMet")] = primaryConstraintMet;
     res[QStringLiteral("targetCalories")] = targetCal;
     res[QStringLiteral("actualCalories")] = actualCal;
     res[QStringLiteral("calorieDiff")] = calDiff;
@@ -1324,7 +1338,304 @@ QVariantMap GameLevelManager::evaluatePlan(MealPlanManager *planManager)
     res[QStringLiteral("constraints")] = constraints;
     res[QStringLiteral("heroConstraints")] = heroResults;
     res[QStringLiteral("coachingTip")] = tip;
+    res[QStringLiteral("chronoData")] = getChronoNutrientData(planManager, levelId);
 
     emit evaluationCompleted(res);
     return res;
+}
+
+QVariantMap GameLevelManager::getChronoNutrientData(MealPlanManager *planManager, int levelId, const QString &customNutrientKey) const
+{
+    QVariantMap result;
+    if (!planManager) return result;
+
+    bool isDe = (LanguageManager::instance() && LanguageManager::instance()->currentLanguage() == QStringLiteral("de"));
+
+    QString key = customNutrientKey.trimmed();
+    QString nameEn;
+    QString nameDe;
+    QString unit = QStringLiteral("g");
+    double targetVal = 0.0;
+    int windowStartMin = -1;
+    int windowEndMin = -1;
+    QString windowType = QStringLiteral("none");
+    double windowTargetPct = 0.0;
+
+    int workoutMins = 16 * 60 + 30;
+    QVariantList meals = planManager->meals();
+    for (const auto &mVal : meals) {
+        QVariantMap m = mVal.toMap();
+        if (m.value(QStringLiteral("isWorkout")).toBool()) {
+            workoutMins = parseTimeToMinutes(m.value(QStringLiteral("time")).toString());
+            break;
+        }
+    }
+
+    if (key.isEmpty()) {
+        switch (levelId) {
+        case 1:
+            key = QStringLiteral("calories");
+            nameEn = QStringLiteral("Energy (Calories)");
+            nameDe = QStringLiteral("Energie (Kalorien)");
+            unit = QStringLiteral("kcal");
+            targetVal = planManager->targetCalories();
+            break;
+        case 2:
+            key = QStringLiteral("protein");
+            nameEn = QStringLiteral("Protein (Macro Split)");
+            nameDe = QStringLiteral("Protein (Makro-Split)");
+            unit = QStringLiteral("g");
+            targetVal = (planManager->targetCalories() * planManager->targetProteinPercent() / 100.0) / 4.0;
+            break;
+        case 3:
+            key = QStringLiteral("fiber");
+            nameEn = QStringLiteral("Dietary Fiber");
+            nameDe = QStringLiteral("Ballaststoffe");
+            unit = QStringLiteral("g");
+            targetVal = 35.0;
+            break;
+        case 4:
+            key = QStringLiteral("satFat");
+            nameEn = QStringLiteral("Saturated Fat");
+            nameDe = QStringLiteral("Gesättigte Fettsäuren");
+            unit = QStringLiteral("g");
+            targetVal = (planManager->targetCalories() * 0.08) / 9.0;
+            break;
+        case 5:
+            key = QStringLiteral("omega3");
+            nameEn = QStringLiteral("Omega-3 Fatty Acids");
+            nameDe = QStringLiteral("Omega-3 Fettsäuren");
+            unit = QStringLiteral("g");
+            targetVal = 2.5;
+            break;
+        case 6:
+            key = QStringLiteral("potassium");
+            nameEn = QStringLiteral("Potassium (K)");
+            nameDe = QStringLiteral("Kalium (K)");
+            unit = QStringLiteral("mg");
+            targetVal = 3500.0;
+            break;
+        case 7:
+            key = QStringLiteral("calcium");
+            nameEn = QStringLiteral("Calcium (Ca)");
+            nameDe = QStringLiteral("Calcium (Ca)");
+            unit = QStringLiteral("mg");
+            targetVal = 1000.0;
+            break;
+        case 8:
+            key = QStringLiteral("zinc");
+            nameEn = QStringLiteral("Zinc (Zn)");
+            nameDe = QStringLiteral("Zink (Zn)");
+            unit = QStringLiteral("mg");
+            targetVal = 11.0;
+            break;
+        case 9:
+            key = QStringLiteral("calories");
+            nameEn = QStringLiteral("Seasonal Energy");
+            nameDe = QStringLiteral("Saisonale Energie");
+            unit = QStringLiteral("kcal");
+            targetVal = planManager->targetCalories();
+            break;
+        case 10:
+            key = QStringLiteral("vitaminC");
+            nameEn = QStringLiteral("Vitamin C (Enhancer)");
+            nameDe = QStringLiteral("Vitamin C (Verstärker)");
+            unit = QStringLiteral("mg");
+            targetVal = 75.0;
+            break;
+        case 11:
+            key = QStringLiteral("fat");
+            nameEn = QStringLiteral("Lipid Matrix (Fat)");
+            nameDe = QStringLiteral("Lipidmatrix (Fett)");
+            unit = QStringLiteral("g");
+            targetVal = (planManager->targetCalories() * planManager->targetFatPercent() / 100.0) / 9.0;
+            break;
+        case 12:
+            key = QStringLiteral("vitaminE");
+            nameEn = QStringLiteral("Vitamin E");
+            nameDe = QStringLiteral("Vitamin E");
+            unit = QStringLiteral("mg");
+            targetVal = 12.0;
+            break;
+        case 13:
+            key = QStringLiteral("calcium");
+            nameEn = QStringLiteral("Morning Calcium Gate (< 13:00)");
+            nameDe = QStringLiteral("Morgendliches Calcium-Fenster (< 13:00)");
+            unit = QStringLiteral("mg");
+            targetVal = 1000.0;
+            windowStartMin = 0;
+            windowEndMin = 13 * 60;
+            windowType = QStringLiteral("before");
+            windowTargetPct = 60.0;
+            break;
+        case 14:
+            key = QStringLiteral("magnesium");
+            nameEn = QStringLiteral("Evening Magnesium Window (≥ 18:00)");
+            nameDe = QStringLiteral("Abendliches Magnesium-Fenster (≥ 18:00)");
+            unit = QStringLiteral("mg");
+            targetVal = 400.0;
+            windowStartMin = 18 * 60;
+            windowEndMin = 24 * 60;
+            windowType = QStringLiteral("after");
+            windowTargetPct = 50.0;
+            break;
+        case 15:
+        case 16:
+        case 21:
+            key = QStringLiteral("iron");
+            nameEn = QStringLiteral("Iron (Fe)");
+            nameDe = QStringLiteral("Eisen (Fe)");
+            unit = QStringLiteral("mg");
+            targetVal = 14.0;
+            break;
+        case 17:
+        case 18:
+            key = QStringLiteral("fiber");
+            nameEn = QStringLiteral("Dietary Fiber");
+            nameDe = QStringLiteral("Ballaststoffe");
+            unit = QStringLiteral("g");
+            targetVal = 35.0;
+            break;
+        case 19:
+            key = QStringLiteral("protein");
+            nameEn = QStringLiteral("Post-Workout Protein (PepT1)");
+            nameDe = QStringLiteral("Post-Workout Protein (PepT1)");
+            unit = QStringLiteral("g");
+            targetVal = 30.0;
+            windowStartMin = workoutMins;
+            windowEndMin = workoutMins + 105;
+            windowType = QStringLiteral("post_workout");
+            windowTargetPct = 100.0;
+            break;
+        case 20:
+            key = QStringLiteral("carbs");
+            nameEn = QStringLiteral("Pre-Workout Carbs");
+            nameDe = QStringLiteral("Pre-Workout Kohlenhydrate");
+            unit = QStringLiteral("g");
+            targetVal = 50.0;
+            windowStartMin = 0;
+            windowEndMin = std::max(0, workoutMins - 150);
+            windowType = QStringLiteral("pre_workout");
+            break;
+        case 22:
+            key = QStringLiteral("leucine");
+            nameEn = QStringLiteral("L-Leucine (MPS Threshold)");
+            nameDe = QStringLiteral("L-Leucin (MPS-Schwelle)");
+            unit = QStringLiteral("g");
+            targetVal = 2.5;
+            break;
+        case 23:
+            key = QStringLiteral("tryptophan");
+            nameEn = QStringLiteral("Evening L-Tryptophan");
+            nameDe = QStringLiteral("Abendliches L-Tryptophan");
+            unit = QStringLiteral("g");
+            targetVal = 0.20;
+            windowStartMin = 18 * 60;
+            windowEndMin = 24 * 60;
+            windowType = QStringLiteral("after");
+            break;
+        case 24:
+        default:
+            key = QStringLiteral("calories");
+            nameEn = QStringLiteral("Daily Energy (Calories)");
+            nameDe = QStringLiteral("Tagesenergie (Kalorien)");
+            unit = QStringLiteral("kcal");
+            targetVal = planManager->targetCalories();
+            break;
+        }
+    } else {
+        if (key == QStringLiteral("calories")) {
+            nameEn = QStringLiteral("Energy (Calories)"); nameDe = QStringLiteral("Energie (Kalorien)"); unit = QStringLiteral("kcal"); targetVal = planManager->targetCalories();
+        } else if (key == QStringLiteral("carbs")) {
+            nameEn = QStringLiteral("Carbohydrates"); nameDe = QStringLiteral("Kohlenhydrate"); unit = QStringLiteral("g"); targetVal = (planManager->targetCalories() * planManager->targetCarbPercent() / 100.0) / 4.0;
+        } else if (key == QStringLiteral("protein")) {
+            nameEn = QStringLiteral("Protein"); nameDe = QStringLiteral("Protein"); unit = QStringLiteral("g"); targetVal = (planManager->targetCalories() * planManager->targetProteinPercent() / 100.0) / 4.0;
+        } else if (key == QStringLiteral("fat")) {
+            nameEn = QStringLiteral("Fat"); nameDe = QStringLiteral("Fett"); unit = QStringLiteral("g"); targetVal = (planManager->targetCalories() * planManager->targetFatPercent() / 100.0) / 9.0;
+        } else if (key == QStringLiteral("fiber")) {
+            nameEn = QStringLiteral("Fiber"); nameDe = QStringLiteral("Ballaststoffe"); unit = QStringLiteral("g"); targetVal = 35.0;
+        } else if (key == QStringLiteral("magnesium")) {
+            nameEn = QStringLiteral("Magnesium"); nameDe = QStringLiteral("Magnesium"); unit = QStringLiteral("mg"); targetVal = 400.0;
+        } else if (key == QStringLiteral("calcium")) {
+            nameEn = QStringLiteral("Calcium"); nameDe = QStringLiteral("Calcium"); unit = QStringLiteral("mg"); targetVal = 1000.0;
+        } else if (key == QStringLiteral("potassium")) {
+            nameEn = QStringLiteral("Potassium"); nameDe = QStringLiteral("Kalium"); unit = QStringLiteral("mg"); targetVal = 3500.0;
+        } else if (key == QStringLiteral("omega3")) {
+            nameEn = QStringLiteral("Omega-3"); nameDe = QStringLiteral("Omega-3"); unit = QStringLiteral("g"); targetVal = 2.5;
+        } else if (key == QStringLiteral("iron")) {
+            nameEn = QStringLiteral("Iron"); nameDe = QStringLiteral("Eisen"); unit = QStringLiteral("mg"); targetVal = 14.0;
+        } else if (key == QStringLiteral("zinc")) {
+            nameEn = QStringLiteral("Zinc"); nameDe = QStringLiteral("Zink"); unit = QStringLiteral("mg"); targetVal = 11.0;
+        } else if (key == QStringLiteral("vitaminC")) {
+            nameEn = QStringLiteral("Vitamin C"); nameDe = QStringLiteral("Vitamin C"); unit = QStringLiteral("mg"); targetVal = 75.0;
+        } else {
+            nameEn = key; nameDe = key; unit = QStringLiteral("g"); targetVal = 10.0;
+        }
+    }
+
+    double runningTotal = 0.0;
+    double windowAmount = 0.0;
+    double maxMealAmount = 0.0;
+    QVariantList mealEntries;
+
+    for (int i = 0; i < meals.size(); ++i) {
+        QVariantMap m = meals[i].toMap();
+        bool isWo = m.value(QStringLiteral("isWorkout")).toBool();
+        QString timeStr = m.value(QStringLiteral("time")).toString();
+        int mins = parseTimeToMinutes(timeStr);
+        double amt = m.value(key, 0.0).toDouble();
+
+        if (amt > maxMealAmount) maxMealAmount = amt;
+        runningTotal += amt;
+
+        bool inWindow = false;
+        if (windowType == QStringLiteral("before")) {
+            inWindow = (mins <= windowEndMin);
+        } else if (windowType == QStringLiteral("after")) {
+            inWindow = (mins >= windowStartMin);
+        } else if (windowType == QStringLiteral("post_workout") || windowType == QStringLiteral("pre_workout")) {
+            inWindow = (mins >= windowStartMin && mins <= windowEndMin);
+        }
+        if (inWindow) {
+            windowAmount += amt;
+        }
+
+        QVariantMap entry;
+        entry[QStringLiteral("index")] = i;
+        entry[QStringLiteral("title")] = m.value(QStringLiteral("title")).toString();
+        entry[QStringLiteral("time")] = timeStr;
+        entry[QStringLiteral("minutes")] = mins;
+        entry[QStringLiteral("icon")] = m.value(QStringLiteral("icon"), QStringLiteral("🍽️")).toString();
+        entry[QStringLiteral("isWorkout")] = isWo;
+        entry[QStringLiteral("amount")] = amt;
+        entry[QStringLiteral("cumulative")] = runningTotal;
+        entry[QStringLiteral("inWindow")] = inWindow;
+        mealEntries.append(entry);
+    }
+
+    double totalAmount = runningTotal;
+    for (int i = 0; i < mealEntries.size(); ++i) {
+        QVariantMap entry = mealEntries[i].toMap();
+        double amt = entry.value(QStringLiteral("amount")).toDouble();
+        entry[QStringLiteral("pctOfTotal")] = (totalAmount > 0.001) ? (amt / totalAmount * 100.0) : 0.0;
+        mealEntries[i] = entry;
+    }
+
+    double windowActualPct = (totalAmount > 0.001) ? (windowAmount / totalAmount * 100.0) : 0.0;
+
+    result[QStringLiteral("nutrientKey")] = key;
+    result[QStringLiteral("nutrientName")] = isDe ? nameDe : nameEn;
+    result[QStringLiteral("nutrientUnit")] = unit;
+    result[QStringLiteral("targetDaily")] = targetVal;
+    result[QStringLiteral("totalAmount")] = totalAmount;
+    result[QStringLiteral("maxMealAmount")] = maxMealAmount;
+    result[QStringLiteral("windowStartMin")] = windowStartMin;
+    result[QStringLiteral("windowEndMin")] = windowEndMin;
+    result[QStringLiteral("windowType")] = windowType;
+    result[QStringLiteral("windowTargetPct")] = windowTargetPct;
+    result[QStringLiteral("windowAmount")] = windowAmount;
+    result[QStringLiteral("windowActualPct")] = windowActualPct;
+    result[QStringLiteral("meals")] = mealEntries;
+
+    return result;
 }

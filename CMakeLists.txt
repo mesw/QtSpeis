@@ -50,6 +50,7 @@ qt_add_qml_module(appQtSpeis
         WorkoutLibraryDialog.qml
         AboutLegalDialog.qml
         IngredientExplorerDialog.qml
+        OnboardingDialog.qml
     RESOURCES
         qtquickcontrols2.conf
         all_32_recipes_detailed.json

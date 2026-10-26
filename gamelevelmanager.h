@@ -37,6 +37,7 @@ public:
     Q_INVOKABLE void saveStars(int levelId, int stars);
     Q_INVOKABLE QVariantMap evaluatePlan(MealPlanManager *planManager);
     Q_INVOKABLE QVariantMap checkAllLevelConstraints(MealPlanManager *planManager);
+    Q_INVOKABLE QVariantMap getChronoNutrientData(MealPlanManager *planManager, int levelId, const QString &customNutrientKey = QString()) const;
 
     Q_INVOKABLE void toggleHeroModifier(const QString &heroId);
     Q_INVOKABLE bool isHeroModifierActive(const QString &heroId) const;
@@ -44,6 +45,8 @@ public:
     Q_INVOKABLE void loadGoldenPlan(MealPlanManager *planManager, QObject *foodDbObj = nullptr);
     Q_INVOKABLE void cheatSolveAll(MealPlanManager *planManager, QObject *foodDbObj = nullptr);
     Q_INVOKABLE void resetAllProgress();
+    Q_INVOKABLE bool isOnboardingCompleted() const;
+    Q_INVOKABLE void setOnboardingCompleted(bool completed);
 
 signals:
     void currentLevelChanged();

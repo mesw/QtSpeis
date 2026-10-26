@@ -27,6 +27,68 @@ Dialog {
     property real addAmount: 100
     property int targetMealIndex: 0
     property string feedbackMessage: ""
+    property bool preserveStateOnShow: false
+
+    function openForMeal(mealIndex, preselectedSortBy) {
+        targetMealIndex = mealIndex;
+        if (preselectedSortBy) {
+            sortBy = preselectedSortBy;
+            sortAscending = false;
+        }
+        preserveStateOnShow = true;
+        foodList = refreshFoods();
+        root.open();
+    }
+
+    function openWithSort(nutrientKey) {
+        if (nutrientKey) {
+            sortBy = nutrientKey;
+            sortAscending = false;
+        }
+        preserveStateOnShow = true;
+        foodList = refreshFoods();
+        root.open();
+    }
+
+    function findMealOptionIndex(targetIdx) {
+        for (var i = 0; i < root.availableMealOptions.length; ++i) {
+            if (root.availableMealOptions[i].index === targetIdx) return i;
+        }
+        return 0;
+    }
+
+    function getSortedNutrientBadge(item) {
+        if (!item) return "";
+        var isDe = langManager && langManager.currentLanguage === "de";
+        switch (root.sortBy) {
+        case "omega_3":
+            return "🐟 Ω-3: " + (item.omega3 || 0).toFixed(2) + "g";
+        case "potassium":
+            return "⚡ K: " + Math.round(item.potassium || 0) + "mg";
+        case "fiber":
+            return "🌾 " + (isDe ? "Ballaststoffe: " : "Fiber: ") + (item.fiber || 0).toFixed(1) + "g";
+        case "magnesium":
+            return "✨ Mg: " + Math.round(item.magnesium || 0) + "mg";
+        case "calcium":
+            return "🥛 Ca: " + Math.round(item.calcium || 0) + "mg";
+        case "iron":
+            return "🩸 Fe: " + (item.iron || 0).toFixed(1) + "mg";
+        case "zinc":
+            return "🛡️ Zn: " + (item.zinc || 0).toFixed(1) + "mg";
+        case "vitamin_c":
+            return "🍊 Vit C: " + Math.round(item.vitaminC || 0) + "mg";
+        case "protein":
+            return "🍗 Protein: " + (item.protein || 0).toFixed(1) + "g";
+        case "carbs":
+            return "🌾 " + (isDe ? "Kohlenhydrate: " : "Carbs: ") + (item.carbs || 0).toFixed(1) + "g";
+        case "fat":
+            return "🥑 " + (isDe ? "Fett: " : "Fat: ") + (item.fat || 0).toFixed(1) + "g";
+        case "sat_fat":
+            return "🧈 " + (isDe ? "Ges. Fett: " : "SatFat: ") + (item.satFat || 0).toFixed(1) + "g";
+        default:
+            return "";
+        }
+    }
 
     readonly property var availableMealOptions: {
         if (!mealPlanManager || !mealPlanManager.meals) return [];
@@ -58,10 +120,14 @@ Dialog {
     property var foodList: refreshFoods()
 
     onAboutToShow: {
-        searchQuery = "";
-        selectedCategory = "All";
-        sortBy = "name";
-        sortAscending = true;
+        if (!preserveStateOnShow) {
+            searchQuery = "";
+            selectedCategory = "All";
+            sortBy = "name";
+            sortAscending = true;
+            targetMealIndex = 0;
+        }
+        preserveStateOnShow = false;
         expandedFoodId = -1;
         openSubsections = ({});
         feedbackMessage = "";
@@ -359,6 +425,17 @@ Dialog {
                     radius: 10
                     property bool isExpanded: (root.expandedFoodId === modelData.id)
                     property bool mineralsExpanded: Boolean(root.openSubsections[String(modelData.id)])
+                    readonly property bool isSpice: {
+                        var cat = String(modelData.category || "").toLowerCase();
+                        var name = String(modelData.name || "").toLowerCase();
+                        var sz = Number(modelData.servingSize || 0);
+                        return cat.indexOf("herb") !== -1 || cat.indexOf("spice") !== -1 ||
+                               cat.indexOf("gewürz") !== -1 || cat.indexOf("kräuter") !== -1 ||
+                               name.indexOf("salz") !== -1 || name.indexOf("salt") !== -1 ||
+                               name.indexOf("kurkuma") !== -1 || name.indexOf("turmeric") !== -1 ||
+                               name.indexOf("pfeffer") !== -1 || name.indexOf("pepper") !== -1 ||
+                               (sz > 0 && sz <= 10);
+                    }
 
                     color: isExpanded ? "#FFFDF9" : (cardHover.containsMouse ? "#FAFAF9" : "#FFFFFF")
                     border.color: isExpanded ? "#D97706" : (cardHover.containsMouse ? "#D6D3D1" : "#E7E5E4")
@@ -464,6 +541,27 @@ Dialog {
                                                     font.bold: true
                                                     color: modelData.ironType === "heme" ? "#B91C1C" : "#047857"
                                                 }
+                                            }
+                                        }
+                                    }
+
+                                    // Dynamic Sorted Nutrient Value Badge (Issue #24 / #32a)
+                                    Rectangle {
+                                        visible: root.sortBy !== "name" && root.sortBy !== "calories" && root.getSortedNutrientBadge(modelData) !== ""
+                                        radius: 6
+                                        color: "#EFF6FF"
+                                        border.color: "#BFDBFE"
+                                        implicitWidth: sortedNutrientLbl.implicitWidth + 10
+                                        implicitHeight: 20
+                                        RowLayout {
+                                            anchors.centerIn: parent
+                                            spacing: 2
+                                            Label {
+                                                id: sortedNutrientLbl
+                                                text: root.getSortedNutrientBadge(modelData)
+                                                font.pixelSize: 10
+                                                font.bold: true
+                                                color: "#1D4ED8"
                                             }
                                         }
                                     }
@@ -792,8 +890,12 @@ Dialog {
                                             font.pixelSize: 10
                                             model: root.availableMealOptions
                                             textRole: "title"
-                                            currentIndex: Math.min(root.targetMealIndex, Math.max(0, count - 1))
-                                            onActivated: (index) => root.targetMealIndex = index
+                                            currentIndex: root.findMealOptionIndex(root.targetMealIndex)
+                                            onActivated: (idx) => {
+                                                if (idx >= 0 && idx < root.availableMealOptions.length) {
+                                                    root.targetMealIndex = root.availableMealOptions[idx].index;
+                                                }
+                                            }
                                         }
 
                                         // Amount input
@@ -807,10 +909,10 @@ Dialog {
                                             id: portionSpin
                                             Layout.preferredWidth: 126
                                             Layout.preferredHeight: 32
-                                            from: 10
-                                            to: 1000
-                                            stepSize: 10
-                                            value: root.addAmount
+                                            from: foodCard.isSpice ? 1 : 10
+                                            to: foodCard.isSpice ? 250 : 1000
+                                            stepSize: foodCard.isSpice ? 1 : 10
+                                            value: foodCard.isSpice ? (modelData.servingSize > 0 ? modelData.servingSize : 2) : root.addAmount
                                             editable: true
                                             font.pixelSize: 11
                                             font.bold: true
@@ -911,7 +1013,7 @@ Dialog {
                                     RowLayout {
                                         spacing: 4
                                         Repeater {
-                                            model: [50, 100, 150, 200, 250]
+                                            model: foodCard.isSpice ? [1, 2, 5, 10, 15] : [50, 100, 150, 200, 250]
                                             delegate: Rectangle {
                                                 width: 44
                                                 height: 22

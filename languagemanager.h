@@ -49,10 +49,12 @@ signals:
 
 private:
     void initEnglishDictionary();
+    void initGermanDictionary();
 
     static LanguageManager *s_instance;
     bool m_showAllLanguages = false;
     QString m_currentLanguage = QStringLiteral("en");
     QMap<QString, QString> m_enDict;
+    QMap<QString, QString> m_deDict;
     QTranslator m_translator;
 };

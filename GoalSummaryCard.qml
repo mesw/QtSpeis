@@ -15,6 +15,32 @@ Rectangle {
     property int planRevision: 0
     signal evaluateRequested()
     signal profileRequested()
+    signal openSortedExplorerRequested(string nutrientKey)
+
+    readonly property string activeConstraintNutrientKey: {
+        if (!gameLevelManager) return "";
+        var lvl = gameLevelManager.currentLevel;
+        switch (lvl) {
+        case 3: return "fiber";
+        case 4: return "sat_fat";
+        case 5: return "omega_3";
+        case 6: return "potassium";
+        case 7: return "calcium";
+        case 8: return "zinc";
+        case 10: return "vitamin_c";
+        case 11: return "fat";
+        case 12: return "vitamin_e";
+        case 13: return "calcium";
+        case 14: return "magnesium";
+        case 15: case 16: case 21: return "iron";
+        case 17: case 18: return "fiber";
+        case 19: return "protein";
+        case 20: return "carbs";
+        case 22: return "protein";
+        case 23: return "protein";
+        default: return "";
+        }
+    }
 
     Connections {
         target: root.mealPlanManager
@@ -170,9 +196,10 @@ Rectangle {
                     property real tgt: mealPlanManager ? mealPlanManager.targetCalories : 2000
                     property real diff: cur - tgt
                     text: {
-                        if (Math.abs(diff) <= 50) return "🎯 Perfect bullseye (±50 kcal)!";
-                        if (diff > 0) return "▲ " + Math.round(diff) + " kcal over target";
-                        return "▼ " + Math.round(Math.abs(diff)) + " kcal remaining";
+                        var isDe = langManager && langManager.currentLanguage === "de";
+                        if (Math.abs(diff) <= 50) return isDe ? "🎯 Perfekte Punktlandung (±50 kcal)!" : "🎯 Perfect bullseye (±50 kcal)!";
+                        if (diff > 0) return "▲ " + Math.round(diff) + (isDe ? " kcal über Ziel" : " kcal over target");
+                        return "▼ " + Math.round(Math.abs(diff)) + (isDe ? " kcal verbleibend" : " kcal remaining");
                     }
                     font.pixelSize: 11
                     color: Math.abs(cur - tgt) <= 50 ? "#16A34A" : "#78716C"
@@ -316,7 +343,9 @@ Rectangle {
                         anchors.centerIn: parent
                         spacing: 1
                         Label {
-                            text: "🌾 " + (langManager ? langManager.t("carbs") : "Carbs")
+                            text: (gameLevelManager && gameLevelManager.currentLevel >= 2 && mealPlanManager)
+                                ? ("🌾 " + (langManager ? langManager.t("carbs") : "Carbs") + " (" + Math.round(mealPlanManager.targetCarbPercent) + "% " + (Math.abs(mealPlanManager.carbPercent - mealPlanManager.targetCarbPercent) <= 4 ? "✓" : "⚠️") + ")")
+                                : ("🌾 " + (langManager ? langManager.t("carbs") : "Carbs"))
                             font.pixelSize: 10
                             font.bold: true
                             color: "#92400E"
@@ -342,7 +371,9 @@ Rectangle {
                         anchors.centerIn: parent
                         spacing: 1
                         Label {
-                            text: "🍗 " + (langManager ? langManager.t("protein") : "Protein")
+                            text: (gameLevelManager && gameLevelManager.currentLevel >= 2 && mealPlanManager)
+                                ? ("🍗 " + (langManager ? langManager.t("protein") : "Protein") + " (" + Math.round(mealPlanManager.minProteinPercent) + "-" + Math.round(mealPlanManager.maxProteinPercent) + "% " + (mealPlanManager.proteinPercent >= mealPlanManager.minProteinPercent && mealPlanManager.proteinPercent <= mealPlanManager.maxProteinPercent ? "✓" : "⚠️") + ")")
+                                : ("🍗 " + (langManager ? langManager.t("protein") : "Protein"))
                             font.pixelSize: 10
                             font.bold: true
                             color: "#065F46"
@@ -368,7 +399,9 @@ Rectangle {
                         anchors.centerIn: parent
                         spacing: 1
                         Label {
-                            text: "🥑 " + (langManager ? langManager.t("fat") : "Fat")
+                            text: (gameLevelManager && gameLevelManager.currentLevel >= 2 && mealPlanManager)
+                                ? ("🥑 " + (langManager ? langManager.t("fat") : "Fat") + " (" + Math.round(mealPlanManager.minFatPercent) + "-" + Math.round(mealPlanManager.maxFatPercent) + "% " + (mealPlanManager.fatPercent >= mealPlanManager.minFatPercent && mealPlanManager.fatPercent <= mealPlanManager.maxFatPercent ? "✓" : "⚠️") + ")")
+                                : ("🥑 " + (langManager ? langManager.t("fat") : "Fat"))
                             font.pixelSize: 10
                             font.bold: true
                             color: "#1E40AF"
@@ -478,6 +511,72 @@ Rectangle {
                         font.pixelSize: 10
                         color: root.isObjectiveMet ? "#166534" : "#991B1B"
                         wrapMode: Text.WordWrap
+                    }
+                }
+
+                // Explicit Level 5 Sub-Goals Breakdown (Issue #28)
+                ColumnLayout {
+                    visible: Boolean(gameLevelManager && gameLevelManager.currentLevel === 5 && mealPlanManager)
+                    Layout.fillWidth: true
+                    spacing: 3
+
+                    RowLayout {
+                        spacing: 4
+                        Label {
+                            text: (mealPlanManager && mealPlanManager.totalOmega3 >= 2.5) ? "✅" : "❌"
+                            font.pixelSize: 11
+                        }
+                        Label {
+                            text: "1. Omega-3 ≥ 2.5g (" + (mealPlanManager ? mealPlanManager.totalOmega3.toFixed(2) : "0") + "g)"
+                            font.pixelSize: 10
+                            font.bold: true
+                            color: (mealPlanManager && mealPlanManager.totalOmega3 >= 2.5) ? "#15803D" : "#B45309"
+                        }
+                    }
+
+                    RowLayout {
+                        spacing: 4
+                        property bool ratioMet: {
+                            if (!mealPlanManager || mealPlanManager.totalOmega3 <= 0.05) return false;
+                            return (mealPlanManager.totalOmega6 / mealPlanManager.totalOmega3) <= 4.0;
+                        }
+                        Label {
+                            text: parent.ratioMet ? "✅" : "❌"
+                            font.pixelSize: 11
+                        }
+                        Label {
+                            text: "2. Ω-6 : Ω-3 ≤ 4:1 (" + (mealPlanManager && mealPlanManager.totalOmega3 > 0.05 ? (mealPlanManager.totalOmega6 / mealPlanManager.totalOmega3).toFixed(1) : "999") + ":1 • " +
+                                  (mealPlanManager ? mealPlanManager.totalOmega6.toFixed(1) : "0") + "g Ω-6 vs " +
+                                  (mealPlanManager ? mealPlanManager.totalOmega3.toFixed(2) : "0") + "g Ω-3)"
+                            font.pixelSize: 10
+                            font.bold: true
+                            color: parent.ratioMet ? "#15803D" : "#B45309"
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                        }
+                    }
+                }
+
+                // Direct Shortcut to Sorted Ingredient Explorer (Issue #24 / #31)
+                Button {
+                    id: findTargetFoodsBtn
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 30
+                    visible: root.activeConstraintNutrientKey !== ""
+                    text: (langManager && langManager.currentLanguage === "de")
+                        ? "🔬 Passende Zutaten im Explorer finden"
+                        : "🔬 Find Matching Foods in Explorer"
+                    font.pixelSize: 10
+                    font.bold: true
+                    palette.buttonText: "#B45309"
+                    background: Rectangle {
+                        radius: 6
+                        color: findTargetFoodsBtn.down ? "#FDE68A" : (findTargetFoodsBtn.hovered ? "#FEF3C7" : "#FFFFFF")
+                        border.color: "#F59E0B"
+                        border.width: 1
+                    }
+                    onClicked: {
+                        root.openSortedExplorerRequested(root.activeConstraintNutrientKey);
                     }
                 }
             }
